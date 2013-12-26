@@ -86,7 +86,7 @@ div 'ng-controller': 'StyleCtrl', ->
 			pre ->
 				code '.lang-coffeescript', '''
 					div '.alert.alert-dismissable.alert-{{style}}', ->
-						button '.close', 'type': 'button',	'data-dismiss': "alert", 'aria-hidden':"true",'&times;'
+						button '.close', 'type': 'button', 'data-dismiss': "alert", 'aria-hidden':"true",'&times;'
 						text 'Your message here. More information here '
 						a '.alert-link', 'href':'#', 'here'
 				'''
@@ -146,9 +146,9 @@ div 'ng-controller': 'StyleCtrl', ->
 			pre ->
 				code '.lang-coffeescript', '''
 					div '.panel.panel-{{style}}', ->
-					div '.panel-heading', 'Panel heading'
-					div '.panel-body', 'Panel body'
-					div '.panel-footer', 'Panel footer'
+						div '.panel-heading', 'Panel heading'
+						div '.panel-body', 'Panel body'
+						div '.panel-footer', 'Panel footer'
 				'''
 		div secondCol, ->
 			div '.panel.panel-{{style}}', ->
@@ -247,7 +247,7 @@ div 'ng-controller': 'StyleCtrl', ->
 		div firstCol, ->
 			pre ->
 				code '.lang-coffeescript', '''
-					ul '.nav{{getCoffeeClassName(navStyle)}}',	->
+					ul '.nav{{getCoffeeClassName(navStyle)}}', ->
 						li ->
 							a 'href': '#tab1', 'data-toggle': 'tab', 'Tab 1'
 						li '.active', ->
@@ -306,7 +306,7 @@ div 'ng-controller': 'StyleCtrl', ->
 							div '#collapse1.panel-collapse.collapse.in', ->
 								div '.panel-body', ->
 									 text 'Content 1' 
-						#second panel (collaosed by default)
+						#second panel (collapsed by default)
 						div '.panel.panel-{{style}}', ->
 							div '.panel-heading', ->
 								h4 '.panel-title', ->

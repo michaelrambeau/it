@@ -74,7 +74,6 @@ html lang: 'en','ng-app':'', ->
     text @partial 'footer.html'
         
     script src: '//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'
-    #script src: @getPath 'vendor/jquery.min.js'
     script src: @getPath 'vendor/bootstrap.min.js?v3.0.3'
     
     if @document.flowtype is true
@@ -96,6 +95,3 @@ html lang: 'en','ng-app':'', ->
         
     text @partial 'googleanalytics.html'
     
-        
-    
-        

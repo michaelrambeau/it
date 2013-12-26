@@ -90,7 +90,6 @@ p -> '''
   But I found recently some tools that really help me doing better work.
 '''
 
-#But as HTML5 becomes a standard for web pages
 blockquote -> 
   p '''
     Development is a craftsmanship. Good craftsmen need good tools.

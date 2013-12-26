@@ -20,3 +20,5 @@ nbproject
 out
 env.coffee
 .env
+
+src/nbproject/*

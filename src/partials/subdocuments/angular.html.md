@@ -1,6 +1,4 @@
 ---
-layout: blank
-title: basic test
 ---
 ### Why use a Javascript framework ?
 
@@ -9,7 +7,7 @@ For many of us, we cannot imagine coding Javscript without jQuery.
 
 But when you need to build a complex application (following the MVC pattern), you might need a more strctured approach.
 
->When working on a web application that involves a lot of JavaScript, one of the first things you learn is to stop tying your data to the DOM. It's all too easy to create JavaScript applications that end up as tangled piles of jQuery selectors and callbacks, all trying frantically to keep data in sync between the HTML UI, your JavaScript logic, and the database on your server. For rich client-side applications, a more structured approach is often helpful.
+> When working on a web application that involves a lot of JavaScript, one of the first things you learn is to stop tying your data to the DOM. It's all too easy to create JavaScript applications that end up as tangled piles of jQuery selectors and callbacks, all trying frantically to keep data in sync between the HTML UI, your JavaScript logic, and the database on your server. For rich client-side applications, a more structured approach is often helpful.
 <small>From [backbonejs.org](http://backbonejs.org/) introduction</small>
 
 ### Why Angular ?
@@ -21,7 +19,7 @@ All these frameworks have the hability to connect dynamically the page DOM eleme
 
 Angular is different because it relies on a **specific HTML markup**.
 
-By using Angular specific attributes (such as "ng-model", ""ng-controller, "ng-repeat") the HTML page becomes dynamic.
+By using Angular specific attributes (such as "ng-model", "ng-controller, "ng-repeat") the HTML page becomes dynamic.
 You can also bind events directly adding "ng-click" to a button or "ng-change" to a combox.
 It can look like "old-fashioned" but it is very different from inline code such as onclick="myFunction()" because a "scope" has been provided.
 
