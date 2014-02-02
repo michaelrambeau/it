@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: The making-of a new project
 description: My work experience about BrastelRemit web site. How I requested the changes that were needed to improve the web site efficiency. 
 date: 2013-08-25

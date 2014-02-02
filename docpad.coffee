@@ -9,11 +9,12 @@ getPageLevel = (doc) ->
 	return url.match(/\//g).length
 
 docpadConfig = {
-	ignoreCustomPatterns: new RegExp('.*\.less$') 
-	
+	watchOptions:
+		catchupDelay: 0
+	regenerateDelay: 0
+	ignoreCustomPatterns: new RegExp('.*\.styl$')
 	enabledPlugins:	# example
 		coffeekup: true
-		inlinegui: true
 	plugins: 
 		coffeekup:
 			coffeecup:
@@ -31,7 +32,7 @@ docpadConfig = {
 			
 
 		getMonth: (d) ->
-			months = "JAN FEB MAR APR MAY JUN JUL AUG SEP OCT NOV DEC"
+			months = "JANUARY FEBRUARY MARCH APRIL MAY JUNE JULY AUGUST SEPTEMBER OCTOBER NOVEMBER DECEMBER"
 			array = months.split(' ')
 			array[d.getMonth()]
 			

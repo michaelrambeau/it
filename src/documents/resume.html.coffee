@@ -1,5 +1,5 @@
 ---
-layout: "default"
+layout: "page"
 title: "Resume"
 description: "Michael Rambeau's curriculum vitae"
 menuId: "EXPERIENCE"
@@ -81,18 +81,19 @@ experiences=[
   
 ]
   
-img '.pull-right',style:'margin-top: 10px;', src: @getPath('img/photos/identite.jpg')
+img '.pull-right', src: @getPath('img/photos/identite.jpg')
 h1 'IT solution developer & Web expert'  
-ul '.reset', ->
+ul '.reset.custom', ->
   li ->
-    span '.glyphicon.glyphicon-user',' '      
+    i '.fa.fa-user',' '      
     text 'Michael Rambeau, 36 years old, French, IT engineer'
   li ->
-    span '.glyphicon.glyphicon-home',' '
+    i '.fa.fa-home',' '
     text 'Residing in Ibaraki city, Osaka, Japan since April 2010'
   li ->
-    span '.glyphicon.glyphicon-envelope',' '
+    i '.fa.fa-envelope',' '
     a '.email', href: "mailto:michael.rambeau@gmail.com", "michael.rambeau@gmail.com"  
+hr '.spacer', ''
 
 h2 'Technical proficiencies'
 ul '.custom', ->
@@ -108,14 +109,14 @@ h2 '.clearfix','style':'clear:both;','Professionnal experience'
 for experience in experiences
 
   div '.experience', ->
-    div '.row', ->
-      div '.col-sm-6', ->
-        p '#' + experience.id + '.experience-date.text-left', ->
+    div '.pure-g-r', ->
+      div '.pure-u-1-2', ->
+        div '#' + experience.id + '.experience-date.text-left', ->
           year = if experience.from is experience.to then experience.from else experience.from + ' ⇒ ' + experience.to
           text year + ' (' + experience.duration + ')'        
-      div '.col-sm-6', ->
-        p '.experience-location', ->
-          span ".glyphicon.glyphicon-globe",''
+      div '.pure-u-1-2', ->
+        div '.experience-location', ->
+          i ".fa.fa-globe",''
           text experience.location
     h3 experience.title
 

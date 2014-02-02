@@ -1,6 +1,7 @@
 ---
 layout: 'presentation-with-impress'
 title: 'Rakuten - Michael Rambeau' 
+css: 'rakuten.css'
 ---
 angle = 0
 y0 = -900
@@ -9,7 +10,7 @@ imgRoot = 'http://michaelrambeau.com/it/img'
 header ->
   div '.right', ->
     a href: 'http://michaelrambeau.com', 'michaelrambeau.com'
-    text ' 2013年10月'
+    text ' 2014年1月'
   a '.start',href:'#/overview', 'スタートに戻る'    
   h1 ->
     text 'Michael' 

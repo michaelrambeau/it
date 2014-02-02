@@ -4,11 +4,11 @@ $(document).ready(function(){
     var $window = $(window);
     var $body   = $(document.body);
     
-    $('.logo-tooltip').tooltip({placement: 'right',container: 'body'});
+    if (false) $('.logo-tooltip').tooltip({placement: 'right',container: 'body'});
     
     var navHeight = $('.navbar').outerHeight(true) + 10;
 
-    $body.scrollspy({
+    if (false) $body.scrollspy({
       target: '.bs-sidebar',
       offset: navHeight
     });
@@ -17,7 +17,7 @@ $(document).ready(function(){
       e.preventDefault();
     });
     
-    setTimeout(function () {
+    if (false) setTimeout(function () {
       initAffix();
     }, 1000);
 });

@@ -1,82 +1,98 @@
----
-layout: 'default'
+--- 
+layout: 'post'
 title: 'Working with CoffeeScript and Grunt'
 description: 'Why I chose CoffeeScript to generate my JavaScript files and how I set up my environment, using Grunt task management system.'
-
 date: '2013-12-06'
 menuId: 'POSTS'
 comments: true
 active: true
+homepage: true
 standalone: true
 angular: false
 isPost: true
 syntaxHighlighter: true
+image: '2013-12-coffeescript-grunt.png'
 ---
 
+grid1 = (html) ->
+	div '.pure-u-1-2', ->
+		div '.first-col', ->
+			html()
+grid2 = (html) ->
+	div '.pure-u-1-2', ->
+		div '.second-col', ->
+			html()
+			
 filesystem = (step = 1) ->
-	span '.glyphicon.glyphicon-folder-open.folder', ''
+	span '.fa.fa-folder-open.folder', ''
 	span 'myapp'
 	ul '.filesystem', ->
 		if step >= 3 then li class: (if step is 3 then 'new' else ''), ->
-			span '.glyphicon.glyphicon-file.file', ''
+			span '.fa.fa-file.file', ''
 			span '.filename', 'gruntfile.coffee'
 
 		li ->
-			span '.glyphicon.glyphicon-folder-open.folder', ''
+			span '.fa.fa-folder-open.folder', ''
 			span 'src'
 			ul '.filesystem', ->
 				li ->
-					span '.glyphicon.glyphicon-file.file', ''
+					span '.fa.fa-file.file', ''
 					span 'mycontroller1.coffee'
 				li ->
-					span '.glyphicon.glyphicon-file.file', ''
+					span '.fa.fa-file.file', ''
 					span 'app1.coffee'
 		li ->
-			span '.glyphicon.glyphicon-folder-open.folder', ''
+			span '.fa.fa-folder-open.folder', ''
 			span 'out'
 			if step >= 4 then ul '.filesystem ',->
 				li ->
-					span '.glyphicon.glyphicon-file.file', ''
+					span '.fa.fa-file.file', ''
 					span 'app.js'
 		if step > 0 then li ->
-			span '.glyphicon.glyphicon-folder-open.folder', ''
+			span '.fa.fa-folder-open.folder', ''
 			span 'node_modules'
 			ul '.filesystem ',->
 				li ->
-					span '.glyphicon.glyphicon-folder-close.folder', ''
+					span '.fa.fa-folder-close.folder', ''
 					span 'grunt'
 				li ->
-					span '.glyphicon.glyphicon-folder-close.folder', ''
+					span '.fa.fa-folder-close.folder', ''
 					span 'grunt-contrib-coffee'
 				if step >= 5 then li ->
-					span '.glyphicon.glyphicon-folder-close.folder', ''
+					span '.fa.fa-folder-close.folder', ''
 					span 'grunt-contrib-watch'
 
-#button type: 'button', 'push me!'
 
-p '''
-	With <a href="http://nodejs.org/">nodejs</a> expansion, JavaScript is more and more used server-side to build web applications.
-	<br/>
-	In the other hand JavaScript has some pitfalls: 
-	it is not object oriented for example (no class), with all the configuration objects and the asynchronous callbacks we use, writing the curly brackets can be tedious...
-'''
 
-p '''
-	<a href="http://coffeescript.org">CoffeeScript</a> is a small language used to generate JavaScript files.
-	By using CoffeeScript to generate your JavaScript files, you handle a language whose syntax is far much concise than JavaScript, with "class" support.
-'''
-p '''
-	For me, CoffeeScript is beautiful and help me focus on the task I have to do rather than the syntax.<br/>
-	
-	This article describes some nice CoffeeScript features and explains how to set up quickly a basic CoffeeScript environment, using Grunt task manager.
-'''
+intro = () ->
+	p '''
+		With <a href="http://nodejs.org/">nodejs</a> expansion, JavaScript is more and more used server-side to build web applications.
+		<br/>
+		In the other hand JavaScript has some pitfalls: 
+		it is not object oriented for example (no class), with all the configuration objects and the asynchronous callbacks we use, writing the curly brackets can be tedious...
+	'''
 
+	p '''
+		<a href="http://coffeescript.org">CoffeeScript</a> is a small language used to generate JavaScript files.
+		By using CoffeeScript to generate your JavaScript files, you handle a language whose syntax is far much concise than JavaScript, with "class" support.
+	'''
+	p '''
+		For me, CoffeeScript is beautiful and help me focus on the task I have to do rather than the syntax.<br/>
+
+		This article describes some nice CoffeeScript features and explains how to set up quickly a basic CoffeeScript environment, using Grunt task manager.
+	'''
+#text @nd.dump @document
+div '.pure-g-r', ->
+	grid1 () ->
+		intro()
+	grid2 () =>
+		img src: @getPath('img/blog/' + @document.image)	
 
 h2 'Quick overview of the language'
 h3 'The basics'
-div '.row', ->
-	div '.col-sm-6', ->
-		ul ->
+div '.pure-g-r', ->
+	grid1 () ->
+		ul '.custom', ->
 			li 'Only indentation is used to create nested blocks of code: no pair of curly bracket {}. It can be a problem when working with IDEs that have different indentation settings (spaces VS tab). '
 			li 'No semi-column at the end of the lines.'
 			li 'No var keyword to declare variables'
@@ -88,7 +104,7 @@ div '.row', ->
 			li 'When calling a function, parenthesis around arguments are optional.'	
 			li 'A default value value can be set to function arguments'
 		
-	div '.col-sm-6', ->
+	grid2 () ->
 	
 		pre ->
 			code '.lang-coffeescript','''
@@ -116,8 +132,8 @@ div '.row', ->
 			'''
 	
 h2 'Class support'
-div '.row', ->
-	div '.col-md-6', ->
+div '.pure-g-r', ->
+	grid1 () ->
 		p '''
 			Using the <code>class</code> keyword, you can easily create your own classes in a quite elegant way, defining the constructor, the properties and the methods.
 			<br/>
@@ -127,7 +143,7 @@ div '.row', ->
 			<code>@name</code> and <code>this.name</code> mean the same thing.<br/>
 		'''
 		
-	div '.col-md-6', ->
+	grid2 () ->
 		pre ->
 			code '.lang-coffeescript','''
 				#Constructor example 1
@@ -139,8 +155,8 @@ div '.row', ->
 				larry = new Player 'Larry', 33
 			'''
 	
-div '.row', ->
-	div '.col-md-6', ->
+div '.pure-g-r', ->
+	grid1 () ->
 		h3 'Constructor optimization'
 		p 'The next 2 examples show how you can make the constructor more compact.'
 		p '''
@@ -160,7 +176,7 @@ div '.row', ->
 			<code>@name = options.name</code><br>
 			<code>@number = options.number</code>
 		'''
-	div '.col-md-6', ->
+	grid2 () ->
 		pre ->
 			code '.lang-coffeescript','''
 				#Constructor / Example 2
@@ -177,16 +193,16 @@ div '.row', ->
 					name: 'Larry'
 					number: 33						
 			'''		
-div '.row', ->
-	div '.col-md-6', ->		
+div '.pure-g-r', ->
+	grid1 () ->
 		h3 'The "this" issue'
 		p '''
-			When creating a method, you can use the fat arrow <code>=></code> instead of the normal arrow <code>-></code> if you want that "this" keyword always means the same thing (the current object).
+			When creating a method, you can use the fat a.pure-g-r <code>=></code> instead of the normal a.pure-g-r <code>-></code> if you want that "this" keyword always means the same thing (the current object).
 			<br/>
 			It is really useful when inside a class, you have to bind a DOM element with an event for example.
 		'''
-div '.row', ->
-	div '.col-md-6', ->		
+div '.pure-g-r', ->
+	grid1 () ->
 		h3 'Inheritance'
 		p '''
 			You can create a "child" class that inherits from its parent class by using the <code>extends</code> keyword.
@@ -194,7 +210,7 @@ div '.row', ->
 		p '''
 			In a child class method or constructor, <code>super()</code> is used to call the same method from the parent class.
 		'''
-	div '.col-md-6', ->
+	grid2 () ->
 		pre ->
 			code '.lang-coffeescript','''
 				#Inheritance
@@ -224,30 +240,8 @@ players = [
 	firstname: 'David'
 ]
 
-#map() function equivalent. Returns the 3 array: [23, 33, 50]
-#Do not forget the parenthesis around the expression, otherwise only the last element will be returned.
-numbers = (player.number for player in players)
-
-#Get the greatest element of the array, using splat "..."
-max = Math.max(numbers...)
-console.log('max=',max)
-
-#Filter the array, finding the player whose number is 33
-#Returns an array with one element: [ { number: 33, firstname: 'Larry' } ]
-filteredArray = (player for player in players when player.number is 33)
-
-#Without parenthesis, the element found is returned: { number: 33, firstname: 'Larry' }
-myPlayer = player for player in players when player.number is 33
-
-#Looping trough object properties
-for own key, value of myPlayer
-	console.log(key,'=',value)
-
- 
-
-
-div '.row', ->
-	div '.col-md-6', ->
+div '.pure-g-r', ->
+	grid1 () ->
 		p '''
 			CoffeeScript provides smart ways to handle array.
 			You don't have to include any external library (like jQuery or underscorejs) if you need a map or find function.
@@ -279,7 +273,7 @@ div '.row', ->
 		p 'By using a splat, we can call Math.max with an array: <code>Math.max myArray...</code>'
 		p '.small', 'Note: the previous CoffeeScript compiles into the following Javascript code: <code>Math.max.apply(Math, myArray)</code>'
 	
-	div '.col-md-6', ->
+	grid2 () ->
 
 		pre ->
 			code '.lang-coffeescript','''
@@ -318,8 +312,8 @@ div '.row', ->
 	'''
 	
 h2 'How to set up your CoffeeScript environment with Grunt'
-div '.row', ->
-	div '.col-md-7', ->
+div '.pure-g-r', ->
+	grid1 () ->
 		p '''
 			<a href="http://gruntjs.com/">Grunt</a> is a task runner command line tool built on top of nodejs. It can be used to concatenate or minify assets (CSS, JS) for example
 			<br>
@@ -335,12 +329,12 @@ div '.row', ->
 		p '''	
 			Let's see how to install and configure Grunt.
 		'''
-	div '.col-md-5', ->
+	grid2 () ->
 		p 'The project folder should look like this:'
 		filesystem(0)
 		
-div '.row', ->
-	div '.col-md-7', ->
+div '.pure-g-r', ->
+	grid1 () ->
 		h3 '1. Install Grunt CLI'
 		p 'Requirements: nodejs and npm must have been installed on your computer.'
 		p 'Install Grunt CLI (Command Line Interface) globally by running this command, from any folder:'
@@ -350,8 +344,8 @@ div '.row', ->
 			'''
 
 h3 '2. Install the Grunt CoffeeScript plugin'
-div '.row', ->
-	div '.col-md-7', ->
+div '.pure-g-r', ->
+	grid1 () ->
 		p '''
 			The CoffeeScript plugins must be installed locally (in your project folder: "myapp" in our example).
 			Go to your project folder and run the following command:
@@ -383,12 +377,12 @@ div '.row', ->
 			li 'grunt: about 500 files - 5.5MB'
 			li 'grunt-contrib-coffee: about 70 files - 690 KB'		
 
-	div '.col-md-5', ->
+	grid2 () ->
 		filesystem(2)
 
 h4 'More about package.json file'
-div '.row', ->
-	div '.col-md-7', ->
+div '.pure-g-r', ->
+	grid1 () ->
 		p '''
 			if you add <code>--save-dev</code> at the end of the plugin install command line, the Grunt CoffeeScript plugin will be saved as a "dev dependency" in the package.json file,
 			that is to say a component used during the development workflow to build the project.
@@ -406,7 +400,7 @@ div '.row', ->
 			npm will automatically download all components that are part of the application, including the dev dependencies.
 		'''
 
-	div '.col-md-5', ->
+	grid2 () ->
 		p 'Example of package.json file with "devDependencies"'
 		pre ->
 			code '.lang-javascript', '''
@@ -423,8 +417,8 @@ div '.row', ->
 
 
 h3 '3. Configuration'
-div '.row', ->
-	div '.col-md-7', ->
+div '.pure-g-r', ->
+	grid1 () ->
 		p 'Create a file called <b>gruntfile.coffee</b> in your project folder and copy-paste the following content.'			
 	
 		pre ->
@@ -444,12 +438,12 @@ div '.row', ->
 			<br/>
 		'''
 	
-	div '.col-md-5', ->
+	grid2 () ->
 		filesystem(3)
 
 h3 '4. Compile the files manually'
-div '.row', ->
-	div '.col-md-7', ->
+div '.pure-g-r', ->
+	grid1 () ->
 		p '''
 			From the command line, launch the "coffee" task.
 		'''
@@ -458,13 +452,13 @@ div '.row', ->
 				grunt coffee
 			'''	
 		p 'Check if the JavaScript file was generated as expected in the out folder.'
-	div '.col-md-5', ->
+	grid2 () ->
 		filesystem(4)
 
 
 h3 '5. Compile automatically the files when they are updated'
-div '.row', ->
-	div '.col-md-7', ->
+div '.pure-g-r', ->
+	grid1 () ->
 		p 'In order to detect any change made your source file, you need to install and configure the grunt-contrib-watch plugin'
 		p 'Run the following command in the console:'
 
@@ -496,12 +490,12 @@ div '.row', ->
 					grunt.loadNpmTasks 'grunt-contrib-coffee'
 					grunt.loadNpmTasks 'grunt-contrib-watch'
 				'''
-	div '.col-md-5', ->
+	grid2 () ->
 		filesystem(5)
 		
 h3 'Default private scope'
-div '.row', ->
-	div '.col-md-7', ->
+div '.pure-g-r', ->
+	grid1 () ->
 		p 'By default, the JavaScript code generated by the compiler is wrapped inside an anonymous function that calls itself <code>(function(){ ... })();</code>'
 
 		p '''

@@ -1,21 +1,41 @@
 ---
-layout: 'default'
+layout: 'post'
 title: 'Bootstrap + CoffeeKup cheatsheet'
-description: 'Bootstrap is a set of amazing UI components for HTML pages.	You will find here CoffeeKup snippets to include Bootstrap v3.0.3 components in your page: dropdown menus, tabs, navigation bars, and more... '
+description: 'Bootstrap is a set of amazing UI components for HTML pages.	You will find here CoffeeKup snippets to include Bootstrap v3 components in your page: dropdown menus, tabs, navigation bars, and more... '
 
 #introduction: '<a href="http://coffeekup.org/">Coffeekup</a> is built on top of <a href="http://coffeescript.org/">CoffeeScript</a>. It makes html code easy to read and to write: no HTML tags to open and to close, indentation is used to create nested elements.'
 date: '2013-09-20'
 menuId: 'POSTS'
 active: true
+homepage: true
 standalone: false
 angular: true
+bootstrap: true
 isPost: true
 comments: true
+className: 'bootstrap'
 js: ['cheatsheet.js','holder.js']
 syntaxHighlighter: true
 image: '2013-09-bootstrap-coffeekup.png'
-intro: -> text '?'
 ---
+
+if false then div '.pure-g-r.hidden-print', ->
+		div '.pure-u-1-2', ->
+			div '.first-col', ->
+
+			
+		div '.pure-u-1-2', ->
+			div '.second-col', ->
+				p '<a href="http://getbootstrap.com/">Boostrap</a> is a set of amazing UI components for HTML pages.'
+				p '''
+					<a href="http://coffeekup.org/">Coffeekup</a> is a templating language built on top of <a href="http://coffeescript.org/">CoffeeScript</a>. 
+					If you already use CoffeeScript instead of Javascript for your web application,	you will love it!
+					No HTML tags to open and to close, indentation is used to create nested elements.
+				'''
+				p '.last-update', 'Updated in 2013 December: Bootstrap upgraded to v3.0.3  - Carousel and modals examples added. '
+	
+
+
 
 
 styles=[
@@ -27,40 +47,60 @@ styles=[
 	'danger'
 ]
 
-firstCol = '.col-md-8'
-secondCol = '.col-md-4.hidden-print'
+grid1 = (html) ->
+	div '.pure-u-3-5', ->
+		div '.first-col', ->
+			html()
+grid2 = (html) ->
+	div '.pure-u-2-5', ->
+		div '.second-col', ->
+			html()
+			
+if false then div '.pure-g-r.hidden-print', ->
+	grid1 () -> 
+		h1 'xxx'
+	grid2 () -> 
+		h1 'yyy'
+		
+			
+			
+		
+
+firstCol = '.pure-u-2-3.first-col'
+secondCol = '.pure-u-1-3.second-col.hidden-print'
+
+intro = () ->
+	p 'You will find here some snippets to add Bootstrap 3 components to your page written in CoffeeKup language.'
+
+	p '''
+	I was tired of going to the official Bootstrap documentation site (even if it is good), copying the HTML code and making the CoffeeKup conversion.
+	I have already done the job for you!
+	'''
+
+	p 'Select one of the 6 Bootstrap "styles":'
+	div '.btn-group', ->
+		for style in styles
+			button '.btn.btn-' + style ,type: 'button', 'ng-click': 'setStyle(\'' + style + '\')','ng-class': 'setActiveClass(\'' + style + '\')' ,style
+	p '.small', -> '''
+		The style option will affect the color of several components: buttons, dropdowns, panels...			
+	'''
 
 div 'ng-controller': 'StyleCtrl', ->
 
-	div '.row.hidden-print', ->
-		div '.col-md-6', ->
-			p 'You will find here some snippets to add Bootstrap components (v3.0.3) to your page written in CoffeeKup language.'
-			p '<a href="http://getbootstrap.com/">Boostrap</a> is a set of amazing UI components for HTML pages.'
-			p '''
-				<a href="http://coffeekup.org/">Coffeekup</a> is built on top of <a href="http://coffeescript.org/">CoffeeScript</a>. 
-				If you already use CoffeeScript instead of Javascript for your web application,	you will love it!
-				No HTML tags to open and to close, indentation is used to create nested elements.
-			'''
-			p '''
-			I was tired of going to the official Bootstrap documentation site (even if it is good), copying the HTML code and making the CoffeeKup conversion.
-			I have already done the job for you!
-			'''
-			p '.last-update', 'Updated in 2013 December: Bootstrap upgraded to v3.0.3  - Carousel and modals examples added. '
-			
-		div '.col-md-6', ->
-			p 'Select one of the 6 Bootstrap "styles":'
-			div '.btn-group', ->
-				for style in styles
-					button '.btn.btn-' + style ,type: 'button', 'ng-click': 'setStyle(\'' + style + '\')','ng-class': 'setActiveClass(\'' + style + '\')' ,style
-			p ->
-				small 'The style option will affect the color of several components: buttons, dropdowns, panels...'
-	
+	div '.pure-g-r', ->
+		grid1 () ->
+			intro()
+		grid2 () =>
+			img src: @getPath('img/blog/' + @document.image)	
+
+
+
 	h2 ->
 		text 'Buttons'
 		span '.label.label-{{style}}', '.btn'
 	
-	div '.row', ->
-		div firstCol, ->
+	div '.pure-g-r', ->
+		grid1 () -> 
 			pre ->
 				code '.lang-coffeescript','''
 					button '.btn.btn-{{style}}.btn-lg','Large size'
@@ -70,7 +110,7 @@ div 'ng-controller': 'StyleCtrl', ->
 					button '.btn.btn-{{style}}.btn-link','Simple link'
 				'''
 
-		div secondCol, ->
+		grid2 () -> 
 			button '.btn.btn-{{style}}.btn-lg','Large size'
 			button '.btn.btn-{{style}}','Normal size'
 			button '.btn.btn-{{style}}.btn-sm','Small size'
@@ -81,8 +121,8 @@ div 'ng-controller': 'StyleCtrl', ->
 		text 'Alerts'
 		span '.label.label-{{style}}', '.alert'
 	 
-	div '.row', ->
-		div firstCol, -> 
+	div '.pure-g-r', ->
+		grid1 () ->  
 			pre ->
 				code '.lang-coffeescript', '''
 					div '.alert.alert-dismissable.alert-{{style}}', ->
@@ -90,7 +130,7 @@ div 'ng-controller': 'StyleCtrl', ->
 						text 'Your message here. More information here '
 						a '.alert-link', 'href':'#', 'here'
 				'''
-		div secondCol, ->
+		grid2 () -> 
 			div '.alert.alert-dismissable.alert-{{style}}', ->
 				button '.close', 'type': 'button',	'data-dismiss': "alert", 'aria-hidden':"true",'&times;'
 				text 'Your message here. More information '
@@ -101,8 +141,8 @@ div 'ng-controller': 'StyleCtrl', ->
 		text 'Dropdown menu'
 		span '.label.label-{{style}}','.dropdown-menu'		
 
-	div '.row', ->
-		div firstCol, ->
+	div '.pure-g-r', ->
+		grid1 () -> 
 				pre -> 
 					code '.lang-coffeescript', '''
 						div '.btn-group', -> 
@@ -121,7 +161,7 @@ div 'ng-controller': 'StyleCtrl', ->
 									a href:'#', 'Disabled link' 
 					'''	
 
-			div secondCol, ->					
+			grid2 () -> 					
 				div '.btn-group', -> 
 					button '.btn.btn-{{style}}.dropdown-toggle', type: 'button', 'data-toggle': 'dropdown', ->
 						text 'Action'
@@ -141,8 +181,8 @@ div 'ng-controller': 'StyleCtrl', ->
 		text 'Panel'
 		span '.label.label-{{style}}', '.panel'
 	
-	div '.row', ->
-		div firstCol, -> 
+	div '.pure-g-r', ->
+		grid1 () ->  
 			pre ->
 				code '.lang-coffeescript', '''
 					div '.panel.panel-{{style}}', ->
@@ -150,7 +190,7 @@ div 'ng-controller': 'StyleCtrl', ->
 						div '.panel-body', 'Panel body'
 						div '.panel-footer', 'Panel footer'
 				'''
-		div secondCol, ->
+		grid2 () -> 
 			div '.panel.panel-{{style}}', ->
 				div '.panel-heading', 'Panel heading'
 				div '.panel-body', 'Panel body'
@@ -177,8 +217,8 @@ div 'ng-controller': 'StyleCtrl', ->
 	}	
 	#text nodedump(@document,options)		
 
-	div '.row', ->
-		div firstCol, ->
+	div '.pure-g-r', ->
+		grid1 () -> 
 			pre ->
 				code '.lang-coffeescript', '''
 					header '.navbar.navbar-default', ->
@@ -189,14 +229,14 @@ div 'ng-controller': 'StyleCtrl', ->
 										span '.icon-bar',''
 										span '.icon-bar',''
 										span '.icon-bar',''
-									a '.navbar-brand', href:'/', 'my website'
+									a '.navbar-brand', href:'/', 'website'
 								div '#my-menu.collapse.navbar-collapse', ->
 									ul '.nav.navbar-nav', ->
 										li ->
 											a href: '#', 'Page 1'
 										li '.dropdown', ->
 											a '.dropdown-toggle', 'data-toggle': 'dropdown', href: '#', ->
-												text 'Dropdown'
+												text 'Page 2'
 												span '.caret',''
 											ul '.dropdown-menu', ->
 												li ->
@@ -204,7 +244,7 @@ div 'ng-controller': 'StyleCtrl', ->
 												li ->
 													a href: '#', 'Page 2.2'					
 				'''
-		div secondCol, ->
+		grid2 () -> 
 
 			header '.navbar.navbar-default', ->
 				div '.container', ->
@@ -214,14 +254,14 @@ div 'ng-controller': 'StyleCtrl', ->
 								span '.icon-bar',''
 								span '.icon-bar',''
 								span '.icon-bar',''
-							a '.navbar-brand', href:'/', 'my website'
+							a '.navbar-brand', href:'/', 'website'
 						div '#my-menu.collapse.navbar-collapse', ->
 							ul '.nav.navbar-nav', ->
 								li ->
 									a href: '#', 'Page 1'
 								li '.dropdown', ->
 									a '.dropdown-toggle', 'data-toggle': 'dropdown', href: '#', ->
-										text 'Dropdown'
+										text 'Page 2'
 										span '.caret',''
 									ul '.dropdown-menu', ->
 										li ->
@@ -243,8 +283,8 @@ div 'ng-controller': 'StyleCtrl', ->
 			option value: 'nav-pills', 'Pills'
 			option value: 'nav-pills nav-stacked', 'Stackable pills'
 
-	div '.row', ->
-		div firstCol, ->
+	div '.pure-g-r', ->
+		grid1 () -> 
 			pre ->
 				code '.lang-coffeescript', '''
 					ul '.nav{{getCoffeeClassName(navStyle)}}', ->
@@ -267,7 +307,7 @@ div 'ng-controller': 'StyleCtrl', ->
 						div '#tab4.tab-pane.fade', ->
 							p 'Tab 4 content'
 					'''
-		div secondCol, ->
+		grid2 () -> 
 			ul '.nav', 'ng-class': 'navStyle', ->
 				li ->
 					a 'href': '#tab1', 'data-toggle': 'tab', 'Tab 1'
@@ -292,8 +332,8 @@ div 'ng-controller': 'StyleCtrl', ->
 		text 'Accordion'
 		span '.label.label-{{style}}', '.panel-group'
 	
-	div '.row', ->
-		div firstCol, -> 
+	div '.pure-g-r', ->
+		grid1 () ->  
 			pre ->
 				code '.lang-coffeescript', '''
 					div '#acordion.panel-group', ->
@@ -316,7 +356,7 @@ div 'ng-controller': 'StyleCtrl', ->
 								div '.panel-body', ->
 									 text 'Content 2'  
 				'''
-		div secondCol, ->
+		grid2 () -> 
 			div '#acordion.panel-group', ->
 				#first panel (expanded by default)
 				div '.panel.panel-{{style}}', ->
@@ -337,8 +377,8 @@ div 'ng-controller': 'StyleCtrl', ->
 						div '.panel-body', ->
 							 text 'Content 2' 
 							 
-	div '.row', ->
-		div firstCol, ->
+	div '.pure-g-r', ->
+		grid1 () -> 
 			h3 ->
 				text 'Extra CSS code to display '
 				span '.glyphicon.glyphicon-chevron-right', ''
@@ -350,12 +390,12 @@ div 'ng-controller': 'StyleCtrl', ->
 				code '.css', '''
 					.panel-heading .accordion-toggle:after {
 						font-family: 'Glyphicons Halflings';/* Bootstrap glyphicons */
-						content: "\e114";/* chevron displayed for expanded items */
+						content: "\\e114";/* chevron displayed for expanded items */
 						float: right; 
 						color: white;
 					}
 					.panel-heading .accordion-toggle.collapsed:after {
-						content: "\e080";	/* chevron displayed for collapsed items */
+						content: "\\e080";	/* chevron displayed for collapsed items */
 					}						
 				'''
 				
@@ -365,8 +405,8 @@ div 'ng-controller': 'StyleCtrl', ->
 	h2	->
 		text 'List group'
 		label '.label.label-{{style}}','.list-group'
-	div '.row', -> 
-		div firstCol, -> 
+	div '.pure-g-r', -> 
+		grid1 () ->  
 			pre ->
 				code '.lang-coffeescript', '''
 					div '.list-group', ->
@@ -383,7 +423,7 @@ div 'ng-controller': 'StyleCtrl', ->
 						a '.list-group-item', href:'#', 'item 5'
 					''' 
 
-		div secondCol, -> 
+		grid2 () ->  
 			div '.list-group', ->
 				a '.list-group-item', href:'#', 'item 1'
 				a '.list-group-item.active', ->
@@ -408,8 +448,8 @@ div 'ng-controller': 'StyleCtrl', ->
 			option value: 'input-lg', 'Large input'
 	
 
-	div '.row', ->
-		div firstCol, -> 
+	div '.pure-g-r', ->
+		grid1 () ->  
 			pre ->
 				code '.lang-coffeescript', '''
 					form '.form-horizontal', ->
@@ -437,7 +477,7 @@ div 'ng-controller': 'StyleCtrl', ->
 									text 'Option 2'
 					'''
 
-		div secondCol, -> 
+		grid2 () ->  
 			form '.form-horizontal', ->
 				div '.form-group', ->
 					label '.col-lg-4.control-label','for': 'inputName', 'Name'
@@ -463,8 +503,8 @@ div 'ng-controller': 'StyleCtrl', ->
 							text 'Option 2'		 
 	
 	h2 'Dialog'
-	div '.row', ->
-		div firstCol, -> 
+	div '.pure-g-r', ->
+		grid1 () ->  
 			pre ->
 				code '.lang-coffeescript', '''
 					div '#my-dialog.modal.fade', 'role': 'dialog', tabindex: '-1', ->
@@ -479,7 +519,7 @@ div 'ng-controller': 'StyleCtrl', ->
 									button '.btn.btn-default', type: 'button', 'data-dismiss': 'modal', 'Cancel'
 									button '.btn.btn-primary', type: 'button', 'OK'				
 				'''
-		div secondCol, ->
+		grid2 () -> 
 		
 			button '.btn.btn-primary', type:'button', 'data-toggle': "modal", 'data-target': "#my-dialog", 'Push to open the dialog box'
 
@@ -496,8 +536,8 @@ div 'ng-controller': 'StyleCtrl', ->
 							button '.btn.btn-primary', type: 'button', 'OK'
 	
 	h2 'Carousel'
-	div '.row', ->
-		div firstCol, -> 
+	div '.pure-g-r', ->
+		grid1 () ->  
 			pre ->
 				code '.lang-coffeescript', '''
 					div '#carousel.carousel.slide', 'data-ride': 'carousel', ->
@@ -522,7 +562,7 @@ div 'ng-controller': 'StyleCtrl', ->
 						a '.right.carousel-control', 'data-slide': 'next', href: '#carousel', ->
 							span '.glyphicon.glyphicon-chevron-right', '				
 				'''
-		div secondCol, -> 
+		grid2 () ->  
 			div '#carousel.carousel.slide', 'data-ride': 'carousel', ->
 
 				#carousel indicators (little circles that show the active slide)
@@ -548,8 +588,8 @@ div 'ng-controller': 'StyleCtrl', ->
 				
 	h2 'Miscellaneous'
 	
-	div '.row', ->
-		div firstCol, -> 
+	div '.pure-g-r', ->
+		grid1 () ->  
 			pre ->
 				code '.lang-coffeescript', '''
 					div '.pull-left', 'content on the left' #float: left
@@ -560,7 +600,7 @@ div 'ng-controller': 'StyleCtrl', ->
 					
 					img '.img-responsive', 'src': 'image.png' #picture's width fits its container				
 				'''
-		div secondCol, ->
+		grid2 () -> 
 			div '.pull-left', 'content on the left' #float: left
 			div '.pull-right', 'content on the right' #float: right
 			div '.text-center', 'content centered' #float: right		
