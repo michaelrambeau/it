@@ -9,6 +9,14 @@ className: 'resume'
 ---
 #require('nodedump')
 
+getAge = ->
+	today = new Date()
+	birth = new Date(1977,1,11)
+	y = today.getFullYear() - birth.getFullYear()
+	d = new Date(today.getFullYear(),birth.getMonth(),birth.getDate())
+	if d > today then y--
+	y
+
 experiences=[
   id: 'BRASTEL'
   title: 'Web developer at Brastel Telecom'
@@ -85,8 +93,8 @@ img '.pull-right', src: @getPath('img/photos/identite.jpg')
 h1 'IT solution developer & Web expert'  
 ul '.reset.custom', ->
   li ->
-    i '.fa.fa-user',' '      
-    text 'Michael Rambeau, 36 years old, French, IT engineer'
+    i '.fa.fa-user',' '
+    text 'Michael Rambeau, ' + getAge() + ' years old, French, IT engineer'
   li ->
     i '.fa.fa-home',' '
     text 'Residing in Ibaraki city, Osaka, Japan since April 2010'
