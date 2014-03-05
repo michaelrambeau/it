@@ -42,8 +42,8 @@ skills = [
 		ul '.custom', ->
 			li 'PHP framework : CakePHP, used for building Object-oriented applications'
 			li 'Work experience with XML - XSL : XSLT used to process XML data provided by web services to generate dynamic pages.'
-			li 'node.js used to run local web servers'
-			li 'Database: MySQL, MS SQL Server'
+			li 'node.js used to run web application servers'
+			li 'Databases: MongoDB, MySQL, MS SQL Server'
 ,
 	title: "Lotus Notes Domino"
 	picture: 'notesdomino.png'

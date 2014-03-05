@@ -4,7 +4,12 @@
 	div '.container.main', ->
 		div '.white-block', ->
 			div '.title', ->
-				div '.post-date.hidden-print', @getMonth(@document.date) + ' '+ @document.date.getFullYear()
+				if @document.lastUpdate 
+					div '.post-date.hidden-print', ->
+						text 'Last updated in ' + @getMonth(@document.lastUpdate.date) + ' '+ @document.lastUpdate.date.getFullYear()
+						text ' : ' + @document.lastUpdate.comment
+				else
+					div '.post-date.hidden-print', @getMonth(@document.date) + ' '+ @document.date.getFullYear()
 				h1 '.post-title', @document.title
 				text @content
 				

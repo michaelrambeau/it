@@ -1,53 +1,182 @@
-/* Tomorrow Night Blue Theme */
-/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
-/* Original theme - https://github.com/chriskempson/tomorrow-theme */
-/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/*
 
+Railscasts-like style (c) Visoft, Inc. (Damien White)
 
-/* added by mike, to overwrite bootstrap*/
-pre{
-	padding: 0;
-	border-style: none;
-}
+*/
 
-.tomorrow-comment, pre .comment, pre .title {
-  color: #7285b7;
-}
-
-.tomorrow-red, pre .variable, pre .attribute, pre .tag, pre .regexp, pre .ruby .constant, pre .xml .tag .title, pre .xml .pi, pre .xml .doctype, pre .html .doctype, pre .css .id, pre .css .class, pre .css .pseudo {
-  color: #ff9da4;
-}
-
-.tomorrow-orange, pre .number, pre .preprocessor, pre .built_in, pre .literal, pre .params, pre .constant {
-  color: #ffc58f;
-}
-
-.tomorrow-yellow, pre .class, pre .ruby .class .title, pre .css .rules .attribute {
-  color: #ffeead;
-}
-
-.tomorrow-green, pre .string, pre .value, pre .inheritance, pre .header, pre .ruby .symbol, pre .xml .cdata {
-  color: #d1f1a9;
-}
-
-.tomorrow-aqua, pre .css .hexcolor {
-  color: #99ffff;
-}
-
-.tomorrow-blue, pre .function, pre .python .decorator, pre .python .title, pre .ruby .function .title, pre .ruby .title .keyword, pre .perl .sub, pre .javascript .title, pre .coffeescript .title {
-  color: #bbdaff;
-}
-
-.tomorrow-purple, pre .keyword, pre .javascript .function {
-  color: #ebbbff;
-}
-
-pre code {
+.hljs {
   display: block;
-  background: #002451;
-  color: white;
-  font-family: Menlo, Monaco, Consolas, monospace;
-  line-height: 1.5;
-  border: 1px solid #ccc;
-  padding: 10px;
+  padding: 0.5em;
+  background: #232323;
+  color: #E6E1DC;
+}
+
+.hljs-comment,
+.hljs-template_comment,
+.hljs-javadoc,
+.hljs-shebang {
+  color: #BC9458;
+  font-style: italic;
+}
+
+.hljs-keyword,
+.ruby .hljs-function .hljs-keyword,
+.hljs-request,
+.hljs-status,
+.nginx .hljs-title,
+.method,
+.hljs-list .hljs-title {
+  color: #C26230;
+}
+
+.hljs-string,
+.hljs-number,
+.hljs-regexp,
+.hljs-tag .hljs-value,
+.hljs-cdata,
+.hljs-filter .hljs-argument,
+.hljs-attr_selector,
+.apache .hljs-cbracket,
+.hljs-date,
+.tex .hljs-command,
+.markdown .hljs-link_label {
+  color: #A5C261;
+}
+
+.hljs-subst {
+  color: #519F50;
+}
+
+.hljs-tag,
+.hljs-tag .hljs-keyword,
+.hljs-tag .hljs-title,
+.hljs-doctype,
+.hljs-sub .hljs-identifier,
+.hljs-pi,
+.input_number {
+  color: #E8BF6A;
+}
+
+.hljs-identifier {
+  color: #D0D0FF;
+}
+
+.hljs-class .hljs-title,
+.haskell .hljs-type,
+.smalltalk .hljs-class,
+.hljs-javadoctag,
+.hljs-yardoctag,
+.hljs-phpdoc {
+  text-decoration: none;
+}
+
+.hljs-constant {
+  color: #DA4939;
+}
+
+
+.hljs-symbol,
+.hljs-built_in,
+.ruby .hljs-symbol .hljs-string,
+.ruby .hljs-symbol .hljs-identifier,
+.markdown .hljs-link_url,
+.hljs-attribute {
+  color: #6D9CBE;
+}
+
+.markdown .hljs-link_url {
+  text-decoration: underline;
+}
+
+
+
+.hljs-params,
+.hljs-variable,
+.clojure .hljs-attribute {
+  color: #D0D0FF;
+}
+
+.css .hljs-tag,
+.hljs-rules .hljs-property,
+.hljs-pseudo,
+.tex .hljs-special {
+  color: #CDA869;
+}
+
+.css .hljs-class {
+  color: #9B703F;
+}
+
+.hljs-rules .hljs-keyword {
+  color: #C5AF75;
+}
+
+.hljs-rules .hljs-value {
+  color: #CF6A4C;
+}
+
+.css .hljs-id {
+  color: #8B98AB;
+}
+
+.hljs-annotation,
+.apache .hljs-sqbracket,
+.nginx .hljs-built_in {
+  color: #9B859D;
+}
+
+.hljs-preprocessor,
+.hljs-preprocessor *,
+.hljs-pragma {
+  color: #8996A8 !important;
+}
+
+.hljs-hexcolor,
+.css .hljs-value .hljs-number {
+  color: #A5C261;
+}
+
+.hljs-title,
+.hljs-decorator,
+.css .hljs-function {
+  color: #FFC66D;
+}
+
+.diff .hljs-header,
+.hljs-chunk {
+  background-color: #2F33AB;
+  color: #E6E1DC;
+  display: inline-block;
+  width: 100%;
+}
+
+.diff .hljs-change {
+  background-color: #4A410D;
+  color: #F8F8F8;
+  display: inline-block;
+  width: 100%;
+}
+
+.hljs-addition {
+  background-color: #144212;
+  color: #E6E1DC;
+  display: inline-block;
+  width: 100%;
+}
+
+.hljs-deletion {
+  background-color: #600;
+  color: #E6E1DC;
+  display: inline-block;
+  width: 100%;
+}
+
+.coffeescript .javascript,
+.javascript .xml,
+.tex .hljs-formula,
+.xml .javascript,
+.xml .vbscript,
+.xml .css,
+.xml .hljs-cdata {
+  opacity: 0.7;
 }

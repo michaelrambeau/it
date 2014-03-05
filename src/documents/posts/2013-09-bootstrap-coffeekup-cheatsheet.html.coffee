@@ -1,4 +1,4 @@
----
+--- cson
 layout: 'post'
 title: 'Bootstrap + CoffeeKup cheatsheet'
 description: 'Bootstrap is a set of amazing UI components for HTML pages.	You will find here CoffeeKup snippets to include Bootstrap v3 components in your page: dropdown menus, tabs, navigation bars, and more... '
@@ -17,13 +17,15 @@ className: 'bootstrap'
 js: ['cheatsheet.js','holder.js']
 syntaxHighlighter: true
 image: '2013-09-bootstrap-coffeekup.png'
+lastUpdate:
+	date: new Date(2014,1,24)
+	comment: 'Upgrade to Bootstrap V3.1'
 ---
 
 if false then div '.pure-g-r.hidden-print', ->
 		div '.pure-u-1-2', ->
 			div '.first-col', ->
 
-			
 		div '.pure-u-1-2', ->
 			div '.second-col', ->
 				p '<a href="http://getbootstrap.com/">Boostrap</a> is a set of amazing UI components for HTML pages.'
