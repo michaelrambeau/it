@@ -11,7 +11,14 @@
 				else
 					div '.post-date.hidden-print', @getMonth(@document.date) + ' '+ @document.date.getFullYear()
 				h1 '.post-title', @document.title
-				text @content
+				if @document.hasPicture
+					div '.pure-g-r', ->
+						div '.pure-u-3-5', ->
+							text @content
+						div '.pure-u-2-5', ->
+							img '.img-responsive', src: @getPath('img/blog/'+@document.image)
+				else
+					text @content
 				
 		if @document.comments is true
 			div '.hidden-print', ->

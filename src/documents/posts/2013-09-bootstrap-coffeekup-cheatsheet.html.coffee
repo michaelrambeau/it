@@ -16,7 +16,7 @@ comments: true
 className: 'bootstrap'
 js: ['cheatsheet.js','holder.js']
 syntaxHighlighter: true
-image: '2013-09-bootstrap-coffeekup.png'
+image: '2013-09-bootstrap-coffeekup.jpg'
 lastUpdate:
 	date: new Date(2014,1,24)
 	comment: 'Upgrade to Bootstrap V3.1'

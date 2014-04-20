@@ -6,7 +6,7 @@ date: '2013-08-26'
 menuId: POSTS
 comments: true
 active: true
-homepage: true
+homepage: false
 isPost: true
 image: 'lego-minifig-400px.jpg'
 ---

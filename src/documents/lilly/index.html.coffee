@@ -149,7 +149,7 @@ div '#footer', ->
 
 if swipejs is true
   script src: '//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js'
-  script src: 'http://bradbirdsall.github.com/Swipe/swipe.js'
+  script src: 'swipe.js'
   coffeescript ->
   
     callback = (index, element) ->

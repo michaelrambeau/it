@@ -11,7 +11,7 @@ standalone: true
 angular: false
 isPost: true
 syntaxHighlighter: true
-image: '2013-12-coffeescript-grunt.png'
+image: '2013-12-coffeescript-grunt.jpg'
 ---
 
 grid1 = (html) ->
