@@ -13,6 +13,43 @@ docStory = @getCollection('documents').findAllLive({relativeOutDirPath:'posts',k
 urlStory = @getPath(docStory.url)
 
 apps = [
+	id: 'asissonlinestore'
+	title: 'Asics online store prototype'
+	sidebarTitle: 'Asics online store'
+	customer: 'Asics'
+	year: 2014
+	image: ['asics/asics-mobile-1.jpg','asics/asics-mobile-2.jpg','asics/asics-tablet.jpg','asics/asics-desktop.jpg']
+	url: 'http://michaelrambeau.com/it/projects/asics'
+	buttonText: 'View the online demo'
+	context: (link = urlStory ) ->
+		p """
+			A demonstration of how "Responsive Web Design" could be used with an e-commerce website, using Asics catalogue.
+		"""
+	work: ->
+		p '''
+		 This prototype of e-commerce web site has been designed to deliver users a great experience, no matter the device they use.
+		'''
+		p '''
+			The content (about 800 items) has been imported from the real Asics web site to a MongoDB database, using nodejs server.
+		'''
+		
+		h3 'Features'
+		ul ->
+			li '800 sport items imported from the real Asics web site'
+			li 'Super fast search engine to search by gender, sport, category and keyword'
+			li '3 different layouts to make the best of all devices: mobiles, tablets and desktops'
+
+		
+	technologies:[
+		'AngularJS framework and CoffeeScript language'
+		,
+		'Frontend: Jade templating language, LESS style pre-processor'
+		,
+		'Backend : Node.js web application hosted on Heroku'
+		,
+		'MongoLab: a MongoDB database "in the cloud" accessed via Node.js driver'
+	]
+,
 	id: 'brastelremit2'
 	title: 'Brastel Remit Responsive design prototype'
 	sidebarTitle: 'Brastel Remit Responsive'
@@ -201,8 +238,8 @@ div '.pure-g-r', ->
 						for image in app.image
 							path="img/screenshots/"
 							if app.url isnt ''
-								a 'href': app.url, target: '_blank', ->
-									img '.img-responsive.thumbnail', src: @getPath(path + image)
+								a '.thumbnail', 'href': app.url, target: '_blank', ->
+									img '.img-responsive', src: @getPath(path + image)
 							else
 								urlBig = getBigImage(image)
 								a 'href': @getPath(path + urlBig), target: '_blank', 'rel': 'lightbox-screeshots', title: app.title + ' - screenshot', ->
