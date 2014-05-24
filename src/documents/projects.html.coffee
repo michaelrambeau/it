@@ -230,9 +230,10 @@ div '.pure-g-r', ->
 						ul '.custom', ->
 							for techno in app.technologies
 								li techno
-						unless app.url is ""					
-							a '.pure-button.pure-button-primary', href: app.url, target: '_blank', ->
-								text app.buttonText
+						unless app.url is ""
+							p '.button-container', ->
+								a '.pure-button.pure-button-primary', href: app.url, target: '_blank', ->
+									text app.buttonText
 				div '.pure-u-1-3', ->
 					div '.second-col', ->
 						for image in app.image

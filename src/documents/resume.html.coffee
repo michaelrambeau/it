@@ -22,7 +22,7 @@ experiences=[
   title: 'Web developer at Brastel Telecom'
   from: '2011'
   to: 'Present'
-  duration: '2 years'
+  duration: '3 years'
   location: 'Osaka, Japan'
   resp:'''
     In charge of the <a href="http://brastelremit.jp">brastelremit.jp</a> web site, a money transfer service from Japan to locations overseas that was launched in March 2012.
@@ -91,7 +91,7 @@ experiences=[
   
 img '.pull-right', src: @getPath('img/photos/identite.jpg')
 h1 'IT solution developer & Web expert'  
-ul '.reset.custom', ->
+ul '.reset', ->
   li ->
     i '.fa.fa-user',' '
     text 'Michael Rambeau, ' + getAge() + ' years old, French, IT engineer'

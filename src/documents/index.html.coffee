@@ -159,7 +159,7 @@ templatePosts = () ->
 div '.banner', ->
 	div '.container', ->	
 		div '.intro.main', ->
-			img '.osaka', src:'img/photos/shinsekai.jpg', width:'160'
+			img '.osaka', src:'img/photos/shinsekai.jpg'
 			p '.hello', 'Hello, I am Michael Rambeau'
 			h1 'IT solution developer and Web expert in Osaka'
 			p '.whoiam', '''

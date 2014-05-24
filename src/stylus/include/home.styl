@@ -1,37 +1,61 @@
 .banner
-	//background-color $yellow
 	background linear-gradient(top, $yellow, $lightYellow1)
-	padding 20px 0
+	padding 0
 	margin-bottom 10px
-	//border-bottom 2px solid $orange
-
+	@media $screenMedium
+		padding 10px 0
+	@media $screenBig
+		padding 20px 0
 .intro
 	margin 0
 	padding 10px
 	color #333333
-	//background-color white
-	@media $screenBig
+	@media $screenXL
 		margin 0 0 0
 		padding 0
 .home
 	h1
 		margin 5px 0
-		font-size 20px
+		font-size 24px
 		text-shadow 0 1px 1px rgba(255,255,255,0.8)
+		@media $screenMedium
+			font-size 24px
 		@media $screenBig
 			margin 15px 0
+			font-size 36px
+			line-height 32px
+		@media $screenXL
+			margin 15px 0
 			font-size 44px
+			line-height 40px
 	h2
+		margin 10px 0
+		padding-left 10px
 		text-shadow 1px 1px 1px rgba(255,255,255,0.9)
-		font-size 36px
-			
+		font-size 24px
+		@media $screenMedium
+			font-size 28px
+			margin 15px 0
+		@media $screenBig
+			font-size 36px
+			margin 25px 0
+		@media $screenXL
+			padding-left 0
+
 p.hello
 	margin 0 0 10px
 	//font-size 28px
 
 img.osaka
 	float right
-	border-radius 80px
+	border-radius 50%
+	width 40%
+	height auto
+	@media $screenSmall
+		width 160px
+	@media $screenBig
+		width 200px
+	
 
 hr.spacer
 	visibility hidden
@@ -41,26 +65,25 @@ hr.spacer
 
 .block
 	margin-bottom 20px
+	@media $screenBig
+		margin-bottom 40px
+
 	padding 10px
 	background-color white
-	img
-		//margin 10px
 	.body
 		margin 0
 	.content
-		//padding 10px
 		@media (min-width:980px)
 			padding 10px
 
 	h3
 		margin 0 5px 10px
-		//color white
-		//padding 5px 10px
-		//background-color $orange
 		background-color white
-		font-size 24px
+		font-size 20px
 		font-weight normal
-		//border-bottom 2px solid $lightGrey
+		@media $screenMedium
+			font-size 24px
+			
 	.footer
 		padding 10px
 		text-align center
@@ -73,18 +96,12 @@ hr.spacer
 		text-transform uppercase
 
 .skill
-	h3
-		//background-color $blue
 	img
 		margin-bottom 10px
 .logos
 	img
 		height: inherit
 
-h2.skills
-	//color $blue
-h2.latest-posts
-	//color $orange
 
 p.whoiam
 	margin-bottom 10px

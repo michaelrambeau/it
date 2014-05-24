@@ -18,7 +18,7 @@ html lang: 'en','ng-app':'', ->
 		#link rel: 'stylesheet', href: @getPath 'vendor/purecss/pure-min.css'
 		#link rel: 'stylesheet', href: @getPath 'css/website.css'
 		#link rel: 'stylesheet', href: @getPath 'vendor/font-awesome/css/font-awesome.min.css'
-		link rel: 'stylesheet', href: @getPath 'css/style-concat.min.css?2014-02-11'
+		link rel: 'stylesheet', href: @getPath 'css/style-concat.min.css?2014-05-24'
 		
 		if @document.slimbox is true
 			link rel: 'stylesheet', href: @getPath 'vendor/slimbox2/css/slimbox2.css' 

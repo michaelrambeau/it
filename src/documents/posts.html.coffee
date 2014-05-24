@@ -18,12 +18,13 @@ div '.posts', ->
 					div '.first-col', ->
 						div '.date.pull-left', ->
 							div '.date', @getMonth(doc.date) + ' '+ doc.date.getFullYear()
-						h2 '.xx', doc.title
-						div '.yy', ->
+						h2  doc.title
+						div ->
 							p '.post-introduction', doc.description
 							if doc.introduction
 								p -> doc.introduction
-							a '.pure-button.pure-button-primary.pure-button-xsmall', href: @getPath(doc.url), 'Read post &raquo;'	
+							p '.button-container', ->
+								a '.pure-button.pure-button-primary.pure-button-xsmall', href: @getPath(doc.url), 'Read post &raquo;'	
 
 				div '.pure-u-2-5', ->
 					div '.second-col', ->
