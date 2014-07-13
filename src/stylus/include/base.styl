@@ -14,10 +14,12 @@ body
 body
 	font-family 'Lato', sans-serif
 
-h1
-	padding-left 10px
-	@media $screenMedium
-		padding-left 0
+a.heading,a.heading:hover
+	text-decoration none
+	color $orange
+	&:hover
+		text-decoration underline
+
 ul
 	padding-left 25px
 	li

@@ -13,6 +13,33 @@ docStory = @getCollection('documents').findAllLive({relativeOutDirPath:'posts',k
 urlStory = @getPath(docStory.url)
 
 apps = [
+	id: 'brastelremit2'
+	title: 'Brastel Remit Responsive design prototype'
+	sidebarTitle: 'Brastel Remit Responsive'
+	customer: 'Brastel Telecom'
+	year: 2013
+	image: ['imt2/brastelremit2-home.png']
+	url: 'http://michaelrambeau.com/it/projects/brastelremit'
+	buttonText: 'View the online prototype'
+	context: (link = urlStory ) ->
+		p """
+			I was in charge of <a href="http://brastelremit.jp">brastelremit.jp</a> web site (an internatonal money transfer service).
+			I made a proposal to make the web site mobile-friendly, using "Responsive Web Design" ideas (Read more about the making-of <a href="#{link}">here</a>).
+		"""
+	work: ->
+		p '''
+		 I made a prototype of a mobile-friendly web, using "Responsive design" concepts: 
+			one website that suits all shapes, sizes and interaction.
+			Depending on the device screen, the same page behaves differently.
+		'''
+	technologies:[
+		'Bootstrap : a set of HTML5 components perfect for creating responsive web sites'
+		,
+		'Docpad : a site generator based on node.js'
+		,
+		'CoffeeScript/CoffeeKup : the templating language used to create pages'
+	]
+,	
 	id: 'asissonlinestore'
 	title: 'Asics online store prototype'
 	sidebarTitle: 'Asics online store'
@@ -50,41 +77,14 @@ apps = [
 		'MongoLab: a MongoDB database "in the cloud" accessed via Node.js driver'
 	]
 ,
-	id: 'brastelremit2'
-	title: 'Brastel Remit Responsive design prototype'
-	sidebarTitle: 'Brastel Remit Responsive'
-	customer: 'Brastel Telecom'
-	year: 2013
-	image: ['imt2/brastelremit2-home.png']
-	url: 'http://michaelrambeau.com/it/projects/brastelremit'
-	buttonText: 'View the online demo'
-	context: (link = urlStory ) ->
-		p """
-			I was in charge of brastelremit.jp web site (an internatonal money transfer service)
-			I made a proposal to make the web site mobile-friendly (Read more about the making-of this project <a href="#{link}">here</a>)
-		"""
-	work: ->
-		p '''
-		 I made a prototype of a mobile-friendly web, using "Responsive design" concepts: 
-			one website that suits all shapes, sizes and interaction.
-			Depending on the device screen, the same page behaves differently.
-		'''
-	technologies:[
-		'Bootstrap : a set of HTML5 components perfect for creating responsive web sites'
-		,
-		'Docpad : a site generator based on node.js'
-		,
-		'CoffeeScript/CoffeeKup : the templating language used to create pages'
-	]
-,
 	id: 'brastelremit1'
 	title: 'Brastel Remit first version'
 	sidebarTitle: 'Brastel Remit V1'	
 	customer: 'Brastel Telecom'
 	year: 2012
 	image: ['imt1/brastelremit1-home-big.jpg']
-	url: 'http://brastelremit.jp'
-	buttonText: 'Visit the web site'
+	url: 'http://michaelrambeau.com/it/projects/brastelremit-v1/'
+	buttonText: 'View the onmine demo'
 	description: ->
 		p '''
 			Brastel Remit is an international money transfer service released in March 2012.
@@ -216,7 +216,8 @@ div '.pure-g-r', ->
 			div '.pure-g-r.project', ->
 				div '.pure-u-2-3', ->
 					div '.first-col', ->
-						h2 '#' + app.id, app.title
+						a '.heading', 'href': app.url, target: '_blank', ->
+							h2 '#' + app.id, app.title
 						p '.customer', app.year + ' - ' +'Customer: ' + app.customer
 						if app.description
 							p app.description
