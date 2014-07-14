@@ -1,0 +1,19 @@
+$zoom = 0.5
+$width = 335px
+$height = 576px
+
+.device-mobile
+	background-image url('/img/device-iphone.png')
+	background-repeat no-repeat
+	width:385px
+	height:800px
+	padding-top:116px
+	padding-left:30px
+	iframe
+		width $width
+		height $height
+		&.zoom
+			width ($width/$zoom)
+			height ($height/$zoom)
+			transform scale($zoom)	
+			transform-origin 0 0

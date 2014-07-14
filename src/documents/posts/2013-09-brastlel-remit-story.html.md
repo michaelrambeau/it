@@ -97,14 +97,16 @@ The renewal of the web site I requested was not part of the marketing priorities
 
 So in 2014, 4 months after the proposal I sent, I decided to contact the managers to make them include the web site renewal into their dicussion.
 
-An other project (to allow users without email to subscribe by SMS) became the new priority.
-I was asked to include new features in the web site.
+In April, I was told that an other project (to allow users without email to subscribe by SMS) became the new priority.
+Because of thay new project, I was asked to include new features in the web site.
 
-I told them I wll do that but I will do it using the new "responsive layout", meaning the 2 projcts will be released.
+I told them I wll do that but I will do it using the new "responsive layout", meaning that 2 projects will be released int he same time.
 
-Basically I took advantage of an other project to include 
+Basically I took advantage of an other project to "push" my ideas.
 
-I convinced the remittance manager that I could deliver the web site renewal without delaying the main project.
+I convinced the remittance manager that I could deliver the web site renewal without delaying the other project.
+
+I was in a rush to manage to finish all pages (around 50 page!) but I did it.
 
 
 
@@ -119,3 +121,6 @@ I learned some things about working for a Japanese company:
 * Don't expect people to be proactive, they are not!
 * To be listened you have to target the right people, people who have power.
 * Make sure that your ideas transform into acts and schedules.
+
+> Michaelさんの情熱(Passion)はとてもうれしく思います。実現してくれてありがとうございました。
+ <small>AAN (Brastel Remit General Executive Manager)</small>
