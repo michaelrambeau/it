@@ -83,6 +83,11 @@ templateProfile = () ->
 				#a '.pure-button.pure-button-primary', href: @getPath('resume'), 'Resume &raquo;'
 				#span ' and contact me in English, French or Japanese.'
 
+		
+		a href: @getPath('japanese'), ->
+			img '.flag', 'src': @getPath('img/flags/jp.png'), 'alt': 'Japanese', 'width': '36', 'height': '26'
+			text '日本語 プロフィール'	
+		
 		if false
 			img src: @getPath('img/logos/html5.png'), alt: 'html5'
 			img src: @getPath('img/logos/nodejs.png'), alt: 'nodejs'
