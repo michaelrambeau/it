@@ -1,13 +1,12 @@
-# Michael's Rambeau web site
+# Michael Rambeau's personal web site
 
-A web site to describe my experience and show my skills.
+This web site describes my experience as an IT engineer working in Japan.
 
-My web site has been built using Docpad, a tool built on top of nodejs that can be used to generate static web sites.
-The web site is mobile-friendly thank to purecss.io components.
+The web site is powered by [docpad](http://docpad.org), a tool built on top of node.js that can be used to generate static web sites.
 
-I use CoffeKup as templating language to create all pages, including the blog entries.
+I took advantage of the flexibility of docpad to create pages using different templating languages:
+* [CoffeeKup](http://coffeekup.org/) (CoffeeCup used as a templating language)
+* [Jade](http://jade-lang.com/)
+* [Markdown](https://daringfireball.net/projects/markdown/basics)
 
-Technologies:
-- docpad
-- Stylus
-- CoffeeScript / CoffeeKup
+I used [Stylus](https://github.com/learnboost/stylus) CSS preprocessor and [Purecss](http://purecss.io) CSS components to make the web site mobile-friendly.
