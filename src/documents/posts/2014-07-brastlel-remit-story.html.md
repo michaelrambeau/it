@@ -15,11 +15,13 @@ hasPicture: true
 ---
 
 In 2013, I was working as a web developer for a Japanese company.
-I was in charge of Brastel Remit web site (a service of money transfer from Japan to overseas), but I was not fully satisfied by the web site, for 3 reasons:
+I was in charge of [Brastel Remit web site](http://brastelremit.jp) (a service of money transfer from Japan to overseas), but I was not fully satisfied by the web site, for 3 reasons:
 
 * The site was not mobile-friendly although statistics show that half of visitors use mobile devices.
 * The front home page was nice but did not convey any message.
 * The subscription process, used to register new customers, was awkward.
+
+Check how the previous version was [here](http://michaelrambeau.com/it/projects/brastelremit-v1/).
 
 I tried to make suggestions several times but no decision was taken.
 I was working from Osaka but the rest of the team was in Tokyo main office.
@@ -98,15 +100,15 @@ The renewal of the web site I requested was not part of the marketing priorities
 So in 2014, 4 months after the proposal I sent, I decided to contact the managers to make them include the web site renewal into their dicussion.
 
 In April, I was told that an other project (to allow users without email to subscribe by SMS) became the new priority.
-Because of thay new project, I was asked to include new features in the web site.
+Because of that new project, I was asked to include new features in the web site.
 
-I told them I wll do that but I will do it using the new "responsive layout", meaning that 2 projects will be released int he same time.
+I told them I wll do that but I will do it using the new "responsive layout", meaning that the 2 projects will be released int he same time.
 
 Basically I took advantage of an other project to "push" my ideas.
 
-I convinced the remittance manager that I could deliver the web site renewal without delaying the other project.
+I convinced the Brastel Remit manager that I could deliver the web site renewal without delaying the other project.
 
-I was in a rush to manage to finish all pages (around 50 page!) but I did it.
+I was in a rush to finish all pages (around 50 page!) but I did it.
 
 
 
@@ -115,10 +117,10 @@ I was in a rush to manage to finish all pages (around 50 page!) but I did it.
 The brand new web site was released on 2014 July, exactly 11 months after the first proposal I sent.
 How happy I was ot see "my ideas" on line !
 
-The "Remittance department" manager was happy too:
+The "Brastel Remit General Executive Manager" manager was happy too:
 
 > Michaelさんの情熱(Passion)はとてもうれしく思います。実現してくれてありがとうございました。
- <small>AAN (Brastel Remit General Executive Manager)</small>
+ <small>AAN</small>
 
 
 I learned some things about working for a Japanese company:
