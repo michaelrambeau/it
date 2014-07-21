@@ -17,7 +17,7 @@ hasPicture: true
 In 2013, I was working as a web developer for a Japanese company.
 I was in charge of [Brastel Remit web site](http://brastelremit.jp) (a service of money transfer from Japan to overseas), but I was not fully satisfied by the web site, for 3 reasons:
 
-* The site was not mobile-friendly although statistics show that half of visitors use mobile devices.
+* The site was not mobile-friendly although statistics show that half of the visitors use mobile devices.
 * The front home page was nice but did not convey any message.
 * The subscription process, used to register new customers, was awkward.
 
@@ -40,7 +40,7 @@ First I shared a document about the improvement I wanted to implement.
 The document was split into 3 parts:
 
 * A marketing-oriented home page
-* A mobile friendly-site
+* A mobile-friendly site
 * A smoother registration process
 
 I hesitated about the title of the document.
@@ -102,25 +102,27 @@ So in 2014, 4 months after the proposal I sent, I decided to contact the manager
 In April, I was told that an other project (to allow users without email to subscribe by SMS) became the new priority.
 Because of that new project, I was asked to include new features in the web site.
 
-I told them I wll do that but I will do it using the new "responsive layout", meaning that the 2 projects will be released int he same time.
+I told them I would do that but I would do it using the new "responsive layout", meaning that the 2 projects would be released in the same time.
 
 Basically I took advantage of an other project to "push" my ideas.
 
 I convinced the Brastel Remit manager that I could deliver the web site renewal without delaying the other project.
 
-I was in a rush to finish all pages (around 50 page!) but I did it.
+I was in a rush to finish all pages (around 50 pages!) but I did it.
 
 
 
 ##Conclusion, what I learned
 
 The brand new web site was released on 2014 July, exactly 11 months after the first proposal I sent.
-How happy I was ot see "my ideas" on line !
+How happy I was to see "my ideas" online !
 
 The "Brastel Remit General Executive Manager" manager was happy too:
 
 > Michaelさんの情熱(Passion)はとてもうれしく思います。実現してくれてありがとうございました。
  <small>AAN</small>
+
+... that can be translated by "I'm very pleased with your enthousiasm. Thank you for having realized it."
 
 
 I learned some things about working for a Japanese company:
