@@ -6,8 +6,16 @@ menuId: EXPERIENCE
 className: resume.japanese
 standalone: true
 ---
-img(alt="Michael Rambeau",src="http://michaelrambeau.com/it/img/photos/identite.jpg")
+div(style="float: right;")
+	img(alt="Michael Rambeau",src="http://michaelrambeau.com/it/img/photos/identite.jpg")
+	br
+	img.logo(src=getPath("img/logos/nodejs.png"), alt="node.js", width="150")
+	br
+	img.logo(src=getPath("/img/logos/mongodb.jpg"), alt="mongoDB", width="150")
+	br
+	img.logo(src=getPath("img/logos/angularjs.png"), alt="AngularJS", width="150")
 h1 履歴書 / プロフィール
+
 
 div.intro
 	p.name Michael Rambeau ミカエル　ランボー
@@ -32,7 +40,20 @@ ul
 	li 2001年～2004年 フランス・パリ Lotus Notes　開発
 	li 2004年～2010年 フランス・トゥールーズ Lotus Notes - Domino イントラネットWEB開発
 	li 2010年～2011年 大阪 フリーランス PHP MySQL WEB開発
-	li 2011年～現在 大阪 BrastelRemit webサイト担当者 
+	li 2011年～現在 大阪 BrastelRemit webサイト担当者
+
+h3 経験があるスキル
+ul
+	li [ 言語、ツール ] HTML, CSS, Javascript, jQuery, CoffeeScript, PHP, XSL- XML, Lotus Notes Domino
+	li [ DB ] MongoDB, MySQL, MS SQL Server
+
+ul
+	li [ PHPフレームワーク ] CakePHP, YII
+	li [ WEBサーバー ] node.js, Express
+	li [ Responsive Web Design ] Bootstrap
+	li [JavaScript フレームワーク ] AngularJS
+	li [ CSSメタ言語 ] LESS, Stylus
+	li [ バージョン管理システム ] GitHub, SVN 
 	
 
 h2 職務経歴書
@@ -63,7 +84,7 @@ h3 【勤務先会社名】フランスObjective (2010年8月 ~ 2011年1月)
 p 【雇用形態】フリーランス
 p 【事業内容】IT
 p 【業務内容】WEB開発
-p 【トピックス】PHP - MySQL のCRMを維持
+p 【トピックス】PHP - MySQL のCRMをメンテナンス
 
 h3 【勤務先会社名】Brastel Telecom (2011年5月 ~ 在籍中)
 
@@ -73,39 +94,41 @@ p 【業務内容】WEBサイト開発の担当
 
 p 【トピックス】
 ul
-	li XHTML, CSS, Javascript, XSLでサイトのページを実装。
-	li シデザインのチームとステムのチームの中心として　コーディネーション。
-	li モバイルユーザと「Responsive Web Design」について　検討と提案。
+	li XHTML, CSS, Javascript, XSLでWEBサイトを作成。
+	li デザインチームとシステムチームの中心としてコーディネーション。
+	li モバイルユーザと「Responsive Web Design」について検討と提案。
 
 h2 スキルシート
 
 h3 自己PR
 
 p 2000年からイントラネットとインターネットのアプリケーションを設計しています。
-p 2010年家庭事情で来日しました。
+p 2010年家来日しました。
 p 2011年ブラステル株式会社に入社しました。
-p BrastelRemitという　新しい海外送金サービスはリリズされ、私はBrastelRemitのWEBサイトの担当です。
+p BrastelRemitという　新しい海外送金サービスはリリズーされ、私はBrastelRemitのWEBサイトの担当です。
 p 現在、HTML, Javascript, CSS, Responsive Web Design の仕事をしています。
 p 最先端のウェブテクノロジーに関心があります。
 
-h3 経験があるスキル
-ul
-	li [ 言語、ツール ] HTML, CSS, Javascript, jQuery, CoffeeScript, PHP, XSL- XML, Lotus Notes Domino
-	li [ DB ] MongoDB, MySQL, MS SQL Server
+- if (false)
+	h3 経験があるスキル
+	ul
+		li [ 言語、ツール ] HTML, CSS, Javascript, jQuery, CoffeeScript, PHP, XSL- XML, Lotus Notes Domino
+		li [ DB ] MongoDB, MySQL, MS SQL Server
 
-ul
-	li [ PHPフレームワーク ] CakePHP, YII
-	li [ WEBサーバー ] node.js
-	li [ Responsive Web Design ] Bootstrap
-	li [JavaScript フレームワーク ] angularJS
-	li [ CSSメタ言語 ] LESS, Stylus
-	li [ バージョン管理システム ] GitHub, SVN
+	ul
+		li [ PHPフレームワーク ] CakePHP, YII
+		li [ WEBサーバー ] node.js, Express
+		li [ Responsive Web Design ] Bootstrap, PureCSS
+		li [JavaScript フレームワーク ] AngularJS
+		li [ CSSメタ言語 ] LESS, Stylus
+		li [ バージョン管理システム ] GitHub, SVN
 
+h3 スキル
 
-table.pure-table.pure-table-stripedXXX.skills.pure-table-bordered
+table.pure-table.skills.pure-table-bordered
 	thead
 		tr
-			th プロジェクト期間
+			th(width="90") プロジェクト期間
 			th 牛無内容
 			th システム環境
 	tbody
@@ -131,18 +154,13 @@ table.pure-table.pure-table-stripedXXX.skills.pure-table-bordered
 			td PHP - MySQL のCRMを維持
 			td PHP 5, MySQL, vtiger CRM
 		tr
-			td 2011 ~ 現在　3年）
+			td 2011 ~ 現在　(3年）
 			td 
 				p brastelremit.jpのWEBサイト開発の担当
 				p jQuery, XHTML, XSL, CSSで　すべてのページを作成
-				p "Responsive Web Design"の提案、実装
+				p "Responsive Web Design"の提案、実装。2014年7月リリズーされました。http://brastelremit.jp
 			td 
 				p XML, XSL, MS SQLServer 2008, Win XP
 				p XHTML, CSS, LESS, Bootstrap
-				p AngularJS
-				
-			
-			
-		
-	
-	
+				p jQuery, AngularJS
+				p SVN

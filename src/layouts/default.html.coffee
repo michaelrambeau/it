@@ -1,5 +1,5 @@
 doctype 5
-html lang: 'en','ng-app':'', ->
+html lang: 'en','ng-app':'mywebsite', ->
 	head ->
 		meta charset: 'utf-8'
 		title @site.title + ' &middot; ' + @document.title
@@ -18,7 +18,7 @@ html lang: 'en','ng-app':'', ->
 		#link rel: 'stylesheet', href: @getPath 'vendor/purecss/pure-min.css'
 		#link rel: 'stylesheet', href: @getPath 'css/website.css'
 		#link rel: 'stylesheet', href: @getPath 'vendor/font-awesome/css/font-awesome.min.css'
-		link rel: 'stylesheet', href: @getPath 'css/style-concat.min.css?2014-07-13'
+		link rel: 'stylesheet', href: @getPath 'css/style-concat.min.css?2014-07-27'
 		
 		if @document.slimbox is true
 			link rel: 'stylesheet', href: @getPath 'vendor/slimbox2/css/slimbox2.css' 
@@ -34,7 +34,7 @@ html lang: 'en','ng-app':'', ->
 		if @document.angular is true
 			script src: 'https://ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.min.js' 
 					
-	body (if @document.className then '.' + @document.className else ''), ->
+	body (if @document.className then '.' + @document.className else ''), 'ng-controller': (if @document.controller then @document.controller else ''), ->
 	
 		text @partial 'header.html'
 

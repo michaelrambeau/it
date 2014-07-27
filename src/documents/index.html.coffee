@@ -1,11 +1,13 @@
 ---
 layout: 'default'
 title: 'IT solution developer and Web expert in Japan'
-description: 'Michael Rambeau, web expert in Osaka, Japan. Specialities: HTML5, docpad, AngularJS, Responsive design, Bootstrap, Lotus Notes Domino'
+description: 'Michael Rambeau, web expert in Osaka, Japan. Specialities: HTML5, node.js, docpad, AngularJS, Responsive Web Design, Bootstrap, Lotus Notes Domino'
 menuId: 'HOME'
 standalone: true
 className: 'home'
 noTitle: true
+angular: true
+controller: 'HomeCtrl'
 ---
 
 #========
@@ -133,6 +135,24 @@ templateSkills = () ->
 					div '.content', ->
 						skill.content()
 
+#GITHUB projects I follow
+templateGithubProjects = () ->
+	h2 ->
+		i '.fa.fa-github',''
+		text 'Github projects I follow'
+	div '.block', ->
+		table.pure-table ->
+			tr '.github-project', 'ng-repeat': 'project in projects', ->
+				td ->
+					a 'href': '{{getProjectURL(project)}}','{{getProjectName(project)}}'
+					span '.count', ->
+						i '.fa.fa-star',''
+						text '{{project.stargazers_count}}'
+					p '.description', ->
+						i '.fa.fa-quote-left', ''
+						text '{{project.description}}'
+						i '.fa.fa-quote-right', ''
+
 #POSTS
 posts = @getCollection('documents').findAllLive({relativeOutDirPath:'posts',homepage:true},[date:-1]).toJSON()
 templatePosts = () -> 
@@ -180,6 +200,7 @@ div '.container.main', ->
 				#templateProfile()
 				#templateContact()
 				templateSkills()
+				templateGithubProjects()
 
 		div '.pure-u-2-5', ->
 			div '.second-col', ->
@@ -187,8 +208,18 @@ div '.container.main', ->
 
 script src: 'https://cdnjs.cloudflare.com/ajax/libs/zepto/1.0/zepto.min.js'
 coffeescript ->
+	app = angular.module 'mywebsite', []
+	app.controller 'HomeCtrl', ($scope, $http) ->
+		$http.get('https://api.github.com/users/michaelrambeau/starred').success (data) ->
+			$scope.projects = data;
+		$scope.getProjectName = (project) ->
+			if project.homepage is '' then project.name else project.homepage 
+		$scope.getProjectURL = (project) ->
+			if project.homepage is '' then project.html_url else project.homepage 
+		$scope.projects = []
+		
 	$(document).ready () ->
-		document.getElementById('readmore-link').onclick = (event) -> 
+		$('#readmore-link').click (event) -> 
 			event.preventDefault()
 			$('#readmore-content').toggleClass('closed')
-			console.log event
+			
