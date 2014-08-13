@@ -1,31 +1,32 @@
----
-layout: 'page'
-title: 'My projects'
-description: "Michael Rambeau's IT projects"
-menuId: 'APPS'
-standalone: true
-className: 'projects'
-slimbox: true
-js: ['projects.js']
----
-	
-docStory = @getCollection('documents').findAllLive({relativeOutDirPath:'posts',key:'remit-story'}).toJSON()[0];
-urlStory = @getPath(docStory.url)
-
+#docStory = getCollection('documents').findAllLive({relativeOutDirPath:'posts',key:'remit-story'}).toJSON()[0];
+#urlStory = getPath(docStory.url)
 
 apps = [
 	id: 'brastelremit2'
-	title: 'Brastel Remit Responsive design prototype'
+	title: 
+		eng: 'Brastel Remit Responsive design prototype'
+		jpn: 'brastelremit.jp リニュアル'
 	sidebarTitle: 'Brastel Remit Responsive'
 	customer: 'Brastel Telecom'
 	year: 2013
 	image: ['imt2/brastelremit2-home.png']
 	url: 'http://michaelrambeau.com/it/projects/brastelremit'
+	buttons: [
+		text:
+			jpn: '最初のプロトタイプ'
+		url: 'http://michaelrambeau.com/it/projects/brastelremit'
+	,
+		text:
+			jpn: ' WEBサイト'
+		url: 'http://brastelremit.jp/jpn/home'
+	]
 	buttonText: 'View the online prototype'
+	text:
+		jpn: 'モバイルユーザー向けについて　研究、提案、開発。</br>2014年7月　WEBサイトのリニュアルをリリース。'
 	context: (link = urlStory ) ->
 		p """
 			I was in charge of <a href="http://brastelremit.jp">brastelremit.jp</a> web site (an internatonal money transfer service).
-			I made a proposal to make the web site mobile-friendly, using "Responsive Web Design" ideas (Read more about the making-of <a href="#{link}">here</a>).
+			I made a proposal to make the web site mobile-friendly, using "Responsive Web Design" ideas.
 		"""
 	work: ->
 		p '''
@@ -34,21 +35,25 @@ apps = [
 			Depending on the device screen, the same page behaves differently.
 		'''
 	technologies:[
-		'Bootstrap : a set of HTML5 components perfect for creating responsive web sites'
+		'Bootstrap'
 		,
-		'Docpad : a site generator based on node.js'
+		'Responsive Web Design'
 		,
-		'CoffeeScript/CoffeeKup : the templating language used to create pages'
+		'LESS'
 	]
 ,	
 	id: 'asissonlinestore'
-	title: 'Asics online store prototype'
+	title: 
+		eng: 'Asics online store prototype'
+		jpn: 'Asics オンラインストア プロトタイプ'
 	sidebarTitle: 'Asics online store'
 	customer: 'Asics'
 	year: 2014
 	image: ['asics/asics-mobile-1.jpg','asics/asics-mobile-2.jpg','asics/asics-tablet.jpg','asics/asics-desktop.jpg']
 	url: 'http://michaelrambeau.com/it/projects/asics'
 	buttonText: 'View the online demo'
+	text:
+		jpn: '求人に応募する際、モバイルユーザー向けオンラインストアのプロトタイプを作成。'
 	context: (link = urlStory ) ->
 		p """
 			A demonstration of how "Responsive Web Design" could be used with an e-commerce website, using Asics catalogue.
@@ -69,23 +74,27 @@ apps = [
 
 		
 	technologies:[
-		'AngularJS framework and CoffeeScript language'
+		'AngularJS framework'
 		,
-		'Frontend: Jade templating language, LESS style pre-processor'
+		'CoffeeScript'
 		,
-		'Backend : Node.js web application hosted on Heroku'
+		'node.js on Heroku'
 		,
-		'MongoLab: a MongoDB database "in the cloud" accessed via Node.js driver'
+		'MongoDB database'
 	]
 ,
 	id: 'brastelremit1'
-	title: 'Brastel Remit first version'
+	title: 
+		eng: 'Brastel Remit first version'
+		jpn: 'brastelremit.jp WEBサイト'
 	sidebarTitle: 'Brastel Remit V1'	
 	customer: 'Brastel Telecom'
 	year: 2012
 	image: ['imt1/brastelremit1-home-big.jpg']
 	url: 'http://michaelrambeau.com/it/projects/brastelremit-v1/'
 	buttonText: 'View the onmine demo'
+	text:
+		jpn: '2012年　新しい海外送金サービスのリリースのため、すべてのページを作成。'
 	description: ->
 		p '''
 			Brastel Remit is an international money transfer service released in March 2012.
@@ -97,16 +106,21 @@ apps = [
 			I made the page dynamic using web services provided by the System team (XSL - XML).		
 		'''
 	technologies:[
+		'XHTML, CSS'
 		'XSL - XML'
 		'jQuery'
 	]
 ,	
 	id: 'teamcalendar'
-	title: 'Team Calendar',
+	title: 
+		eng: 'Team Calendar'
+		jpn: 'AirFrance TeamCalendar 【イントラネット】'
 	customer: 'Air France'
 	year: 2010
 	image: ['teamcalendar/teamcalendar-big.jpg','teamcalendar/teamcalendar-popup.jpg']
 	url: ''
+	text: 
+		jpn: '社員・チームメンバーの出張や研修、休暇等を管理するツールの開発。'
 	context: ->
 		p '''
 			TeamCalendar is an online calendar that shows working schedule and days off of all team members in order to better coordinate project activities.
@@ -120,14 +134,16 @@ apps = [
 			The User Interface was simplified : for example the user has just to click on a calendar cell to create an entry.	
 		'''
 	technologies:[
-		'CakePHP for the demo version'
-		'Lotus Notes Domino for the intranet version'
+		'HTML'
+		'Javascript, Ajax'
+		'Lotus Notes Domino'
 	]	
 ,	
 	id: 'eletter'
 	title: 'e-letter',
 	customer: 'Air France'
 	year: 2009
+	enabled: false
 	image: ['eletter/eletter-klm-big.jpg','eletter/eletter-view-big.jpg','eletter/eletter-document-big.jpg']
 	url: ''
 	context: ->
@@ -157,11 +173,15 @@ apps = [
 	]	
 ,	
 	id: 'eslots'
-	title: 'e-slots',
+	title:
+		eng: 'e-slots',
+		jpn: 'AirFrance e-slots 【イントラネット】'
 	customer: 'Air France'
 	year: 2007
 	image: ['eslots/eslots-view-big.jpg','eslots/eslots-record-big.jpg','eslots/eslots-popup.jpg']
 	url: ''
+	text:
+		jpn: 'AirFranceのカーゴトラック（運搬車両）の出発・到着のスケジュール表のプログラム及びデザイン開発。'
 	context: ->
 		p '''
 			Air France Cargo carries freight all over the world by plane but also by truck.
@@ -181,73 +201,10 @@ apps = [
 			Users also get information about all events by accessing a special mailbox, included within the application.
 		'''
 	technologies:[
-		'Lotus Notes Domino, web and Notes client'
+		'Lotus Notes Domino'
+		'HTML'
+		'JavaScript'
 	]	
 ]
 
-
-
-#Helpers
-
-getBigImage = (image) ->
-	if /.*\-small\..*/.test(image) is true
-		urlBig = image.replace(/(.*)\-small\.(.*)/ , "$1-big.$2")
-	else
-		urlBig = image
-	return urlBig
-	
-#Template	
-
-
-#text @nd(@document)
-
-div '.pure-g-r', ->
-	div '.pure-u-1-4.visible-lg.pure-hidden-phone', ->
-		div '.pure-menu.pure-menu-open.pure-menu-vertical', role: "complementary", ->
-			ul '.nav.bs-sidenav', ->
-				for app in apps
-					li ->
-						a href: '#'+app.id, if app.sidebarTitle then app.sidebarTitle else app.title
-		
-		
-	div '.pure-u-3-4', ->
-		i=0
-		for app in apps
-			i++
-			div '.pure-g-r.project', ->
-				div '.pure-u-2-3', ->
-					div '.first-col', ->
-						a '.heading', 'href': app.url, target: '_blank', ->
-							h2 '#' + app.id, app.title
-						p '.customer', app.year + ' - ' +'Customer: ' + app.customer
-						if app.description
-							p app.description
-						if app.context
-							h3 'Context'
-							app.context()
-						if app.work
-							h3 'What I did'
-							app.work()
-						h3 'Technologies'
-						ul '.custom', ->
-							for techno in app.technologies
-								li techno
-						unless app.url is ""
-							p '.button-container', ->
-								a '.pure-button.pure-button-primary', href: app.url, target: '_blank', ->
-									text app.buttonText
-				div '.pure-u-1-3', ->
-					div '.second-col', ->
-						for image in app.image
-							path="img/screenshots/"
-							if app.url isnt ''
-								a '.thumbnail', 'href': app.url, target: '_blank', ->
-									img '.img-responsive', src: @getPath(path + image)
-							else
-								urlBig = getBigImage(image)
-								a 'href': @getPath(path + urlBig), target: '_blank', 'rel': 'lightbox-screeshots', title: app.title + ' - screenshot', ->
-									img '.img-responsive.screenshot.thumbnail',src: @getPath(path + image)
-									br()						
-			#hr() unless i is apps.length	
-
-	
+module.exports.projects = apps

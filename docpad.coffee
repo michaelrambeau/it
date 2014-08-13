@@ -22,6 +22,7 @@ docpadConfig = {
 	
 	templateData:
 		nd: require('nodedump')
+		projects: require('./projects.coffee').projects
 		site:
 			version: "0.1"
 			url: "http://michaelrambeau.com"
