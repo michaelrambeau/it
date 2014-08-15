@@ -166,12 +166,9 @@ templatePosts = () ->
 			h3 doc.title
 			div '.body', ->
 				if doc.image
-					extension = doc.image.substr(doc.image.length - 4,4)
-					className = ''
-					if extension is '.jpg'
-						className = '.img-thumbnail'
+					url = if doc.image.url then doc.image.url else @getPath('img/blog/'+doc.image)
 					a href: @getPath(doc.url), ->
-						img '.img-responsive' + className, src: @getPath('img/blog/'+doc.image)
+						img '.img-responsive', src: url
 				div '.content', doc.description
 			div '.footer', ->
 				a '.pure-button.pure-button-primary', href: @getPath(doc.url), 'Read post &raquo;'	

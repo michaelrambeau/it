@@ -29,8 +29,9 @@ div '.posts', ->
 				div '.pure-u-2-5', ->
 					div '.second-col', ->
 						if doc.image
+							url = if doc.image.url then doc.image.url else @getPath('img/blog/'+doc.image)
 							a href: @getPath(doc.url), ->
-								img '.img-responsive.img-thumbnail2', src: @getPath('img/blog/'+doc.image)
+								img '.img-responsive.img-thumbnail2', src: url
 						div '.clearfix', ''
 
 getIntroduction = (doc) =>

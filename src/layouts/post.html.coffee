@@ -1,6 +1,8 @@
 	---
 	layout: 'default'
 	---
+
+		
 	div '.container.main', ->
 		div '.white-block', ->
 			div '.title', ->

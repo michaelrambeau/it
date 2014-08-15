@@ -1,5 +1,5 @@
 ---
-layout: 'post'
+layout: 'review'
 title: 'The tools I use for web development'
 description: 'Some feedback about 4 tools I discovered recently: Bootstrap, Docpad, Angular and LESS'
 date: '2013-08-26'
@@ -7,7 +7,7 @@ menuId: POSTS
 comments: true
 active: true
 homepage: false
-isPost: true
+standalone: true
 image: 'lego-minifig-400px.jpg'
 ---
 
@@ -99,37 +99,37 @@ intro = () ->
 		small '''
 			A quote found somewhere in the web but I can't remember where
 		'''
-		
-div '.pure-g-r', ->
-	div '.pure-u-2-3', ->
-		div '.first-col', ->
-			intro()
-	div '.pure-u-1-3', ->
-		div '.second-col', ->
-			img src: @getPath('img/blog/' + @document.image)
+
+div '.intro', ->
+	div '.pure-g-r', ->
+		div '.pure-u-2-3', ->
+			div '.first-col', ->
+				intro()
+		div '.pure-u-1-3', ->
+			div '.second-col', ->
+				img src: @getPath('img/blog/' + @document.image)
 
 i = 0
 for tool in tools
 	i++
-	div '.pure-g-r', ->
-		div '.pure-u-1-3', ->
-			div '.first-col', ->
-				a href: tool.url, ->
-						img ".img-responsive.img-thumbnail", src: @getPath('img/blog/tools/'+tool.image), alt: tool.title
-		div ".pure-u-2-3", ->
-			div '.second-col', ->
-				h2 ->
-					 a href: tool.url, ->
-						text tool.title
-				strong tool.description
-				p tool.text
-				if tool.text2
-					p tool.text2
-				if tool.points
-					p 'What I like:'
-					ul '.custom', ->
-						for point in tool.points
-							li point
-	hr() unless i is tools.length
-	
+	div '.review-block', ->
+		div '.pure-g-r', ->
+			div '.pure-u-1-3', ->
+				div '.first-col', ->
+					a href: tool.url, ->
+							img ".img-responsive.img-thumbnail", src: @getPath('img/blog/tools/'+tool.image), alt: tool.title
+			div ".pure-u-2-3", ->
+				div '.second-col', ->
+					a '.heading', href: tool.url, ->
+							h2 tool.title
+					strong tool.description
+					p tool.text
+					if tool.text2
+						p tool.text2
+					if tool.points
+						p 'What I like:'
+						ul '.custom', ->
+							for point in tool.points
+								li point
+
 	

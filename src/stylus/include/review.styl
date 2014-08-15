@@ -1,0 +1,39 @@
+$green-pros = #35c344
+$red-cons = #e6405f
+
+.review-header
+	margin-top 20px
+	background-color white
+	padding 20px
+
+.review .intro
+	background-color white
+	padding 0 20px 20px
+	margin-bottom 20px//separate the introduction from the 1st reviez
+
+.review-block
+	background-color white
+	margin 0 0 20px
+	padding 20px
+	h2
+		margin-top 0
+	
+.pros-cons
+	.icon
+		color white
+		//font-size 36px
+		width 50px
+		text-align center	
+	ul
+		list-style none		
+	
+.pros
+	border solid 2px lighten($green-pros, 50%)
+	margin-bottom 10px
+	.icon
+		background-color $green-pros
+.cons
+	border solid 2px lighten($red-cons, 50%)
+	.icon
+		background-color $red-cons
+
