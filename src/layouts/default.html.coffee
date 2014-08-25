@@ -32,7 +32,7 @@ html lang: 'en','ng-app':'mywebsite', ->
 			link rel: 'stylesheet', href: @getPath('css/highlight.css')
 		
 		if @document.angular is true
-			script src: 'https://ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.min.js' 
+			script src: 'https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.js' 
 					
 	body (if @document.className then '.' + @document.className else ''), 'ng-controller': (if @document.controller then @document.controller else ''), ->
 	

@@ -1,6 +1,5 @@
-//var app = angular.module('cheatsheet');
-function StyleCtrl($scope) {
-  
+var app = angular.module('mywebsite', []);
+app.controller('StyleCtrl', function ($scope) {
   $scope.getCoffeeClassName = function(classNames){
     //from css class names, separated by a comma, return a string to use in CoffeeKup syntax;
     //ex: "class1 class2" => ".class1.class2"
@@ -21,6 +20,5 @@ function StyleCtrl($scope) {
   $scope.setActiveClass = function (style){
     return (style == $scope.style) ? "active" : "";
   };
-   
-}
-
+   	
+});

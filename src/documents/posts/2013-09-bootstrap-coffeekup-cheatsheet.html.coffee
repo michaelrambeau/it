@@ -10,6 +10,7 @@ active: true
 homepage: true
 standalone: false
 angular: true
+controller: 'StyleCtrl'
 bootstrap: true
 isPost: true
 comments: true
