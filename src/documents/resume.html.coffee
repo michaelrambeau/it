@@ -105,10 +105,9 @@ hr '.spacer', ''
 
 h2 'Technical proficiencies'
 ul '.custom', ->
-  li 'Languages: HTML5, CSS, LESS, Stylus, Javascript, CoffeeScript, PHP, Lotus script, XML - XSL'
-  li 'Frameworks and libraries: Bootstrap, jQuery, YUI, AngularJS, CakePHP'
-  li 'Servers: node.js'
-  li 'Applications and CMS: Lotus Notes Domino, Docpad, WordPress, Typo3'
+  li 'Front-end: HTML5, JavaScript, AngularJS, jQuery, Bootstrap, CSS, LESS, Stylus, CoffeeScript, Responsive Web Design'
+  li 'Back-end: node.js, Express, PHP, CakePHP, YII, XML - XSL'
+  li 'Applications and CMS: Lotus Notes Domino, Docpad, WordPress, Typo3, KeystoneJS'
   li 'Databases: MongoDB, MySQL, MS SQLServer'
 
 
@@ -117,7 +116,7 @@ h2 '.clearfix','style':'clear:both;','Professionnal experience'
 for experience in experiences
 
   div '.experience', ->
-    div '.pure-g-r', ->
+    div '.pure-g', ->
       div '.pure-u-1-2', ->
         div '#' + experience.id + '.experience-date.text-left', ->
           year = if experience.from is experience.to then experience.from else experience.from + ' ⇒ ' + experience.to
