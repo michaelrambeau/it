@@ -1,7 +1,7 @@
 ---
 layout: 'presentation-with-impress'
 title: 'Rakuten - Michael Rambeau' 
-css: 'rakuten.css'
+css: 'rakuten/rakuten.css'
 ---
 angle = 0
 y0 = -900
@@ -10,7 +10,7 @@ imgRoot = 'http://michaelrambeau.com/it/img'
 header ->
   div '.right', ->
     a href: 'http://michaelrambeau.com', 'michaelrambeau.com'
-    text ' 2014年1月'
+    text ' 2014年9月'
   a '.start',href:'#/overview', 'スタートに戻る'    
   h1 ->
     text 'Michael' 
@@ -54,7 +54,7 @@ div '#impress', ->
     div '.logos', ->
       img 'src': imgRoot + '/logos/html5.png'
       img 'src': imgRoot + '/logos/nodejs.png'
-      img 'src': imgRoot + '/logos/angularjs.png', 'width': 60
+      img 'src': imgRoot + '/logos/angularjs.png'
       img 'src': imgRoot + '/logos/coffeescript.png'
 
   div '#slide3.step.slide', 'data-x':"1000", 'data-y': y0, 'data-rotate-y':angle, ->
