@@ -5,7 +5,7 @@ description: 'A set of common AngularJS recipes. Stategies to filter array of da
 date: '2014-11-29'
 menuId: 'POSTS'
 active: true
-comments: false
+comments: true
 homepage: true
 standalone: false
 angular: false
