@@ -18,10 +18,19 @@ getAge = ->
 	y
 
 experiences=[
+	id: 'FIRSTSERVER'
+	title: 'Web developer at FirstServer'
+	from: '2014'
+	to: 'Present'
+	location: 'Osaka, Japan'
+	resp: '''
+		Research and development about a Customer Portal web application.
+	'''
+,
   id: 'BRASTEL'
   title: 'Web developer at Brastel Telecom'
   from: '2011'
-  to: 'Present'
+  to: '2014'
   duration: '3 years'
   location: 'Osaka, Japan'
   resp:'''
@@ -120,7 +129,7 @@ for experience in experiences
       div '.pure-u-1-2', ->
         div '#' + experience.id + '.experience-date.text-left', ->
           year = if experience.from is experience.to then experience.from else experience.from + ' ⇒ ' + experience.to
-          text year + ' (' + experience.duration + ')'        
+          text year + (if experience.duration? then ' (' + experience.duration + ')' else '' )
       div '.pure-u-1-2', ->
         div '.experience-location', ->
           i ".fa.fa-globe",''
@@ -129,12 +138,11 @@ for experience in experiences
 
     if experience.resp
       p '.resp', experience.resp
-
-    p 'Key achievements:'       
-    ul '.custom', ->
-      for point in experience.points
-        li point
-    #hr();    
+    if experience.points
+      p 'Key achievements:'
+      ul '.custom', ->
+        for point in experience.points
+          li point
 
 h2 'Education'
 
