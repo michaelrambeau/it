@@ -10,11 +10,11 @@ apps = [
 	customer: 'Brastel Telecom'
 	year: 2013
 	image: ['imt2/brastelremit2-home.png']
-	url: 'http://michaelrambeau.com/it/projects/brastelremit'
+	url: 'http://projects.michaelrambeau.com/brastelremit'
 	buttons: [
 		text:
 			jpn: '最初のプロトタイプ'
-		url: 'http://michaelrambeau.com/it/projects/brastelremit'
+		url: 'http://projects.michaelrambeau.com/brastelremit'
 	,
 		text:
 			jpn: ' WEBサイト'
@@ -50,7 +50,7 @@ apps = [
 	customer: 'Asics'
 	year: 2014
 	image: ['asics/asics-mobile-1.jpg','asics/asics-mobile-2.jpg','asics/asics-tablet.jpg','asics/asics-desktop.jpg']
-	url: 'http://michaelrambeau.com/it/projects/asics'
+	url: 'http://projects.michaelrambeau.com/asics'
 	buttonText: 'View the online demo'
 	text:
 		jpn: '求人に応募する際、モバイルユーザー向けオンラインストアのプロトタイプを作成。'
@@ -91,8 +91,8 @@ apps = [
 	customer: 'Brastel Telecom'
 	year: 2012
 	image: ['imt1/brastelremit1-home-big.jpg']
-	url: 'http://michaelrambeau.com/it/projects/brastelremit-v1/'
-	buttonText: 'View the onmine demo'
+	url: 'http://projects.michaelrambeau.com/brastelremit-v1/'
+	buttonText: 'View the online demo'
 	text:
 		jpn: '2012年　新しい海外送金サービスのリリースのため、すべてのページを作成。'
 	description: ->

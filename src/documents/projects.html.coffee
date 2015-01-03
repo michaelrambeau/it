@@ -20,7 +20,7 @@ apps = [
 	customer: 'Brastel Telecom'
 	year: 2013
 	image: ['imt2/brastelremit2-home.png']
-	url: 'http://michaelrambeau.com/it/projects/brastelremit'
+	url: 'http://projects.michaelrambeau.com/brastelremit'
 	buttonText: 'View the online prototype'
 	context: (link = urlStory ) ->
 		p """
@@ -47,7 +47,7 @@ apps = [
 	customer: 'Asics'
 	year: 2014
 	image: ['asics/asics-mobile-1.jpg','asics/asics-mobile-2.jpg','asics/asics-tablet.jpg','asics/asics-desktop.jpg']
-	url: 'http://michaelrambeau.com/it/projects/asics'
+	url: 'http://projects.michaelrambeau.com/asics'
 	buttonText: 'View the online demo'
 	context: (link = urlStory ) ->
 		p """
@@ -84,7 +84,7 @@ apps = [
 	customer: 'Brastel Telecom'
 	year: 2012
 	image: ['imt1/brastelremit1-home-big.jpg']
-	url: 'http://michaelrambeau.com/it/projects/brastelremit-v1/'
+	url: 'http://projects.michaelrambeau.com/brastelremit-v1/'
 	buttonText: 'View the onmine demo'
 	description: ->
 		p '''
