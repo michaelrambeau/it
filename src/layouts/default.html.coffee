@@ -32,7 +32,7 @@ html lang: 'en','ng-app':'mywebsite', ->
 			link rel: 'stylesheet', href: @getPath('css/highlight.css')
 		
 		if @document.angular is true
-			script src: 'https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.js' 
+			script src: 'https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js'
 					
 	body (if @document.className then '.' + @document.className else ''), 'ng-controller': (if @document.controller then @document.controller else ''), ->
 	
@@ -64,4 +64,3 @@ html lang: 'en','ng-app':'mywebsite', ->
 				script src: @getPath 'js/'+file
 				
 		text @partial 'googleanalytics.html'
-		

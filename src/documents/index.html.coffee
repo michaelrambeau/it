@@ -203,7 +203,7 @@ div '.container.main', ->
 			div '.second-col', ->
 				templatePosts()
 
-script src: 'https://cdnjs.cloudflare.com/ajax/libs/zepto/1.0/zepto.min.js'
+#script src: 'https://cdnjs.cloudflare.com/ajax/libs/zepto/1.0/zepto.min.js'
 coffeescript ->
 	app = angular.module 'mywebsite', []
 	app.controller 'HomeCtrl', ($scope, $http) ->
@@ -214,9 +214,17 @@ coffeescript ->
 		$scope.getProjectURL = (project) ->
 			if project.homepage is '' then project.html_url else project.homepage 
 		$scope.projects = []
-		
-	$(document).ready () ->
-		$('#readmore-link').click (event) -> 
-			event.preventDefault()
-			$('#readmore-content').toggleClass('closed')
+
+	#update 2015/01: no more "jQuery" dependency, to make the homepage page faster!
+	#from the code used in Google Web startkit project
+	query = document.querySelector.bind(document);
+	link = query '#readmore-link'
+	content = query '#readmore-content'
+	toggleContent = (e) ->
+		content.classList.toggle 'closed'
+		e.preventDefault()
+		false
+	link.addEventListener 'click', toggleContent
+	return
+
 			
