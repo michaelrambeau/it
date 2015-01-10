@@ -14,25 +14,19 @@ html lang: 'en','ng-app':'mywebsite', ->
 		
 		if @document.bootstrap is true
 			link rel: 'stylesheet', href: @getPath 'vendor/bootstrap/bootstrap.min.css' 
-			
-		#link rel: 'stylesheet', href: @getPath 'vendor/purecss/pure-min.css'
-		#link rel: 'stylesheet', href: @getPath 'css/website.css'
-		#link rel: 'stylesheet', href: @getPath 'vendor/font-awesome/css/font-awesome.min.css'
+
 		link rel: 'stylesheet', href: @getPath 'css/style-concat.min.css?2014-07-27'
 		
 		if @document.slimbox is true
 			link rel: 'stylesheet', href: @getPath 'vendor/slimbox2/css/slimbox2.css' 
-			
-		#link rel: 'stylesheet', href: 'http://fonts.googleapis.com/css?family=Ubuntu+Condensed'
-		#link rel: 'stylesheet', href: 'http://fonts.googleapis.com/css?family=PT+Serif'
-		#link href:'http://fonts.googleapis.com/css?family=Open+Sans:300', rel:'stylesheet', type:'text/css'
+
 		link href:'http://fonts.googleapis.com/css?family=Lato', rel:'stylesheet', type:'text/css'		
 		
 		if @document.syntaxHighlighter is true
 			link rel: 'stylesheet', href: @getPath('css/highlight.css')
 		
 		if @document.angular is true
-			script src: 'https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js'
+			script src: @lib.angular
 					
 	body (if @document.className then '.' + @document.className else ''), 'ng-controller': (if @document.controller then @document.controller else ''), ->
 	

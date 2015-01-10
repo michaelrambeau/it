@@ -6,7 +6,6 @@ menuId: 'HOME'
 standalone: true
 className: 'home'
 noTitle: true
-angular: true
 controller: 'HomeCtrl'
 ---
 
@@ -203,7 +202,9 @@ div '.container.main', ->
 			div '.second-col', ->
 				templatePosts()
 
-#script src: 'https://cdnjs.cloudflare.com/ajax/libs/zepto/1.0/zepto.min.js'
+#homepage optimization (2015/1): angular is included in the document <body> rather than the <head>.
+#"Your page has 1 blocking script resources and 2 blocking CSS resources. This causes a delay in rendering your page."
+script src: @lib.angular
 coffeescript ->
 	app = angular.module 'mywebsite', []
 	app.controller 'HomeCtrl', ($scope, $http) ->
