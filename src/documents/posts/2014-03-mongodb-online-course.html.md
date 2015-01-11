@@ -8,7 +8,7 @@ hasPicture: true
 date: 2014-03-14
 active: true
 comments: true
-homepage: true
+homepage: false
 isPost: true
 ---
 [MongoDB](http://www.mongoDB.org/) is an open source document-oriented database.

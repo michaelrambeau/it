@@ -9,7 +9,7 @@ comments: true
 active: true
 comments: true
 isPost: true
-homepage: true
+homepage: false
 image: '2014-07-brastelremit.jpg'
 hasPicture: true
 ---

@@ -7,7 +7,7 @@ description: 'Bootstrap is a set of amazing UI components for HTML pages.	You wi
 date: '2013-09-20'
 menuId: 'POSTS'
 active: true
-homepage: true
+homepage: false
 standalone: false
 angular: true
 controller: 'StyleCtrl'
@@ -611,5 +611,4 @@ div 'ng-controller': 'StyleCtrl', ->
 			span '.glyphicon.glyphicon-globe','' #A glyphicn (a spcecial font used to display icons)
 			
 			img '.img-responsive','data-src': 'holder.js/800x600/auto'
-	 
 	 

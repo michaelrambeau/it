@@ -154,7 +154,7 @@ templateGithubProjects = () ->
 
 #POSTS
 posts = @getCollection('documents').findAllLive({relativeOutDirPath:'posts',homepage:true},[date:-1]).toJSON()
-templatePosts = () -> 
+templatePosts = () =>
 	h2 '.latest-posts', ->
 		i '.fa.fa-pencil',''
 		text 'Latest posts'
@@ -170,7 +170,11 @@ templatePosts = () ->
 						img '.img-responsive', src: url
 				div '.content', doc.description
 			div '.footer', ->
-				a '.pure-button.pure-button-primary', href: @getPath(doc.url), 'Read post &raquo;'	
+				a '.pure-button.pure-button-primary1', href: @getPath(doc.url), 'Read post &raquo;'
+	div '.view-all', ->
+		a '.pure-button.pure-button-primary', href: @getPath('posts'), ->
+			i '.fa.fa-plus',''
+			text 'View all posts &raquo;'
 
 
 #========

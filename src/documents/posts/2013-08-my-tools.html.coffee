@@ -79,7 +79,7 @@ tools=[
 		"No more duplication of selectors... it makes the stylesheet easier to read and to write"
 		"Media-queries (used to define style dependng on the screen device, for example) can be nested inside elements, which means it is easy to define how a given element behaves depending on the context (mobile, desktop, print...)"
 	]
-	image: "less2.png"
+	image: "less.png"
 ]
 
 intro = () ->
@@ -132,4 +132,3 @@ for tool in tools
 							for point in tool.points
 								li point
 
-	
