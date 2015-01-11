@@ -43,12 +43,15 @@ tools=[
 	description: '''
 		 "A highly-themable UI framework with naming conventions built around common usage."
 	'''
-	text: '''
-		Semantic-UI is a set of more than 50 UI components to create beautiful web pages.<br/>
-		The HTML mark-up aims to be as expressive as possible, hence the name "semantic".<br/>
-		Not only the number of components, but also the number of variations for every component are amazing, the project is really thorough.<br/>
-		The version 1.0 was released in November 2014 and the project keeps up growing at a fast pace.
-	'''
+	text: ->
+		p '''
+			Semantic-UI is a set of more than 50 UI components to create beautiful web pages.<br/>
+			The HTML mark-up aims to be as expressive as possible, hence the name "semantic".
+		'''
+		p ''' ->
+			Not only the number of components, but also the number of variations for every component are amazing, the project is really thorough.<br/>
+			The version 1.0 was released in November 2014 and the project keeps up growing at a fast pace.
+		'''
 	image: "semanticui.jpg"
 
 ,
@@ -76,9 +79,13 @@ tools=[
 ]
 
 intro = ->
+	p '''
+		The web landscape is evolving quickly so it is important to stay up-to-date about the latest technologies.
 	'''
-		The web landscape is evolving quickly so it is important to stay up-to-date about the latest technologies.<br/>
-		2013 was a watershed for me, I learned so many great things: node.js, AngularJS, Git, style pre-processors, CoffeeScript, Responsive Web Design...</br>
+	p '''
+		2013 was a watershed for me, I learned so many great things: node.js, AngularJS, Git, style pre-processors, CoffeeScript, Responsive Web Design...
+	'''
+	p '''
 		So what did I find last year, in 2014 ? Here are my 3 picks...
 	'''
 

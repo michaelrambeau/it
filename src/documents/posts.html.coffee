@@ -24,7 +24,7 @@ div '.posts', ->
 							if doc.introduction
 								p -> doc.introduction
 							p '.button-container', ->
-								a '.pure-button.pure-button-primary.pure-button-xsmall', href: @getPath(doc.url), 'Read post &raquo;'	
+								a '.pure-button.pure-button-secondary.pure-button-xsmall', href: @getPath(doc.url), 'Read post &raquo;'
 
 				div '.pure-u-2-5', ->
 					div '.second-col', ->
