@@ -1,72 +1,78 @@
 body,.pure-g-r [class *= "pure-u"]
-	font-family 'Lato', sans-serif
-	color #555555
-@media screen	
-	body
-		background-color $lightGrey
+  font-family 'Lato', sans-serif
+  color #555555
+@media screen
+  body
+    background-color $lightGrey
 .main
-	@media $screenMedium
-		font-size 18px
-	@media $screenBig
-		font-size 21px
-		line-height 28px
-		font-weight: 300
+  @media $screenMedium
+    font-size 18px
+  @media $screenBig
+    font-size 21px
+    line-height 28px
+    font-weight: 300
 
 body
-	font-family 'Lato', sans-serif
+  font-family 'Lato', sans-serif
 
 a.heading,a.heading:hover
-	text-decoration none
-	color $orange
-	&:hover
-		text-decoration underline
+  text-decoration none
+  color $orange
+  &:hover
+    text-decoration underline
 
 ul
-	padding-left 25px
-	li
-		padding-bottom 5px
+  padding-left 25px
+  li
+    padding-bottom 5px
 ul.custom
-	margin 0
+  margin 0
 
 pre
-	margin 0 0 10px
+  margin 0 0 1em
 
 hr
-	border-color $lightGrey
-	margin 20px 0
+  border-color $lightGrey
+  margin 20px 0
 blockquote
-	margin 1em 0
-	border-left 5px solid $yellow
-	padding 15px 20px
-	background-color $lightYellow2
-	small:before
-		content "— "
-		font-size 80%
-	p:last-child
-		margin-bottom 0
+  margin 1em 0
+  border-left 5px solid $yellow
+  padding 15px 20px
+  background-color $lightYellow2
+  small:before
+    content "— "
+    font-size 80%
+  p:last-child
+    margin-bottom 0
 
 .first-col
-	@media $screenMedium
-		padding-right 10px
-	@media $screenBig
-		padding-right 20px
+  @media $screenMedium
+    padding-right 10px
+  @media $screenBig
+    padding-right 20px
 .second-col
-	@media $screenMedium
-		padding-left 10px
-	@media $screenBig
-		padding-left 20px
+  @media $screenMedium
+    padding-left 10px
+  @media $screenBig
+    padding-left 20px
 
 @media print
-	.hidden-print
-		display none
-		
+  .hidden-print
+    display none
+
 .small
-	font-size 0.7em
+  font-size 0.7em
 
 .pure-button-secondary
-	//text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-	background-color $yellow - 5%
-	color white
-	&:hover
-		background-color $yellow - 7%
-	
+  //text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  background-color $yellow - 5%
+  color white
+  &:hover
+    background-color $yellow - 7%
+
+//in post entries, more space is needed between sections
+h2
+  margin-top 2em
+
+h3
+  margin-top 1.5em

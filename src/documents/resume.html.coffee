@@ -10,22 +10,22 @@ className: 'resume'
 #require('nodedump')
 
 getAge = ->
-	today = new Date()
-	birth = new Date(1977,1,11)
-	y = today.getFullYear() - birth.getFullYear()
-	d = new Date(today.getFullYear(),birth.getMonth(),birth.getDate())
-	if d > today then y--
-	y
+  today = new Date()
+  birth = new Date(1977,1,11)
+  y = today.getFullYear() - birth.getFullYear()
+  d = new Date(today.getFullYear(),birth.getMonth(),birth.getDate())
+  if d > today then y--
+  y
 
 experiences=[
-	id: 'FIRSTSERVER'
-	title: 'Web developer at FirstServer'
-	from: '2014'
-	to: 'Present'
-	location: 'Osaka, Japan'
-	resp: '''
-		Research and development about a Customer Portal web application.
-	'''
+  id: 'FIRSTSERVER'
+  title: 'Web developer at FirstServer'
+  from: '2014'
+  to: 'Present'
+  location: 'Osaka, Japan'
+  resp: '''
+    Research and development about a Customer Portal web application.
+  '''
 ,
   id: 'BRASTEL'
   title: 'Web developer at Brastel Telecom'
@@ -48,18 +48,18 @@ experiences=[
   from: '2010'
   to: '2011'
   duration: '1 year'
-  location: 'Osaka, Japan'  
+  location: 'Osaka, Japan'
   points:[
     'Maintenance and evolution of a CRM application built using the open-source Vtiger CRM, PHP, MySQL and Ajax'
     'Design of a school new web site, using WordPress and jQuery plugins'
   ]
-,  
+,
   id: 'AIRFRANCE'
   title: 'Lotus Domino expert at Air France'
   from: '2004'
   to: '2010'
   duration: '6 years'
-  location: 'Toulouse, France'  
+  location: 'Toulouse, France'
   resp:'''
     In charge of the development and the maintenance of a pool of intranet web applications powered by Lotus Notes Domino.
   '''
@@ -70,36 +70,36 @@ experiences=[
     'e-slots Project : a new application allowing users to manage departures and arrivals of Air France Cargo trucks.'
     'Taught courses on best practices for developing web applications with Lotus Notes Domino'
   ]
-,  
+,
   id: 'CCR'
   title: 'Notes developer at Caisse Centrale de Réassurance (reinsurance company)'
   from: '2001'
   to: '2004'
   duration: '3 years'
-  location: 'Paris, France'  
+  location: 'Paris, France'
   points:[
     'CAP Project : Customer Relationship Manager integrated into users\' mailboxes, automatic archive from mailbox.'
     'Company Shared Agenda integrated with personal user agendas.'
     'Log Analysis : application for Lotus Notes Administrators with daily scheduled agents sending e-mails.'
   ]
   sidebarTitle:'2001 and before'
-,  
+,
   id: 'GPA'
   title: 'Lotus Notes developer at GPA (insurance company)'
   from: '2001'
   to: '2001'
   duration: '7 months'
-  location: 'Paris, France'  
+  location: 'Paris, France'
   points:[
     'Maintained a database storing reports on interviews between employees and their managers, complete with secured access control.'
     'Euro Anomalies Manager: built an application complete with workflow to fix issues that occurred with the switch to the Euro currency'
   ]
   sidebar: false
-  
+
 ]
-  
+
 img '.pull-right', src: @getPath('img/photos/identite.jpg')
-h1 'IT solution developer & Web expert'  
+h1 'IT solution developer & Web expert'
 ul '.reset', ->
   li ->
     i '.fa.fa-user',' '
@@ -109,13 +109,13 @@ ul '.reset', ->
     text 'Residing in Ibaraki city, Osaka, Japan since April 2010'
   li ->
     i '.fa.fa-envelope',' '
-    a '.email', href: "mailto:michael.rambeau@gmail.com", "michael.rambeau@gmail.com"  
+    a '.email', href: "mailto:michael.rambeau@gmail.com", "michael.rambeau@gmail.com"
 hr '.spacer', ''
 
 h2 'Technical proficiencies'
 ul '.custom', ->
   li 'Front-end: HTML5, JavaScript, AngularJS, jQuery, Bootstrap, CSS, LESS, Stylus, CoffeeScript, Responsive Web Design'
-  li 'Back-end: node.js, Express, PHP, CakePHP, YII, XML - XSL'
+  li 'Back-end: node.js, Express, Ruby on Rails, PHP, CakePHP, YII, XML - XSL'
   li 'Applications and CMS: Lotus Notes Domino, Docpad, WordPress, Typo3, KeystoneJS'
   li 'Databases: MongoDB, MySQL, MS SQLServer'
 
@@ -149,5 +149,5 @@ h2 'Education'
 p '''
 Bachelor's degree in Physics degree, University of Pau, France 1999
 '''
-  
+
 
