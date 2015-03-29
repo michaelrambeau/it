@@ -1,7 +1,7 @@
 --- cson
 layout: 'post'
 title: 'AngularJS memo'
-description: 'A set of common AngularJS recipes. Stategies to filter array of data especially.'
+description: 'A set of common AngularJS recipes. Services, directives, strategies to filter array of data, routing and more.'
 date: '2014-11-29'
 menuId: 'POSTS'
 active: true

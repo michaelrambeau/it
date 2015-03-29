@@ -167,7 +167,7 @@ templatePosts = () =>
       div '.body', ->
         if doc.image
           url = if doc.image.url then doc.image.url else @getPath('img/blog/'+doc.image)
-          a href: @getPath(doc.url), ->
+          a href: @getPath(doc.url), title: doc.title, ->
             img '.img-responsive', src: url
         div '.content', doc.description
       div '.footer', ->
