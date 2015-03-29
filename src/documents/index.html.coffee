@@ -1,7 +1,7 @@
 ---
 layout: 'default'
 title: 'IT solution developer and Web expert in Japan'
-description: 'Michael Rambeau, web expert in Osaka, Japan. Specialities: HTML5, node.js, docpad, AngularJS, Responsive Web Design, Bootstrap, Lotus Notes Domino'
+description: 'Michael Rambeau, web expert in Osaka, Japan. Specialities: HTML5, AngularJS,　ReactJS, node.js, Responsive Web Design, CSS, LESS, Sass, Stylus, Bootstrap, Lotus Notes Domino.'
 menuId: 'HOME'
 standalone: true
 className: 'home'
