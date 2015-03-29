@@ -92,8 +92,8 @@ apps = [
       I did the main web site and the customer web site.
     '''
     p '''
-      I created all pages of Brastel Remit web site:
-      I implemented the layout provided by the Design team (using XHTML and jQuery).</br>
+      I created all pages of Brastel Remit web site:<br/>
+      I implemented the layout provided by the Design team (using XHTML and jQuery).<br/>
       I made the page dynamic using web services provided by the System team (XSL - XML).
     '''
   technologies:[
@@ -221,7 +221,7 @@ div '.pure-g-r', ->
               h2 '#' + app.id, app.title
             p '.customer', app.year + ' - ' +'Customer: ' + app.customer
             if app.description
-              p app.description
+              p app.description()
             if app.context
               h3 'Context'
               app.context()
@@ -242,11 +242,11 @@ div '.pure-g-r', ->
               path="img/screenshots/"
               if app.url isnt ''
                 a '.thumbnail', 'href': app.url, target: '_blank', title: app.title, ->
-                  img '.img-responsive', src: @getPath(path + image)
+                  img '.img-responsive', src: @getPath(path + image), alt: app.title
               else
                 urlBig = getBigImage(image)
                 a 'href': @getPath(path + urlBig), target: '_blank', 'rel': 'lightbox-screeshots', title: app.title + ' - screenshot', ->
-                  img '.img-responsive.screenshot.thumbnail',src: @getPath(path + image)
+                  img '.img-responsive.screenshot.thumbnail', src: @getPath(path + image), alt: app.title
                   br()
       #hr() unless i is apps.length
 
