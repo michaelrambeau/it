@@ -15,5 +15,5 @@ I used [Stylus](https://github.com/learnboost/stylus) CSS preprocessor and [Pure
 Command line to deploy to Github pages:
 
 ```
-docpad deploy-gh-pages --env static
+docpad deploy-ghpages --env static
 ```
