@@ -4,6 +4,7 @@ title: "Posts"
 description: "A blog to share Michael Rambeau's experience as an IT engineer in Japan"
 menuId: "POSTS"
 className: 'posts'
+standalone: true
 ---
 
 
@@ -11,8 +12,6 @@ options =
   relativeOutDirPath: 'posts'
   #active: true
 docs = @getCollection('documents').findAll(options, [date:-1]).toJSON()
-for doc, i in docs
-  console.log i + 1, doc.title
 
 #p 'Some posts to share my experience as an IT engineer in Japan'
 

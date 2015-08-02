@@ -24,8 +24,11 @@ experiences=[
   to: 'Present'
   location: 'Osaka, Japan'
   resp: '''
-    Research and development about a Customer Portal web application.
+    Research and development about a Customer Portal web application UI.
   '''
+  points: [
+    'Created a single-page application to show how Responsive Web Design can be used to make an application mobile-friendly.'
+  ]
 ,
   id: 'BRASTEL'
   title: 'Web developer at Brastel Telecom'
@@ -114,11 +117,10 @@ hr '.spacer', ''
 
 h2 'Technical proficiencies'
 ul '.custom', ->
-  li 'Front-end: HTML5, JavaScript, AngularJS, jQuery, Bootstrap, CSS, LESS, Stylus, CoffeeScript, Responsive Web Design'
-  li 'Back-end: node.js, Express, Ruby on Rails, PHP, CakePHP, YII, XML - XSL'
-  li 'Applications and CMS: Lotus Notes Domino, Docpad, WordPress, Typo3, KeystoneJS'
+  li 'Front-end: HTML5, JavaScript ES2015 and CoffeeScript, React, Flux, AngularJS, jQuery, Bootstrap, CSS, LESS, Stylus, Responsive Web Design'
+  li 'Back-end: node.js, Express, Ruby on Rails, PHP (CakePHP), XML - XSL'
+  li 'Applications and CMS: KeystoneJS, SailsJS, Docpad, Lotus Notes Domino, WordPress, Typo3'
   li 'Databases: MongoDB, MySQL, MS SQLServer'
-
 
 
 h2 '.clearfix','style':'clear:both;','Professionnal experience'
