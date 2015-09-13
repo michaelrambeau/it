@@ -24,10 +24,12 @@ experiences=[
   to: 'Present'
   location: 'Osaka, Japan'
   resp: '''
-    Research and development about a Customer Portal web application UI.
+    Research and development about a Customer Portal web application UI/UX.
   '''
   points: [
     'Created a single-page application to show how Responsive Web Design can be used to make an application mobile-friendly.'
+    'Research and proposal to improve promotion web site eficiency and registration processes'
+    'Made presentation to all team members about latest web technologies: React, Flux, ES6...'
   ]
 ,
   id: 'BRASTEL'
