@@ -27,9 +27,9 @@ experiences=[
     Research and development about a Customer Portal web application UI/UX.
   '''
   points: [
-    'Created a single-page application to show how Responsive Web Design can be used to make an application mobile-friendly.'
+    'Created a responsive prototype of customer portal application using Single Page Application architecture and React components'
     'Research and proposal to improve promotion web site eficiency and registration processes'
-    'Made presentation to all team members about latest web technologies: React, Flux, ES6...'
+    'Made a presentation to all team members about the latest web technologies: React, Flux, ES6...'
   ]
 ,
   id: 'BRASTEL'
@@ -119,7 +119,7 @@ hr '.spacer', ''
 
 h2 'Technical proficiencies'
 ul '.custom', ->
-  li 'Front-end: HTML5, JavaScript ES2015 and CoffeeScript, React, Flux, AngularJS, jQuery, Bootstrap, CSS, LESS, Stylus, Responsive Web Design'
+  li 'Front-end: HTML5, JavaScript ES6, CoffeeScript, React, Flux, AngularJS, jQuery, Bootstrap, CSS, LESS, Stylus, Responsive Web Design'
   li 'Back-end: node.js, Express, Ruby on Rails, PHP (CakePHP), XML - XSL'
   li 'Applications and CMS: KeystoneJS, SailsJS, Docpad, Lotus Notes Domino, WordPress, Typo3'
   li 'Databases: MongoDB, MySQL, MS SQLServer'
@@ -143,7 +143,8 @@ for experience in experiences
     if experience.resp
       p '.resp', experience.resp
     if experience.points
-      p 'Key achievements:'
+      if experience.resp
+        p 'Key achievements:'
       ul '.custom', ->
         for point in experience.points
           li point
