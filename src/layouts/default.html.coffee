@@ -7,7 +7,6 @@ html lang: (if @document.language then @document.language else 'en'), 'ng-app':'
     meta name: 'viewport', content: 'width=device-width, initial-scale=1'
     meta 'http-equiv': 'X-UA-Compatible', 'content': 'IE=edge'
     link rel:"author", href:"https://plus.google.com/u/1/115589168984238296965"
-    script src: "//fast.eager.io/52ZDV7L7L_.js"
     ie 'lt IE 9', ->
        script src: @getPath('vendor/html5shiv.js')
        script src: @getPath('vendor/respond.min.js')

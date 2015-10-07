@@ -41,7 +41,7 @@ skills = [
   title: 'Back-end web development'
   content: ->
     ul '.custom', ->
-      li 'node.js, socket.io'
+      li 'node.js microservices, socket.io'
       li 'Ruby on Rails'
       li 'Work experience with XML - XSL : XSLT used to process XML data provided by web services to generate dynamic pages.'
       li 'PHP: CakePHP, YII frameworks'
