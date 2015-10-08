@@ -12,7 +12,9 @@ homepage: true
 syntaxHighlighter: true
 homepage: true
 ---
-Today I am happy to introduce the web application I built: [bestof.js.org](http://bestof.js.org/): a place to find the best components to build amazing web applications!
+I am happy to introduce the new application I built: [bestof.js.org](http://bestof.js.org/).
+
+bestof.js.org is a place where front-end engineers and node.js developers can find the best components to build amazing web applications.
 
 
 ## A bit of history
@@ -23,21 +25,23 @@ In the beginning, JavaScript was just a way to add some dynamic features to stat
 Now browsers are no longer just document renderers.
 JavaScript is the cornerstone of what is called the "web platorm".
 
-Now JavaScript can be found almost anywhere: 
+JavaScript can be found almost anywhere: 
 
 * on the server-side with the rise of node.js 
 * on mobile applications with hybrid frameworks and solutions like React Native
 * on devices of the Internet of Things
 
-And the future is bright with ES6, the JavaScript next version, already available with tools such as [Babel](http://babeljs.io/).
+The future is bright with ES6, the JavaScript next version, already available with tools such as [Babel](http://babeljs.io/).
 
 The open source community is very active, new interesting projects are released almost everyday on Github.
 
-Recently, major companies have opened up their projects (like Facebook with React for example, but also Google, LinkedIn, Netflix...)
+Recently, major companies have opened up their projects: Facebook with React for example, but also Twitter, Google, LinkedIn, Netflix...
 
 ## Why bestof.js.org
 
-There are so many interesting projects to follow that is difficult to stay up-to-date.
+There are so many open-source projects to follow that it is difficult to stay up-to-date about the latest tendencies.
+
+I used to take notes about the interesting projects I found but I was tired of searching through my notes and my bookmarks.
 
 I thought that a tool was needed to help us follow what is happening in this everyday changing world.
 
@@ -51,36 +55,38 @@ bestof.js.org takes "snapshot" of Github stars every day, for more than 300 proj
 
 A project can have been popular a while ago, collecting a big number of stars... but a new contender may have made it obsolete since that time.
 
-Now with bestof.js.org you can see which projects are hot in more than categories (including MV* frameworks, React components, node.js CMS, CSS tools...).
+Now with bestof.js.org you can see which projects are **hot** in more than 50 categories (including MV* frameworks, React components, node.js CMS, CSS tools...).
+
+The project focuses on speed: you can search projects by entering keywords in the searchbox or you can filter by category. In both cases, the result is displayed **instantly**.
 
 ## Technical overview
 
-I tried to create a decoupled architecture, as flexible as possible, taking advantages of micro-services concept and free cloud services.
+I tried to create a decoupled architecture, as flexible as possible, taking advantages of micro-services concept and some free cloud services.
 
 As a result, there are 5 repositories on Github:
 
-* [bestofjs-webui](https://github.com/michaelrambeau/bestofjs-webui): front end web application, a single-page application built with React components
+* [bestofjs-webui](https://github.com/michaelrambeau/bestofjs-webui): the front end web application, a single-page application built with React components
 * [bestofjs-keystonejs](https://github.com/michaelrambeau/bestofjs-keystonejs): the web application used by admin users to manage data. Built with [KeystoneJS](http://keystonejs.com/), a node.js CMS.
-* [bestofjs-batches](https://github.com/michaelrambeau/bestofjs-batches): Scheduled tasks that generate static every day data used by the web application.
+* [bestofjs-batches](https://github.com/michaelrambeau/bestofjs-batches): Scheduled tasks that generate every day data used by the web application.
 * [bestofjs-microservices](https://github.com/michaelrambeau/microservices): microservice used to retrieve project information from Github, when a project is opened in the webui application
 * [bestofjs](https://github.com/michaelrambeau/bestofjs): repository used to deploy content to Github pages, linked to js.org domain. Generated from bestofjs-webui repository.
 
 Cloud services I use:
 
-* [Mongolab](https://mongolab.com/): mongodb database
+* [Mongolab](https://mongolab.com/): mongodb database that stores project data
 * [SemaphoreCI](https://semaphoreci.com/): Continuous Integration service with an amazing "daily build" feature
 * [divshot](https://divshot.com/): Static web hosting, used to deploy static JSON data consumed by the web application
-* [webtask.io](https://webtask.io/): node.js microservices
+* [webtask.io](https://webtask.io/): node.js microservice
 
 ## What I learned
 
 It is not easy to find the right architecture since the start.
 
-First I thought about a more classic architecture, with a back-end listening for user requests and serving data. So the first version of the application was a Single-Page-Application connected to a web appllication running on Heroku.
+First I thought about a more classic architecture, with a back-end listening for user requests and serving data. So the first version was a Single-Page-Application connected to a web application running on Heroku.
 
-Later I realized that data displayed by the web application is almost "static", it only changes every morning when I take snapshots from Github. So all I needed was to build application data every morning (using a Continuous Integration service).
+Later I realized that data displayed by the web application is almost "static", it only changes every morning when I take snapshots from Github. So all I needed was to build application data every morning using a Continuous Integration server.
 
-The last piece of the puzzle was to build a "micro-service" that retrieves readme data from Github, when a user opens a project in the application.
+The last piece of the puzzle was to build a "micro-service" that retrieves readme data from Github, when a user opens a project in the application. It has been done using [webtask.io](https://webtask.io/).
 
 It takes time to build an application on one's spare time but it is a great experience to release an open-source project!
 
