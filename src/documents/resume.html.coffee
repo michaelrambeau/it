@@ -22,8 +22,8 @@ experiences=[
   '''
   points: [
     'Created a responsive prototype of customer portal application using Single Page Application architecture and React components'
-    'Research and proposal to improve promotion web site eficiency and registration processes'
-    'Made a presentation to all team members about the latest web technologies: React, Flux, ES6...'
+    'Research and proposal to improve promotion web site eficiency and customer registration process'
+    'Introduced JavaScript latest technologies into a Rails application: React, Redux, ES6, Unit testing'
   ]
 ,
   id: 'BRASTEL'
@@ -113,7 +113,7 @@ hr '.spacer', ''
 
 h2 'Technical proficiencies'
 ul '.custom', ->
-  li 'Front-end: HTML5, JavaScript ES6, CoffeeScript, React, Flux, AngularJS, jQuery, Bootstrap, CSS, LESS, Stylus, Responsive Web Design'
+  li 'Front-end: HTML5, JavaScript ES6, React, Redux, Webpack, CoffeeScript, AngularJS, jQuery, Bootstrap, CSS, LESS, Stylus, Responsive Web Design, Unit tests, Web performance'
   li 'Back-end: node.js, Express, Ruby on Rails, PHP (CakePHP), XML - XSL'
   li 'Applications and CMS: KeystoneJS, SailsJS, Docpad, Lotus Notes Domino, WordPress, Typo3'
   li 'Databases: MongoDB, MySQL, MS SQLServer'
