@@ -19,7 +19,8 @@
             div '.pure-u-3-5', ->
               text @content
             div '.pure-u-2-5', ->
-              img '.img-responsive', src: @getPath('img/blog/'+@document.image)
+              div '.second-col', ->
+                img '.img-responsive', src: @getPath('img/blog/'+@document.image)
         else
           text @content
 

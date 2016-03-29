@@ -14,45 +14,45 @@
 @import 'include/review.styl'
 
 p
-	margin 0 0 1em
+  margin 0 0 1em
 a.icon, .email
-	text-decoration none
+  text-decoration none
 
 
 a
-	color $blue
-	&:hover
-		text-decoration none
-	img
-		text-decoration none
+  color darken($blue, 10%)
+  &:hover
+    text-decoration none
+  img
+    text-decoration none
 
 .container
-	margin 0 auto
-	max-width 1170px
-	//background-color white
+  margin 0 auto
+  max-width 1170px
+  //background-color white
 
 .first-col
-	@media $screenMedium
-		//padding-right 50px
+  @media $screenMedium
+    //padding-right 50px
 
 
 footer
-	padding 20px
-	background-color #444444
-	color #999999
-	box-shadow: 0 -1px 8px rgba(0, 0, 0, 0.5) inset;
-	font-size 16x
-	p
-		margin 5px 0
-		text-align center
+  padding 20px
+  background-color #444444
+  color #999999
+  box-shadow: 0 -1px 8px rgba(0, 0, 0, 0.5) inset;
+  font-size 16x
+  p
+    margin 5px 0
+    text-align center
 
 .slider
-	overflow-y hidden
-	max-height 500px
-	@media $screenMedium
-		max-height 300px
-	transition-property all
-	transition-duration: .5s
-	transition-timing-function: cubic-bezier(0, 1, 0.5, 1)
+  overflow-y hidden
+  max-height 500px
+  @media $screenMedium
+    max-height 300px
+  transition-property all
+  transition-duration: .5s
+  transition-timing-function: cubic-bezier(0, 1, 0.5, 1)
 .closed
-	max-height: 0
+  max-height: 0
