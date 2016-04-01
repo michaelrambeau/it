@@ -1,12 +1,11 @@
 ---
 layout: 'default'
-title: 'IT solution developer and Web expert in Japan'
-description: 'Michael Rambeau, web expert in Osaka, Japan. Specialities: HTML5, AngularJS,　ReactJS, node.js, Responsive Web Design, CSS, LESS, Sass, Stylus, Bootstrap, Lotus Notes Domino.'
+title: 'Full-stack web engineer in Osaka, Japan'
+description: 'Michael Rambeau, web development expert in Osaka, Japan. Specialities: HTML5, React, Redux, AngularJS, node.js microservices, Responsive Web Design, CSS, Sass.'
 menuId: 'HOME'
 standalone: true
 className: 'home'
 noTitle: true
-controller: 'HomeCtrl'
 ---
 
 #========
@@ -141,17 +140,8 @@ templateGithubProjects = () ->
     i '.fa.fa-github',''
     text 'Github projects I follow'
   div '.block', ->
-    table.pure-table ->
-      tr '.github-project', 'ng-repeat': 'project in projects', ->
-        td ->
-          a 'href': '{{getProjectURL(project)}}','{{getProjectName(project)}}'
-          span '.count', ->
-            i '.fa.fa-star',''
-            text '{{project.stargazers_count}}'
-          p '.description', ->
-            i '.fa.fa-quote-left', ''
-            text '{{project.description}}'
-            i '.fa.fa-quote-right', ''
+    div id: 'repos', 'Loading...'
+
 
 #POSTS
 posts = @getCollection('documents').findAllLive({relativeOutDirPath:'posts',homepage:true},[date:-1]).toJSON()
@@ -198,8 +188,6 @@ div '.container.main', ->
   div '.pure-g-r', ->
     div '.pure-u-3-5', ->
       div '.first-col', ->
-        #templateProfile()
-        #templateContact()
         templateSkills()
         templateGithubProjects()
 
@@ -207,20 +195,13 @@ div '.container.main', ->
       div '.second-col', ->
         templatePosts()
 
-#homepage optimization (2015/1): angular is included in the document <body> rather than the <head>.
-#"Your page has 1 blocking script resources and 2 blocking CSS resources. This causes a delay in rendering your page."
-script src: @lib.angular
-coffeescript ->
-  app = angular.module 'mywebsite', []
-  app.controller 'HomeCtrl', ($scope, $http) ->
-    $http.get('https://api.github.com/users/michaelrambeau/starred').success (data) ->
-      $scope.projects = data;
-    $scope.getProjectName = (project) ->
-      if project.homepage is '' then project.name else project.homepage
-    $scope.getProjectURL = (project) ->
-      if project.homepage is '' then project.html_url else project.homepage
-    $scope.projects = []
+script ->
+  # include doT templating engine
+  text @partial 'dot.js'
+  # Fetch starred projects and render the table in the page.
+  text @partial 'homepage-scripts.js'
 
+coffeescript ->
   #update 2015/01: no more "jQuery" dependency, to make the homepage page faster!
   #from the code used in Google Web startkit project
   query = document.querySelector.bind(document);
