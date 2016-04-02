@@ -21,7 +21,7 @@ I was in charge of [Brastel Remit web site](http://brastelremit.jp) (a service o
 * The front home page was nice but did not convey any message.
 * The subscription process, used to register new customers, was awkward.
 
-Check how the previous version was [here](http://michaelrambeau.com/it/projects/brastelremit-v1/).
+Check how the previous version was [here](http://projects.michaelrambeau.com/brastelremit-v1/).
 
 I tried to make suggestions several times but no decision was taken.
 I was working from Osaka but the rest of the team was in Tokyo main office.
@@ -48,7 +48,7 @@ First it was called "Crucial points to be improved" because I really wanted peop
 My colleague found the perfect word: "proposal".
 Suddenly, the document had an other impact.
 
-Then I implemented an [online prototype](http://michaelrambeau.com/it/projects/brastelremit/) : a static web site, with only 5 functional pages, in order to show people what could be done.
+Then I implemented an [online prototype](http://projects.michaelrambeau.com/brastelremit/) : a static web site, with only 5 functional pages, in order to show people what could be done.
 I chose to implement a solution using what is called "Responsive Web Design": the same web site behaves differently depending on the device screen.
 I asked people to check the prototype from their mobiles.
 With the prototype, people can clearly see what I proposed.

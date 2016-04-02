@@ -15,7 +15,7 @@ header '.hidden-print', ->
           a target: "_blank", href: "https://plus.google.com/115589168984238296965", rel:"publisher", title: "View Michael Rambeau's profile on Google+", ->
             text @partial 'svg/googleplus.svg'
         li ->
-          a target: "_blank", href: "http://www.linkedin.com/in/michaelrambeau", title: "View Michael Rambeau's profile on Linkedin", ->
+          a target: "_blank", href: "https://www.linkedin.com/in/michaelrambeau", title: "View Michael Rambeau's profile on Linkedin", ->
             text @partial 'svg/linkedin.svg'
       ul ->
         li class: (if @document.menuId == 'HOME' then selectedClass else ''), ->

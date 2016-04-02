@@ -11,9 +11,9 @@ comments: true
 homepage: false
 isPost: true
 ---
-[MongoDB](http://www.mongoDB.org/) is an open source document-oriented database.
+[MongoDB](http://www.mongoDB.org) is an open source document-oriented database.
 
-During 7 weeks, I did an online course provided by [MongoDB university](https://education.mongoDB.com/) called 
+During 7 weeks, I did an online course provided by [MongoDB university](https://university.mongodb.com) called 
 "M101JS: MongoDB for Node.js Developers".
 
 Here is the course summary, week by week:
@@ -24,7 +24,7 @@ Here is the course summary, week by week:
 4. PERFORMANCE: how to run fast requests using indexes
 5. AGGREGATION FRAMEWORK: how to perform advanced queries
 6. APPLICATION ENGINEERING: scaling a "real world" application using replication and sharding
-7. [MONGOOSE](http://mongoosejs.com/): an "elegant mongoDB object modeling"
+7. [MONGOOSE](http://mongoosejs.com): an "elegant mongoDB object modeling"
 
 Every week, a new unit of about 20 lessons is released. Each lesson is a short Youtube video (less than 5 minutes), followed by a quizz that does not count toward the grade.
 
