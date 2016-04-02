@@ -86,7 +86,7 @@ intro = () ->
     The style option will affect the color of several components: buttons, dropdowns, panels...
   '''
 
-div 'ng-controller': 'StyleCtrl', ->
+div 'ng-app':'mywebsite', 'ng-controller': 'StyleCtrl', ->
 
   div '.pure-g-r', ->
     grid1 () ->

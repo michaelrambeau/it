@@ -1,5 +1,5 @@
 doctype 5
-html lang: (if @document.language then @document.language else 'en'), 'ng-app':'mywebsite', ->
+html lang: (if @document.language then @document.language else 'en'), ->
   head ->
     meta charset: 'utf-8'
     title @site.title + ' &middot; ' + @document.title
@@ -25,7 +25,7 @@ html lang: (if @document.language then @document.language else 'en'), 'ng-app':'
     if @document.angular is true
       script src: @lib.angular
 
-  body (if @document.className then '.' + @document.className else ''), 'ng-controller': (if @document.controller then @document.controller else ''), ->
+  body (if @document.className then '.' + @document.className else ''), ->
 
     text @partial 'header.html'
 
