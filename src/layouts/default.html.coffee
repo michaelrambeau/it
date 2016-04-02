@@ -14,7 +14,7 @@ html lang: (if @document.language then @document.language else 'en'), 'ng-app':'
     if @document.bootstrap is true
       link rel: 'stylesheet', href: @getPath 'vendor/bootstrap/bootstrap.min.css'
 
-    link rel: 'stylesheet', href: @getPath 'css/style-concat.min.css?2014-07-27'
+    link rel: 'stylesheet', href: @getPath 'css/style-concat.min.css?2016-04-02'
 
     if @document.slimbox is true
       link rel: 'stylesheet', href: @getPath 'vendor/slimbox2/css/slimbox2.css'
