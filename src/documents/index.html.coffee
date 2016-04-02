@@ -101,7 +101,7 @@ templateProfile = () ->
 #CONTACT
 templateContact= () ->
   h2 ->
-    i '.fa.fa-envelope', ''
+    i '.octicon.octicon-mail', ''
     text 'Contact'
   div '.pure-g-r', ->
     div '.pure-u-1-2', ->
@@ -118,7 +118,7 @@ templateContact= () ->
 #SKILLS
 templateSkills = () ->
   h2 '.skills', ->
-    i '.fa.fa-wrench',''
+    i '.mega-octicon.octicon-tools',''
     text 'Skills'
   if false then div '.logos', ->
     img src: @getPath('img/logos/html5.png'), alt: 'html5'
@@ -137,7 +137,7 @@ templateSkills = () ->
 #GITHUB projects I follow
 templateGithubProjects = () ->
   h2 ->
-    i '.fa.fa-github',''
+    i '.mega-octicon.octicon-mark-github',''
     text 'Github projects I follow'
   div '.block', ->
     div id: 'repos', 'Loading...'
@@ -147,7 +147,7 @@ templateGithubProjects = () ->
 posts = @getCollection('documents').findAllLive({relativeOutDirPath:'posts',homepage:true},[date:-1]).toJSON()
 templatePosts = () =>
   h2 '.latest-posts', ->
-    i '.fa.fa-pencil',''
+    i '.mega-octicon.octicon-pencil',''
     text 'Latest posts'
 
   for doc in posts
@@ -164,7 +164,6 @@ templatePosts = () =>
         a '.pure-button.pure-button-secondary', href: @getPath(doc.url), 'Read post &raquo;'
   div '.view-all', ->
     a '.pure-button.pure-button-primary', href: @getPath('posts'), ->
-      i '.fa.fa-plus',''
       text 'View all posts &raquo;'
 
 
@@ -177,7 +176,7 @@ div '.banner', ->
     div '.intro.main', ->
       img '.osaka', src:'img/photos/shinsekai.jpg'
       p '.hello', 'Hello, I am Michael Rambeau'
-      h1 'IT solution developer and Web expert in Osaka'
+      h1 'IT solution developer and web expert in Osaka'
       p '.whoiam', '''
         I have been building intranet and web applications with enthusiasm and commitment since 2000.
       '''

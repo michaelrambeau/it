@@ -21,13 +21,13 @@ function getTemplate() {
           <td>
             <a href={{!getProjectURL(repo)}}>{{!repo.name}}</a>
             <span class="count">
-              <i class="fa fa-star"></i>
+              <i class="octicon octicon-star"></i>
               {{!repo.stargazers_count}}
             </span>
             <p class="description">
-              <i class="fa fa-quote-left"></i>
+              <i class="octicon octicon-quote icon"></i>
               {{!getDescription(repo)}}
-              <i class="fa fa-quote-right"></i>
+              <i class="octicon octicon-quote icon"></i>
             </p>
           </td>
         </tr>

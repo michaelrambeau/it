@@ -7,20 +7,20 @@ header '.hidden-print', ->
         #Facebook page http://www.facebook.com/profile.php?id=525808362
         li ->
           a target: "_blank", href: "https://www.facebook.com/michael.rambeau.7", title: "View Michael Rambeau's profile on Facebook", ->
-            i '.fa.fa-facebook',''
+            text @partial 'svg/facebook.svg'
         li ->
           a target: "_blank", href: "https://plus.google.com/115589168984238296965", rel:"publisher", title: "View Michael Rambeau's profile on Google+", ->
-            i '.fa.fa-google-plus',''
+            text @partial 'svg/googleplus.svg'
         li ->
           a target: "_blank", href: "https://github.com/michaelrambeau", title: "View Michael Rambeau's profile on GitHub", ->
-            i '.fa.fa-github',''
+            text @partial 'svg/github.svg'
         li ->
           a target: "_blank", href: "http://www.linkedin.com/in/michaelrambeau", title: "View Michael Rambeau's profile on Linkedin", ->
-            i '.fa.fa-linkedin',''
+            text @partial 'svg/linkedin.svg'
       ul ->
         li class: (if @document.menuId == 'HOME' then selectedClass else ''), ->
           a href: @getPath(''), ->
-            i '.fa.fa-home.pure-hidden-desktop',''
+            i '.octicon.octicon-home.pure-hidden-desktop',''
             span '.pure-hidden-phone', ' Home'
         li class: (if @document.menuId == 'APPS' then selectedClass else ''), ->
           a href: @getPath('projects'), -> 'Projects'

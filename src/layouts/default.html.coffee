@@ -19,8 +19,6 @@ html lang: (if @document.language then @document.language else 'en'), 'ng-app':'
     if @document.slimbox is true
       link rel: 'stylesheet', href: @getPath 'vendor/slimbox2/css/slimbox2.css'
 
-    link href:'http://fonts.googleapis.com/css?family=Lato', rel:'stylesheet', type:'text/css'
-
     if @document.syntaxHighlighter is true
       link rel: 'stylesheet', href: @getPath('css/highlight.css')
 
@@ -55,5 +53,9 @@ html lang: (if @document.language then @document.language else 'en'), 'ng-app':'
     if @document.js
       for file in @document.js
         script src: @getPath 'js/'+file
+
+    script ->
+      # Load font files async.
+      text @partial 'load-css.js'
 
     text @partial 'googleanalytics.html'

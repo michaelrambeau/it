@@ -1,52 +1,64 @@
 header
-	background-color #191818
+  background-color #191818
 
 .pure-menu.navigation
-	background-color #191818
+  background-color #191818
 
 
 .pure-menu.pure-menu-horizontal > ul.social
-	float right
-	li
-		a
-			padding 0 20px
-			font-size 22px
+  float right
+  li
+    a
+      padding 0 20px
+      font-size 22px
 
 .pure-menu.pure-menu-horizontal
-	> ul
-		height auto
-		li
-			padding 0
-			a
-				color #999999
-				text-transform uppercase
-				padding 5px 10px
-				font-size 16px
-				@media $screenBig
-					font-size 16px
-					padding 5px 30px
-			a:hover,a:focus
-				background-color #333333
-				color $orange
-				transition 0.3s
-	> ul.social
-		display: none
-		@media $screenBig
-			display: inherit
+  > ul
+    height auto
+    li
+      height: 36px // required to vertically center icons in social menu
+      padding 0
+      a
+        color #999999
+        text-transform uppercase
+        padding 5px 10px
+        font-size 16px
+        @media $screenBig
+          font-size 16px
+          padding 5px 30px
+      a:hover,a:focus
+        background-color #333333
+        color $orange
+        transition 0.3s
+  > ul.social
+    display: none
+    @media $screenBig
+      display: inherit
+  svg
+    fill: #999999
+    height: 24px
+    font-size: 24px
+    width: auto
+    position: absolute
+    transform: translate(-50%,-50%)
+    top: 50%
+    left: 50%
+    &:hover
+      fill: $orange
 
-	.pure-menu-selected
-		a,a:hover
-			background-color #f5bc06
-			color black
+  .pure-menu-selected
+    a,a:hover
+      background-color #f5bc06
+      color black
 
 .pure-menu.pure-menu-vertical
-	width 90%
-	border-style none
-	> ul
-		li
-			padding 0
-			a
-				font-size 14px
-				&:hover
-					background-color #FBDC74
+  width 90%
+  border-style none
+  > ul
+    li
+      padding 0
+      a
+        font-size 14px
+        &:hover
+          background-color #FBDC74
 

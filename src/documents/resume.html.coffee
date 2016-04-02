@@ -101,13 +101,13 @@ img '.pull-right', src: @getPath('img/photos/identite.jpg')
 h1 'IT solution developer & Web expert'
 ul '.reset', ->
   li ->
-    i '.fa.fa-user',' '
+    i '.octicon.octicon-person',' '
     text 'Michael Rambeau, ' + @getAge() + ' years old, French, IT engineer'
   li ->
-    i '.fa.fa-home',' '
+    i '.octicon.octicon-home',' '
     text 'Residing in Ibaraki city, Osaka, Japan since April 2010'
   li ->
-    i '.fa.fa-envelope',' '
+    i '.octicon.octicon-mail',' '
     a '.email', href: "mailto:michael.rambeau@gmail.com", "michael.rambeau@gmail.com"
 hr '.spacer', ''
 
@@ -127,10 +127,11 @@ for experience in experiences
       div '.pure-u-1-2', ->
         div '#' + experience.id + '.experience-date.text-left', ->
           year = if experience.from is experience.to then experience.from else experience.from + ' ⇒ ' + experience.to
+          i ".octicon.octicon-calendar",''
           text year + (if experience.duration? then ' (' + experience.duration + ')' else '' )
       div '.pure-u-1-2', ->
         div '.experience-location', ->
-          i ".fa.fa-globe",''
+          i ".octicon.octicon-globe",''
           text experience.location
     h3 experience.title
 

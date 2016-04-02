@@ -6,7 +6,7 @@ date: '2014-11-29'
 menuId: 'POSTS'
 active: true
 comments: false
-homepage: true
+homepage: false
 standalone: true
 angular: false
 syntaxHighlighter: true
