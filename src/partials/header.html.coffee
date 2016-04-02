@@ -6,14 +6,14 @@ header '.hidden-print', ->
       ul '.social.pure-hidden-phone', ->
         #Facebook page http://www.facebook.com/profile.php?id=525808362
         li ->
+          a target: "_blank", href: "https://github.com/michaelrambeau", title: "View Michael Rambeau's profile on GitHub", ->
+            text @partial 'svg/github.svg'
+        li ->
           a target: "_blank", href: "https://www.facebook.com/michael.rambeau.7", title: "View Michael Rambeau's profile on Facebook", ->
             text @partial 'svg/facebook.svg'
         li ->
           a target: "_blank", href: "https://plus.google.com/115589168984238296965", rel:"publisher", title: "View Michael Rambeau's profile on Google+", ->
             text @partial 'svg/googleplus.svg'
-        li ->
-          a target: "_blank", href: "https://github.com/michaelrambeau", title: "View Michael Rambeau's profile on GitHub", ->
-            text @partial 'svg/github.svg'
         li ->
           a target: "_blank", href: "http://www.linkedin.com/in/michaelrambeau", title: "View Michael Rambeau's profile on Linkedin", ->
             text @partial 'svg/linkedin.svg'

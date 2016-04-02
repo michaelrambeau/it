@@ -36,7 +36,7 @@ div '.posts', ->
             if doc.image
               url = if doc.image.url then doc.image.url else @getPath('img/blog/'+doc.image)
               a href: @getPath(doc.url), title: doc.title, ->
-                img '.img-responsive.img-thumbnail2', src: url
+                img '.img-responsive.img-thumbnail2', src: url, alt: doc.title
             div '.clearfix', ''
 
 getIntroduction = (doc) =>

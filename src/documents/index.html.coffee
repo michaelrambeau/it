@@ -158,7 +158,7 @@ templatePosts = () =>
         if doc.image
           url = if doc.image.url then doc.image.url else @getPath('img/blog/'+doc.image)
           a href: @getPath(doc.url), title: doc.title, ->
-            img '.img-responsive', src: url
+            img '.img-responsive', src: url, alt: doc.title
         div '.content', doc.description
       div '.footer', ->
         a '.pure-button.pure-button-secondary', href: @getPath(doc.url), 'Read post &raquo;'
@@ -174,7 +174,7 @@ templatePosts = () =>
 div '.banner', ->
   div '.container', ->
     div '.intro.main', ->
-      img '.osaka', src:'img/photos/shinsekai.jpg'
+      img '.osaka', src:'img/photos/shinsekai.jpg', alt: 'Hello Osaka!'
       p '.hello', 'Hello, I am Michael Rambeau'
       h1 'IT solution developer and web expert in Osaka'
       p '.whoiam', '''
