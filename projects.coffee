@@ -2,6 +2,44 @@
 #urlStory = getPath(docStory.url)
 
 apps = [
+  id: 'bestofjs'
+  title:
+    jpn: 'Best of JavaScript'
+  sidebarTitle: 'Best of JS'
+  customer: ''
+  year: 2015
+  image: ['bestofjs/mobile.png', 'bestofjs/desktop.png']
+  url: 'http://bestof.js.org'
+  buttons: [
+    text:
+      jpn: ' WEBサイト'
+    url: 'http://bestof.js.org'
+  ]
+  buttonText: 'Visit the application'
+  text:
+    jpn: 'The best of JavaScript, html and CSS.'
+  context: (link = urlStory ) ->
+    p """
+      The web landscape is changing faster than ever.<br/>
+      It's hard to keep track of everything that happens in the JavaScript open-source community.<br/>
+      As a web developer, I felt that something was missing, so I decided to create my own application!
+    """
+    p """
+      Read the full story in <a href="/posts/2015-10-introducing-bestofjs/">the blog post</a>.
+    """
+  work: ->
+    p '''
+     I created a new web application to gather the best of the web platform:
+      MVC frameworks, CSS toolkits, testing tools, node.js microservices...
+    '''
+  technologies:[
+    'React',
+    'Redux',
+    'Webpack'
+    'MongoDB',
+    'node.js micro services'
+  ]
+,
   id: 'brastelremit2'
   title:
     eng: 'Brastel Remit Responsive design prototype'
