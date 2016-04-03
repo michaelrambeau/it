@@ -2,9 +2,11 @@
   "name": "michaelrambeau.com",
   "version": "0.1.0",
   "description": "Michael's rambeau web site",
-  "scripts":{
+  "scripts": {
     "start": "docpad run --env static",
-    "deploy": "docpad deploy-ghpages --env static"
+    "deploy": "docpad deploy-ghpages --env static",
+    "test": "npm run check-links",
+    "check-links": "blc http://michaelrambeau.com -ro --exclude *linkedin.com* --exclude *university.mongodb.com*"
   },
   "dependencies": {
     "docpad": "~6.78.1",
@@ -18,6 +20,7 @@
     "docpad-plugin-stylus": "~2.9.0"
   },
   "devDependencies": {
+    "broken-link-checker": "^0.7.0",
     "docpad": "~6.63.3",
     "docpad-plugin-cleanurls": "~2.7.0",
     "docpad-plugin-coffeekup": "~2.2.0",
