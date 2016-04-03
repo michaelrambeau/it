@@ -7,8 +7,8 @@
     "start-static": "docpad run --env static",
     "deploy": "docpad deploy-ghpages --env static",
     "test": "npm run check-links-production",
-    "check-links-local": "docpad server --port $PORT && node scripts/check-links",
-    "check-links-production": "node scripts/check-links http://michaelrambeau.com"
+    "check-links-local": "node scripts/run-check-local",
+    "check-links-production": "node scripts/check-website http://michaelrambeau.com"
   },
   "dependencies": {
     "cross-env": "^1.0.7",
