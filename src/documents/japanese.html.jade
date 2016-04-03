@@ -196,29 +196,28 @@ div.pure-g-r
 
     a(name="portfolio")
     h2 ポートフォリオ / 実績
-    each project in projects
-      if project.enabled != false
-        .project
-          .pure-g-r
-            .pure-u-3-5
-              h3=project.year + '年' + project.title.jpn
-              p!= project.text.jpn
-              p 【テクノロジ】
-              ul
-                each techno in project.technologies
-                  li= techno
-              if project.url
-                p.buttons
-                  if project.buttons
-                    each button in project.buttons
-                      a.pure-button.pure-button-primary(href=button.url, target="_blank")= button.text.jpn
-                  else
-                    a.pure-button.pure-button-primary(href=project.url, target="_blank") DEMO
-            div.pure-u-2-5
-              each image in project.image
-                if project.url
-                  a.thumbnail(href=project.url, target="_blank")
-                    img.img-responsive(src=getPath("img/screenshots/" + image), alt=project.title)
+    each project in projects.filter(function(p){ return p.enabled != false })
+      .project
+        .pure-g-r
+          .pure-u-3-5
+            h3=project.year + '年' + project.title.jpn
+            p!= project.text.jpn
+            p 【テクノロジ】
+            ul
+              each techno in project.technologies
+                li= techno
+            if project.url
+              p.buttons
+                if project.buttons
+                  each button in project.buttons
+                    a.pure-button.pure-button-primary(href=button.url, target="_blank")= button.text.jpn
                 else
-                  a.thumbnail(href= getPath("img/screenshots/" + image), target="_blank", rel="lightbox-screeshots")
-                    img.img-responsive(src=getPath("img/screenshots/" + image), alt=project.title)
+                  a.pure-button.pure-button-primary(href=project.url, target="_blank") DEMO
+          div.pure-u-2-5
+            each image in project.image
+              if project.url
+                a.thumbnail(href=project.url, target="_blank")
+                  img.img-responsive(src=getPath("img/screenshots/" + image), alt=project.title)
+              else
+                a.thumbnail(href= getPath("img/screenshots/" + image), target="_blank", rel="lightbox-screeshots")
+                  img.img-responsive(src=getPath("img/screenshots/" + image), alt=project.title)

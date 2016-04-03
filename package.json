@@ -1,12 +1,12 @@
 {
   "name": "michaelrambeau.com",
   "version": "0.1.0",
-  "description": "Michael's rambeau web site",
+  "description": "Michael Rambeau's web site",
   "scripts": {
-    "start": "docpad run --port $PORT",
+    "start": "docpad run",
     "start-static": "docpad run --env static",
     "deploy": "docpad deploy-ghpages --env static",
-    "test": "npm run check-links-production",
+    "test": "npm run check-links-local",
     "check-links-local": "node scripts/run-check-local",
     "check-links-production": "node scripts/check-website http://michaelrambeau.com"
   },

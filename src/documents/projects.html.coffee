@@ -1,6 +1,6 @@
 ---
 layout: 'page'
-title: 'My projects'
+title: "Michael Rambeau's projects"
 description: "Michael Rambeau's IT projects"
 menuId: 'APPS'
 standalone: true
@@ -14,6 +14,43 @@ urlStory = @getPath(docStory.url)
 
 
 apps = [
+  id: 'bestofjs'
+  title: 'Best of JavaScript'
+  sidebarTitle: 'Best of JS'
+  customer: ''
+  year: 2015
+  image: ['bestofjs/mobile.png', 'bestofjs/desktop.png']
+  url: 'http://bestof.js.org'
+  buttons: [
+    text:
+      jpn: ' WEBサイト'
+    url: 'http://bestof.js.org'
+  ]
+  buttonText: 'Visit the application'
+  text:
+    jpn: '???'
+  context: (link = urlStory ) ->
+    p """
+      The web landscape is changing faster than ever.<br/>
+      It's hard to keep track of everything that happens in the JavaScript open-source community.<br/>
+      As a web developer, I felt that something was missing, so I decided to create my own application!
+    """
+    p """
+      Read the full story in <a href="/posts/2015-10-introducing-bestofjs/">the blog post</a>.
+    """
+  work: ->
+    p '''
+     I created a new web application to gather the best of the web platform:
+      MVC frameworks, CSS toolkits, testing tools, node.js microservices...
+    '''
+  technologies:[
+    'React',
+    'Redux',
+    'Webpack'
+    'MongoDB',
+    'node.js micro services'
+  ]
+,
   id: 'brastelremit2'
   title: 'Brastel Remit Responsive design prototype'
   sidebarTitle: 'Brastel Remit Responsive'
@@ -42,6 +79,7 @@ apps = [
   ]
 ,
   id: 'asissonlinestore'
+  enabled: false
   title: 'Asics online store prototype'
   sidebarTitle: 'Asics online store'
   customer: 'Asics'
@@ -212,14 +250,14 @@ div '.pure-g-r', ->
 
   div '.pure-u-3-4', ->
     i=0
-    for app in apps
+    for app in apps when app.enabled isnt false
       i++
       div '.pure-g-r.project', ->
         div '.pure-u-2-3', ->
           div '.first-col', ->
             a '.heading', 'href': app.url, target: '_blank', ->
               h2 '#' + app.id, app.title
-            p '.customer', app.year + ' - ' +'Customer: ' + app.customer
+            p '.customer', app.year + if app.customer isnt '' then ' - ' + 'Customer: ' + app.customer else ''
             if app.description
               p app.description()
             if app.context
@@ -233,7 +271,7 @@ div '.pure-g-r', ->
               for techno in app.technologies
                 li techno
             unless app.url is ""
-              p '.button-container', ->
+              div '.button-container', ->
                 a '.pure-button.pure-button-primary', href: app.url, target: '_blank', ->
                   text app.buttonText
         div '.pure-u-1-3', ->
