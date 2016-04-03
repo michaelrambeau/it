@@ -3,12 +3,15 @@
   "version": "0.1.0",
   "description": "Michael's rambeau web site",
   "scripts": {
-    "start": "docpad run --env static",
+    "start": "docpad run --port $PORT",
+    "start-static": "docpad run --env static",
     "deploy": "docpad deploy-ghpages --env static",
-    "test": "npm run check-links",
-    "check-links": "blc http://michaelrambeau.com -ro --exclude *linkedin.com* --exclude *university.mongodb.com*"
+    "test": "npm run check-links-production",
+    "check-links-local": "docpad server --port $PORT && node scripts/check-links",
+    "check-links-production": "node scripts/check-links http://michaelrambeau.com"
   },
   "dependencies": {
+    "cross-env": "^1.0.7",
     "docpad": "~6.78.1",
     "docpad-plugin-cleanurls": "~2.7.0",
     "docpad-plugin-coffeekup": "~2.2.0",
@@ -17,19 +20,12 @@
     "docpad-plugin-jade": "~2.9.0",
     "docpad-plugin-marked": "~2.3.0",
     "docpad-plugin-partials": "~2.9.2",
-    "docpad-plugin-stylus": "~2.9.0"
-  },
-  "devDependencies": {
-    "broken-link-checker": "^0.7.0",
-    "docpad": "~6.63.3",
-    "docpad-plugin-cleanurls": "~2.7.0",
-    "docpad-plugin-coffeekup": "~2.2.0",
-    "docpad-plugin-coffeescript": "~2.5.0",
-    "docpad-plugin-marked": "~2.3.0",
-    "docpad-plugin-partials": "~2.9.2",
     "docpad-plugin-stylus": "~2.9.0",
     "grunt-contrib-concat": "~0.4.0",
     "grunt-contrib-stylus": "~0.15.0"
+  },
+  "devDependencies": {
+    "broken-link-checker": "^0.7.0"
   },
   "repository": {
     "type": "git",

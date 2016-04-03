@@ -1,6 +1,8 @@
 # Michael Rambeau's personal web site
 
-This web site describes my experience as an IT engineer working in Japan.
+[![Build Status](https://travis-ci.org/michaelrambeau/website.svg?branch=master)](https://travis-ci.org/michaelrambeau/website)
+
+This is the personal web site of Michael Rambeau, a French IT web engineer working in Osaka, Japan, since 2010.
 
 The web site is powered by [docpad](http://docpad.org), a tool built on top of node.js that can be used to generate static web sites.
 
@@ -12,8 +14,16 @@ I took advantage of the flexibility of docpad to create pages using different te
 
 I used [Stylus](https://github.com/learnboost/stylus) CSS preprocessor and [Purecss](http://purecss.io) CSS components to make the web site mobile-friendly.
 
+Command to start the web server and watch for changes on source files:
+
+```
+npm start
+```
+
+Then go to http://localhost:9778/ to check the web site in local.
+
 Command line to deploy to Github pages:
 
 ```
-docpad deploy-ghpages --env static
+npm run deploy
 ```
