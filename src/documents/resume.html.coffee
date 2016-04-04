@@ -13,7 +13,7 @@ className: 'resume'
 
 experiences=[
   id: 'FIRSTSERVER'
-  title: 'Web developer at FirstServer'
+  title: 'Web developer / UI-UX specialist at FirstServer'
   from: '2014'
   to: 'Present'
   location: 'Osaka, Japan'
@@ -90,15 +90,15 @@ experiences=[
   duration: '7 months'
   location: 'Paris, France'
   points:[
-    'Maintained a database storing reports on interviews between employees and their managers, complete with secured access control.'
-    'Euro Anomalies Manager: built an application complete with workflow to fix issues that occurred with the switch to the Euro currency'
+    'Maintained an application storing reports on interviews between employees and their managers, complete with secured access control.'
+    'Built a workflow to fix issues that occurred with the switch to the Euro currency'
   ]
   sidebar: false
 
 ]
 
 img '.pull-right', src: @getPath('img/photos/identite.jpg')
-h1 'IT solution developer & Web expert'
+h1 'Full-stack web development expert'
 ul '.reset', ->
   li ->
     i '.octicon.octicon-person',' '
@@ -113,8 +113,10 @@ hr '.spacer', ''
 
 h2 'Technical proficiencies'
 ul '.custom', ->
-  li 'Front-end: HTML5, JavaScript ES6, React, Redux, Webpack, CoffeeScript, AngularJS, jQuery, Bootstrap, CSS, LESS, Stylus, Responsive Web Design, Unit tests, Web performance'
-  li 'Back-end: node.js, Express, Ruby on Rails, PHP (CakePHP), XML - XSL'
+  li 'Front-end: HTML5, JavaScript ES6, React, Redux, Webpack, CoffeeScript, AngularJS, jQuery, Bootstrap, CSS, LESS, Sass, Stylus'
+  li 'Mobile: Responsive Web Design, web performance'
+  li 'Unit testing: Mocha, Tape'
+  li 'Back-end: node.js microservices, Express, Ruby on Rails, PHP (CakePHP), XML - XSL'
   li 'Applications and CMS: KeystoneJS, SailsJS, Docpad, Lotus Notes Domino, WordPress, Typo3'
   li 'Databases: MongoDB, MySQL, MS SQLServer'
 
