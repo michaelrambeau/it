@@ -239,7 +239,7 @@ getBigImage = (image) ->
 
 #text @nd(@document)
 
-myApps = apps.map(app -> app.enabled isnt false)
+myApps = apps.filter((app) -> app.enabled isnt false)
 
 div '.pure-g-r', ->
   div '.pure-u-1-4.visible-lg.pure-hidden-phone', ->
