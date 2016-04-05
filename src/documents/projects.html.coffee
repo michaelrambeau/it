@@ -239,18 +239,20 @@ getBigImage = (image) ->
 
 #text @nd(@document)
 
+myApps = apps.map(app -> app.enabled isnt false)
+
 div '.pure-g-r', ->
   div '.pure-u-1-4.visible-lg.pure-hidden-phone', ->
     div '.pure-menu.pure-menu-open.pure-menu-vertical', role: "complementary", ->
       ul '.nav.bs-sidenav', ->
-        for app in apps
+        for app in myApps
           li ->
             a href: '#'+app.id, if app.sidebarTitle then app.sidebarTitle else app.title
 
 
   div '.pure-u-3-4', ->
     i=0
-    for app in apps when app.enabled isnt false
+    for app in myApps
       i++
       div '.pure-g-r.project', ->
         div '.pure-u-2-3', ->

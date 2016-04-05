@@ -13,6 +13,7 @@
   "dependencies": {
     "cross-env": "^1.0.7",
     "docpad": "~6.78.1",
+    "docpad-plugin-babel": "~2.0.4",
     "docpad-plugin-cleanurls": "~2.7.0",
     "docpad-plugin-coffeekup": "~2.2.0",
     "docpad-plugin-coffeescript": "~2.5.0",
