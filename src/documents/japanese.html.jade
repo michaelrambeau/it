@@ -64,19 +64,16 @@ div.pure-g-r
 
       h3 経験があるスキル
       ul
-        li [ 言語、ツール ] HTML, CSS, Javascript ES6, jQuery, CoffeeScript, Ruby on Rails, PHP, XSL- XML, Lotus Notes Domino
-        li [ DB ] MongoDB, MySQL, MS SQL Server
-
-      ul
-        li [JavaScript フレームワーク ] React, Flux, AngularJS
-        li [ WEBサーバー ] node.js, Express
+        li [ 言語、ツール ] HTML5, Javascript ES6, node.js, CSS Flexbox, CoffeeScript, XSL- XML, Lotus Notes Domino
+        li [JavaScript ライブラリ ] React, Redux, AngularJS, Webpack, Mocha
         li [ モバイル ] Responsive Web Design, Ionic framework
         li [ CSSメタ言語 ] LESS, Stylus, Sass
-        li [ PHPフレームワーク ] CakePHP, YII
-        li [ バージョン管理システム ] GitHub, SVN
+        li [ WEBフレームワーク ] Express, Ruby on Rails, CakePHP, YII
+        li [ バージョン管理システム ] Git, GitHub, SVN
+        li [ DB ] MongoDB, MySQL, MS SQL Server
 
-    a(name="work")
-    h2 職務経歴書
+    a.anchor(name="work")
+    h2.break 職務経歴書
     .block
 
       h3 【勤務先会社名】フランス　パリ　GPA 2001年1月 ~ 2001年9月
@@ -124,6 +121,13 @@ div.pure-g-r
       p 【事業内容】レンタルサーバ
       p 【業務内容】WEBカスタマーポータール開発
 
+      p 【トピックス】
+      ul
+        li WEB登録プロセスの問題を分析して、改善を提案。
+        li Responsive Web Design で、single page applicationを設計、開発。
+        li 最先端のWEBテクノロジーで (React, Redux, Webpack)、本番のアップリケシオンをりりーす。
+        li チームメンバーの技術を高めるように、勉強会を行いました。
+
     a(name="skills")
     h2 スキルシート
 
@@ -133,23 +137,12 @@ div.pure-g-r
       p 2000年からイントラネットとインターネットのアプリケーションを設計しています。
       p 2010年来日。
       p 2011年ブラステル株式会社に入社。
-      p BrastelRemitという　新しい海外送金サービスがリリースされ、私はBrastelRemitのWEBサイトの担当です。
-      p 現在、HTML, Javascript, CSS, Responsive Web Design の仕事をしています。
+      p BrastelRemitという　新しい海外送金サービスがリリースされ、私はBrastelRemitのWEBサイトの担当でした。
+      p 2014年ファーストサーバ株式会社に入社。
+      p 現在、HTML, Javascript ES6, CSS, Responsive Web Design の仕事をしています。
+      p カスタマーポータルのUI/UXの担当です。
       p 最先端のウェブテクノロジーに関心があります。
 
-      - if (false)
-        h3 経験があるスキル
-        ul
-          li [ 言語、ツール ] HTML, CSS, Javascript, jQuery, CoffeeScript, PHP, XSL- XML, Lotus Notes Domino
-          li [ DB ] MongoDB, MySQL, MS SQL Server
-
-        ul
-          li [ PHPフレームワーク ] CakePHP, YII
-          li [ WEBサーバー ] node.js, Express
-          li [ Responsive Web Design ] Bootstrap, PureCSS
-          li [JavaScript フレームワーク ] AngularJS
-          li [ CSSメタ言語 ] LESS, Stylus
-          li [ バージョン管理システム ] GitHub, SVN
 
       h3 スキル
 
@@ -182,20 +175,29 @@ div.pure-g-r
             td PHP - MySQL のCRMを維持
             td PHP 5, MySQL, vtiger CRM
           tr
-            td 2011 ~ 現在　(3年）
+            td 2011 ~ 2014　(3年）
             td
               p brastelremit.jpのWEBサイト開発の担当
               p jQuery, XHTML, XSL, CSSで　すべてのページを作成
-              p "Responsive Web Design"の提案、実装。2014年7月リリース。http://brastelremit.jp
+              p "Responsive Web Design"の提案、実装。2014年7月リリース: <a href="http://brastelremit.jp">http://brastelremit.jp</a>
             td
               p XML, XSL, MS SQLServer 2008, Win XP
               p XHTML, CSS, LESS, Bootstrap
               p jQuery, AngularJS
               p SVN
-
+          tr
+            td 2014 ~ 現在
+            td
+              p Web UI/UX開発の担当
+              p 2016年1月WEBホスティイング申し込みリリース: <a href="https://my.zenlogic.jp/registration/hosting/start?tracking=0#/">https://my.zenlogic.jp/registration/hosting/start</a>
+            td
+              p Ruby on Rails,
+              p JavaScript ES6, MacOS
+              p React, Redux
+              p Github
 
     a(name="portfolio")
-    h2 ポートフォリオ / 実績
+    h2.break ポートフォリオ / 実績
     each project in projects.filter(function(p){ return p.enabled != false })
       .project
         .pure-g-r
