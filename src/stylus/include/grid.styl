@@ -1,0 +1,9 @@
+// Responsive grid (from https://github.com/IonicaBizau/gridly/blob/gh-pages/lib/gridly.css)
+.grid
+  display: flex
+  > div
+    flex: 1
+  @media (max-width: 767px)
+    flex-direction: column
+    > div
+      flex: 0 0 auto

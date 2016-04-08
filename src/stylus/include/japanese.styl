@@ -1,10 +1,18 @@
 .japanese
+  .grid-layout
+    display: flex
+    > div
+      flex: 1
+      &:first-child
+        flex: 0 0 200px      
+    @media (max-width: 1000px)
+      flex-direction: column
+      > div:first-child
+        display: none
   .main
     font-size: 14px
-    line-height 22px
   .intro
     font-size 18px
-    line-height 28px
   .logo
     margin-top 10px
   p
@@ -29,7 +37,6 @@
     font-weight normal
 
   .skills
-    width 100%
     font-size 12px
     th
       font-weight normal

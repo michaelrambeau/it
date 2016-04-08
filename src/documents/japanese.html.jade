@@ -10,8 +10,8 @@ language: 'ja'
 ---
 
 h1 履歴書 / プロフィール
-div.pure-g-r
-  div.pure-u-1-4.visible-lg.pure-hidden-phone.hidden-print
+.grid-layout
+  div.hidden-print
     div.pure-menu.pure-menu-open.pure-menu-vertical
       ul.nav.bs-sidenav
           li
@@ -22,10 +22,10 @@ div.pure-g-r
             a(href="#portfolio") ポートフォリオ
 
 
-  div.pure-u-3-4
+  div
     //h1 履歴書 / プロフィール
     .block
-      div(style="float: right;")
+      div(style="float: right;text-align: right;")
         img(alt="Michael Rambeau",src=getPath("img/photos/identite.jpg"))
         br
         img.logo(src=getPath("img/logos/nodejs.png"), alt="node.js", width="150")
@@ -73,7 +73,7 @@ div.pure-g-r
         li [ DB ] MongoDB, MySQL, MS SQL Server
 
     a.anchor(name="work")
-    h2.break 職務経歴書
+    h2 職務経歴書
     .block
 
       h3 【勤務先会社名】フランス　パリ　GPA 2001年1月 ~ 2001年9月
@@ -196,12 +196,13 @@ div.pure-g-r
               p React, Redux
               p Github
 
+
     a(name="portfolio")
-    h2.break ポートフォリオ / 実績
+    h2 ポートフォリオ / 実績
     each project in projects.filter(function(p){ return p.enabled != false })
       .project
-        .pure-g-r
-          .pure-u-3-5
+        .grid.project-grid
+          div
             h3=project.year + '年 ' + project.title.jpn
             p!= project.text.jpn
             p 【テクノロジ】
@@ -215,7 +216,7 @@ div.pure-g-r
                     a.pure-button.pure-button-primary(href=button.url, target="_blank")= button.text.jpn
                 else
                   a.pure-button.pure-button-primary(href=project.url, target="_blank") DEMO
-          div.pure-u-2-5
+          div
             each image in project.image
               if project.url
                 a.thumbnail(href=project.url, target="_blank")
