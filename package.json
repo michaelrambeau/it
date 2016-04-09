@@ -23,7 +23,8 @@
     "docpad-plugin-partials": "~2.9.2",
     "docpad-plugin-stylus": "~2.9.0",
     "grunt-contrib-concat": "~0.4.0",
-    "grunt-contrib-stylus": "1.2.0"
+    "grunt-contrib-stylus": "1.2.0",
+    "minimist": "^1.2.0"
   },
   "devDependencies": {
     "broken-link-checker": "^0.7.0"
