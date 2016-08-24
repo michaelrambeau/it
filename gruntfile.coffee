@@ -14,22 +14,10 @@ module.exports = (grunt) ->
       dist:
         src: ['src/files/vendor/purecss/pure-min.css','out/css/website.css'],
         dest: 'out/css/style-concat.min.css'
-    'ftp-deploy':
-      build:
-        auth:
-          host: "gator3060.hostgator.com"
-          port: 21
-          authKey: "hostgator"
-
-        src: "out/"
-        dest: "/public_html/it"
-        exclusions: [
-        ]
 
   #first compile the stylus files into css, and then concatenate
   grunt.registerTask 'style', ['stylus','concat']
 
-  grunt.loadNpmTasks 'grunt-contrib-watch'
+  #grunt.loadNpmTasks 'grunt-contrib-watch'
   grunt.loadNpmTasks 'grunt-contrib-stylus'
   grunt.loadNpmTasks 'grunt-contrib-concat'
-  grunt.loadNpmTasks 'grunt-ftp-deploy'

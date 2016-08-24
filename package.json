@@ -7,6 +7,7 @@
     "start-static": "docpad run --env static",
     "deploy": "docpad deploy-ghpages --env static",
     "test": "npm run check-links-local",
+    "build-style": "grunt style",
     "check-links-local": "node scripts/run-check-local",
     "check-links-production": "node scripts/check-website http://michaelrambeau.com"
   },
@@ -22,6 +23,7 @@
     "docpad-plugin-marked": "~2.3.0",
     "docpad-plugin-partials": "~2.9.2",
     "docpad-plugin-stylus": "~2.9.0",
+    "grunt": "^1.0.1",
     "grunt-contrib-concat": "~0.4.0",
     "grunt-contrib-stylus": "1.2.0",
     "minimist": "^1.2.0"

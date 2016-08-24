@@ -7,15 +7,25 @@ standalone: true
 noTitle: true
 className: 'resume'
 ---
-#require('nodedump')
-
-
-
 experiences=[
+  id: 'BENTO&CO'
+  title: 'Full-stack Web engineer at Bento&Co'
+  from: '2016'
+  to: 'Present'
+  location: 'Kyoto, Japan'
+  resp: '''
+    Development of shipandco.com web application
+  '''
+  points: [
+    'Development and maintenance of a new web application built from Meteor platform (node.js technology)'
+    'Introduced modern JavaScript techniques: linting, ES6 modules...'
+  ]
+,
   id: 'FIRSTSERVER'
   title: 'Web developer / UI-UX specialist at FirstServer'
   from: '2014'
-  to: 'Present'
+  to: '2016'
+  duration: '18 months'
   location: 'Osaka, Japan'
   resp: '''
     Research and development about a Customer Portal web application UI/UX.
@@ -116,7 +126,7 @@ ul '.custom', ->
   li 'Front-end: HTML5, JavaScript ES6, React, Redux, Webpack, CoffeeScript, AngularJS, jQuery, Bootstrap, CSS, LESS, Sass, Stylus'
   li 'Mobile: Responsive Web Design, web performance'
   li 'Unit testing: Mocha, Tape'
-  li 'Back-end: node.js microservices, Express, Ruby on Rails, PHP (CakePHP), XML - XSL'
+  li 'Back-end: node.js microservices, Express, Meteor, Ruby on Rails, CakePHP, XML - XSL'
   li 'Applications and CMS: KeystoneJS, SailsJS, Docpad, Lotus Notes Domino, WordPress, Typo3'
   li 'Databases: MongoDB, MySQL, MS SQLServer'
 
@@ -151,5 +161,3 @@ h2 'Education'
 p '''
 Bachelor's degree in Physics degree, University of Pau, France 1999
 '''
-
-
