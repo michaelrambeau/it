@@ -17,7 +17,7 @@ experiences=[
     Development of shipandco.com web application
   '''
   points: [
-    'Development and maintenance of a new web application built from Meteor platform (node.js technology)'
+    'Development and maintenance of <a href="https://www.shipandco.com" target="_blank">shipandco.com</a>, a new web application built from Meteor platform (node.js technology)'
     'Introduced modern JavaScript techniques: linting, ES6 modules...'
   ]
 ,
