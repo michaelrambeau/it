@@ -123,11 +123,11 @@ hr '.spacer', ''
 
 h2 'Technical proficiencies'
 ul '.custom', ->
-  li 'Front-end: HTML5, JavaScript ES6, React, Redux, Webpack, CoffeeScript, AngularJS, jQuery, Bootstrap, CSS, LESS, Sass, Stylus'
+  li 'Front-end: HTML5, JavaScript ES6, React, Redux, Webpack, CoffeeScript, AngularJS, jQuery, Bootstrap, CSS, Sass, Stylus'
   li 'Mobile: Responsive Web Design, web performance'
   li 'Unit testing: Mocha, Tape'
   li 'Back-end: node.js microservices, Express, Meteor, Ruby on Rails, CakePHP, XML - XSL'
-  li 'Applications and CMS: KeystoneJS, SailsJS, Docpad, Lotus Notes Domino, WordPress, Typo3'
+  li 'Applications and CMS: KeystoneJS, Meteor, Lotus Notes Domino, WordPress, Typo3'
   li 'Databases: MongoDB, MySQL, MS SQLServer'
 
 

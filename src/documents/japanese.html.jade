@@ -28,11 +28,11 @@ h1 履歴書 / プロフィール
       div(style="float: right;text-align: right;")
         img(alt="Michael Rambeau",src=getPath("img/photos/identite.jpg"))
         br
+        img.logo(src=getPath("img/logos/react.png"), alt="React", width="120")
+        br
         img.logo(src=getPath("img/logos/nodejs.png"), alt="node.js", width="150")
-        br
-        img.logo(src=getPath("/img/logos/mongodb.jpg"), alt="mongoDB", width="150")
-        br
-        img.logo(src=getPath("img/logos/react.png"), alt="React", width="150")
+        // br
+        // img.logo(src=getPath("/img/logos/mongodb.jpg"), alt="mongoDB", width="150")
       //h1 履歴書 / プロフィール
 
 
@@ -67,7 +67,7 @@ h1 履歴書 / プロフィール
         li [ 言語、ツール ] HTML5, Javascript ES6, node.js, CSS Flexbox, CoffeeScript, XSL- XML, Lotus Notes Domino
         li [JavaScript ライブラリ ] React, Redux, AngularJS, Webpack, Mocha
         li [ モバイル ] Responsive Web Design, Ionic framework
-        li [ CSSメタ言語 ] LESS, Stylus, Sass
+        li [ CSSメタ言語 ] Sass, CSS
         li [ WEBフレームワーク ] Express, Meteor, Ruby on Rails, CakePHP
         li [ バージョン管理システム ] Git, GitHub, SVN
         li [ DB ] MongoDB, MySQL, MS SQL Server
@@ -163,11 +163,11 @@ h1 履歴書 / プロフィール
             td デスクトップアプリケーションの開発, サポート
             td Lotus Notes Domino 4.6 - Windows NT
           tr
-            td 2001 ~ 2004<br />（3年）
+            td 2001 ~ 2004
             td CRMのアプリケーションの開発、サポート
             td Lotus Notes Domino 5 / 6.0 - Windows NT / XP
           tr
-            td 2004 ~ 2010<br />（6年）
+            td 2004 ~ 2010
             td
               p アプリケーション　設計、実装、サポート
 
@@ -176,7 +176,7 @@ h1 履歴書 / プロフィール
               p HTML, HTML - MIME, CSS
               p JavaScript, ajax, YUI
           tr
-            td 2011 ~ 2014<br /> (3年）
+            td 2011 ~ 2014
             td
               p brastelremit.jpのWEBサイト開発の担当
               p jQuery, XHTML, XSL, CSSで　すべてのページを作成
@@ -187,7 +187,7 @@ h1 履歴書 / プロフィール
               p jQuery, AngularJS
               p SVN
           tr
-            td 2014 ~ 2016<br /> (2年）
+            td 2014 ~ 2016
             td
               p Web UI/UX開発の担当
               p 2016年1月WEBホスティイング申し込みリリース: <a href="https://my.zenlogic.jp/registration/hosting/start?tracking=0#/">https://my.zenlogic.jp/registration/hosting/start</a>
@@ -206,30 +206,31 @@ h1 履歴書 / プロフィール
               p Github
 
 
-    a(name="portfolio")
-    h2 ポートフォリオ / 実績
-    each project in projects.filter(function(p){ return p.enabled != false })
-      .project
-        .grid.project-grid
-          div
-            h3=project.year + '年 ' + project.title.jpn
-            p!= project.text.jpn
-            p 【テクノロジ】
-            ul
-              each techno in project.technologies
-                li= techno
-            if project.url
-              p.buttons
-                if project.buttons
-                  each button in project.buttons
-                    a.pure-button.pure-button-primary(href=button.url, target="_blank")= button.text.jpn
-                else
-                  a.pure-button.pure-button-primary(href=project.url, target="_blank") DEMO
-          div
-            each image in project.image
+    #projects
+      a(name="portfolio")
+      h2 ポートフォリオ / 実績
+      each project in projects.filter(function(p){ return p.enabled != false })
+        .project
+          .grid.project-grid
+            div
+              h3=project.year + '年 ' + project.title.jpn
+              p!= project.text.jpn
+              p 【テクノロジ】
+              ul
+                each techno in project.technologies
+                  li= techno
               if project.url
-                a.thumbnail(href=project.url, target="_blank")
-                  img.img-responsive(src=getPath("img/screenshots/" + image), alt=project.title)
-              else
-                a.thumbnail(href= getPath("img/screenshots/" + image), target="_blank", rel="lightbox-screeshots")
-                  img.img-responsive(src=getPath("img/screenshots/" + image), alt=project.title)
+                p.buttons
+                  if project.buttons
+                    each button in project.buttons
+                      a.pure-button.pure-button-primary(href=button.url, target="_blank")= button.text.jpn
+                  else
+                    a.pure-button.pure-button-primary(href=project.url, target="_blank") DEMO
+            div
+              each image in project.image
+                if project.url
+                  a.thumbnail(href=project.url, target="_blank")
+                    img.img-responsive(src=getPath("img/screenshots/" + image), alt=project.title)
+                else
+                  a.thumbnail(href= getPath("img/screenshots/" + image), target="_blank", rel="lightbox-screeshots")
+                    img.img-responsive(src=getPath("img/screenshots/" + image), alt=project.title)

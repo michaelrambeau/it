@@ -212,5 +212,3 @@ coffeescript ->
     false
   link.addEventListener 'click', toggleContent
   return
-
-
