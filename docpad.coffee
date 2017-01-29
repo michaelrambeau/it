@@ -52,7 +52,7 @@ docpadConfig = {
       x.substring(x.length - 2)
 
     # Return the full filepath to link all resources (js, css, <a> href links...)
-    # create a relative path depending on the 'level' of the current page   
+    # create a relative path depending on the 'level' of the current page
     getPath: (filepath) ->
       level = getPageLevel(@document)
       url=if filepath.charAt(0)=="/" then filepath.substr(1) else filepath
@@ -64,10 +64,7 @@ docpadConfig = {
         for i in [1..level]
           path = path + "../"
       fullpath = path + url
-      console.log filepath, '=>', fullpath
       return fullpath
-
-
 
     # Link Helper
     getPreparedLink: (name) ->

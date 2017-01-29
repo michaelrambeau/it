@@ -107,7 +107,7 @@ experiences=[
 
 ]
 
-img '.pull-right', src: @getPath('img/photos/identite.jpg')
+img '.pull-right', src: @getPath('img/photos/michael-2017-400x400.png'), width: 180, height: 180
 h1 'Full-stack web development expert'
 ul '.reset', ->
   li ->
