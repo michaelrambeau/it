@@ -138,7 +138,7 @@ templateSkills = () ->
 templateGithubProjects = () ->
   h2 ->
     i '.mega-octicon.octicon-mark-github',''
-    text 'Github projects I follow'
+    text 'Main projects on Github'
   div '.block', ->
     div id: 'repos', 'Loading...'
 

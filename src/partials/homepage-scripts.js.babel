@@ -5,7 +5,7 @@ function pegasus(a,b){return b=new XMLHttpRequest,b.open("GET",a),a=[],b.onready
 function getRepos(cb) {
   const url = 'https://api.github.com/users/michaelrambeau/starred';
   pegasus(url).then(function(data) {
-    cb(data);
+    cb(data.filter(project => project.owner.login === 'michaelrambeau'));
   });
 }
 
@@ -28,11 +28,13 @@ function getTemplate() {
               <i class="octicon octicon-star"></i>
               {{!repo.stargazers_count}}
             </span>
-            <p class="description">
-              <i class="octicon octicon-quote icon"></i>
-              {{!getDescription(repo)}}
-              <i class="octicon octicon-quote icon"></i>
-            </p>
+            {{? repo.description}}
+              <p class="description">
+                <i class="octicon octicon-quote icon"></i>
+                {{!getDescription(repo)}}
+                <i class="octicon octicon-quote icon"></i>
+              </p>
+            {{?}}
           </td>
         </tr>
     {{~}}
@@ -48,6 +50,7 @@ function getProjectURL(repo) {
 
 // Return project description, removing emojis
 function getDescription(repo) {
+  if (!repo.description) return ''
   return repo.description.replace(/\:[a-z_\d]+\:/g, '').trim();
 }
 
