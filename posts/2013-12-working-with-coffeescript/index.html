@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Michael Rambeau &middot; Working with CoffeeScript and Grunt</title>
+    <meta name="description" content="Why I chose CoffeeScript to generate my JavaScript files and how I set up my environment, using Grunt task management system." />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="author" href="https://plus.google.com/u/1/115589168984238296965" />
+    <!--[if lt IE 9]>
+      <script src="../../vendor/html5shiv.js"></script>
+      <script src="../../vendor/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="../../css/style-concat.min.css?2016-04-02" />
+    <link rel="stylesheet" href="../../css/highlight.css" />
+  </head>
+  <body>
+<header class="hidden-print">
+  <div class="container">
+    <div class="pure-menu pure-menu-open pure-menu-horizontal navigation">
+      <ul class="social pure-hidden-phone">
+        <li>
+          <a target="_blank" href="https://github.com/michaelrambeau" title="View Michael Rambeau's profile on GitHub">
+<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M8 0C3.58 0 0 3.582 0 8c0 3.535 2.292 6.533 5.47 7.59.4.075.547-.172.547-.385 0-.19-.007-.693-.01-1.36-2.226.483-2.695-1.073-2.695-1.073-.364-.924-.89-1.17-.89-1.17-.725-.496.056-.486.056-.486.803.056 1.225.824 1.225.824.714 1.223 1.873.87 2.33.665.072-.517.278-.87.507-1.07-1.777-.2-3.644-.888-3.644-3.953 0-.873.31-1.587.823-2.147-.083-.202-.358-1.015.077-2.117 0 0 .672-.215 2.2.82.638-.178 1.323-.266 2.003-.27.68.004 1.364.092 2.003.27 1.527-1.035 2.198-.82 2.198-.82.437 1.102.163 1.915.08 2.117.513.56.823 1.274.823 2.147 0 3.073-1.87 3.75-3.653 3.947.287.246.543.735.543 1.48 0 1.07-.01 1.933-.01 2.195 0 .215.144.463.55.385C13.71 14.53 16 11.534 16 8c0-4.418-3.582-8-8-8"></path></svg>
+          </a>
+        </li>
+        <li>
+          <a target="_blank" href="https://www.facebook.com/michael.rambeau.7" title="View Michael Rambeau's profile on Facebook">
+<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M15.117 0H.883C.395 0 0 .395 0 .883v14.234c0 .488.395.883.883.883h7.663V9.804H6.46V7.39h2.086V5.607c0-2.066 1.262-3.19 3.106-3.19.883 0 1.642.064 1.863.094v2.16h-1.28c-1 0-1.195.476-1.195 1.176v1.54h2.39l-.31 2.416h-2.08V16h4.077c.488 0 .883-.395.883-.883V.883C16 .395 15.605 0 15.117 0" fill-rule="nonzero"></path></svg>
+          </a>
+        </li>
+        <li>
+          <a target="_blank" href="https://plus.google.com/115589168984238296965" rel="publisher" title="View Michael Rambeau's profile on Google+">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><g><path d="M5.09 7.273v1.745H7.98c-.116.75-.873 2.197-2.887 2.197-1.737 0-3.155-1.44-3.155-3.215S3.353 4.785 5.09 4.785c.99 0 1.652.422 2.03.786l1.382-1.33c-.887-.83-2.037-1.33-3.41-1.33C2.275 2.91 0 5.184 0 8s2.276 5.09 5.09 5.09c2.94 0 4.888-2.065 4.888-4.974 0-.334-.036-.59-.08-.843H5.09zM16 7.273h-1.455V5.818H13.09v1.455h-1.454v1.454h1.455v1.455h1.455V8.727H16"/></g></svg>
+          </a>
+        </li>
+        <li>
+          <a target="_blank" href="https://www.linkedin.com/in/michaelrambeau" title="View Michael Rambeau's profile on Linkedin">
+<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M13.632 13.635h-2.37V9.922c0-.886-.018-2.025-1.234-2.025-1.235 0-1.424.964-1.424 1.96v3.778h-2.37V6H8.51V7.04h.03c.318-.6 1.092-1.233 2.247-1.233 2.4 0 2.845 1.58 2.845 3.637v4.188zM3.558 4.955c-.762 0-1.376-.617-1.376-1.377 0-.758.614-1.375 1.376-1.375.76 0 1.376.617 1.376 1.375 0 .76-.617 1.377-1.376 1.377zm1.188 8.68H2.37V6h2.376v7.635zM14.816 0H1.18C.528 0 0 .516 0 1.153v13.694C0 15.484.528 16 1.18 16h13.635c.652 0 1.185-.516 1.185-1.153V1.153C16 .516 15.467 0 14.815 0z" fill-rule="nonzero"></path></svg>
+          </a>
+        </li>
+      </ul>
+      <ul>
+        <li class="">
+          <a href="../../">
+            <i class="octicon octicon-home pure-hidden-desktop"></i>
+            <span class="pure-hidden-phone"> Home</span>
+          </a>
+        </li>
+        <li class="">
+          <a href="../../projects/">
+            Projects
+          </a>
+        </li>
+        <li class="">
+          <a href="../../resume/">
+            Resume
+          </a>
+        </li>
+        <li class="pure-menu-selected">
+          <a href="../../posts/">
+            Posts
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</header>
+<div class="container main">
+  <div class="white-block">
+    <div class="title">
+      <div class="post-date hidden-print">DECEMBER 2013</div>
+      <h1 class="post-title">Working with CoffeeScript and Grunt</h1>
+<div class="pure-g-r">
+  <div class="pure-u-1-2">
+    <div class="first-col">
+      <p>With <a href="http://nodejs.org/">nodejs</a> expansion, JavaScript is more and more used server-side to build web applications.
+<br/>
+In the other hand JavaScript has some pitfalls:
+it is not object oriented for example (no class), with all the configuration objects and the asynchronous callbacks we use, writing the curly brackets can be tedious...</p>
+      <p><a href="http://coffeescript.org">CoffeeScript</a> is a small language used to generate JavaScript files.
+By using CoffeeScript to generate your JavaScript files, you handle a language whose syntax is far much concise than JavaScript, with "class" support.</p>
+      <p>For me, CoffeeScript is beautiful and help me focus on the task I have to do rather than the syntax.<br/>
+
+This article describes some nice CoffeeScript features and explains how to set up quickly a basic CoffeeScript environment, using Grunt task manager.</p>
+    </div>
+  </div>
+  <div class="pure-u-1-2">
+    <div class="second-col">
+      <img src="../../img/blog/2013-12-coffeescript-grunt.jpg" />
+    </div>
+  </div>
+</div>
+<h2>Quick overview of the language</h2>
+<h3>The basics</h3>
+<div class="pure-g-r">
+  <div class="pure-u-1-2">
+    <div class="first-col">
+      <ul class="custom">
+        <li>Only indentation is used to create nested blocks of code: no pair of curly bracket {}. It can be a problem when working with IDEs that have different indentation settings (spaces VS tab). </li>
+        <li>No semi-column at the end of the lines.</li>
+        <li>No var keyword to declare variables</li>
+      </ul>
+      <h3>About functions</h3>
+      <ul>
+        <li>No <b>function</b> keyword: an arrow <code>-></code> is used to separate function arguments from function body</li>
+        <li><b>return</b> instruction is implicit (the last instruction inside the function will be returned)</li>
+        <li>When calling a function, parenthesis around arguments are optional.</li>
+        <li>A default value value can be set to function arguments</li>
+      </ul>
+    </div>
+  </div>
+  <div class="pure-u-1-2">
+    <div class="second-col">
+      <pre>
+        <code class="lang-coffeescript">#no "var" keyword
+x = true
+
+#one-line if statement (with "then" keyword)
+if x is true then console.log 'it is true!'
+
+#if statement block (no "then" keyword!)
+if x is true
+  console.log 'it is true!'
+
+#An object with 2 properties
+player =
+  number: 23
+  name: 'MJ'
+
+#add function. The second argument has a default value
+add = (x, y　= 0) ->
+  x + y
+
+#Binding a click event with jQuery
+$(button).click () -> console.log this</code>
+      </pre>
+    </div>
+  </div>
+</div>
+<h2>Class support</h2>
+<div class="pure-g-r">
+  <div class="pure-u-1-2">
+    <div class="first-col">
+      <p>Using the <code>class</code> keyword, you can easily create your own classes in a quite elegant way, defining the constructor, the properties and the methods.
+<br/></p>
+      <p><code>@</code> is a shortcut to "this" keyword.<br/>
+<code>@name</code> and <code>this.name</code> mean the same thing.<br/></p>
+    </div>
+  </div>
+  <div class="pure-u-1-2">
+    <div class="second-col">
+      <pre>
+        <code class="lang-coffeescript">#Constructor example 1
+class Player
+  constructor: (name, number) ->
+    @name = name
+    @number = number
+
+larry = new Player 'Larry', 33</code>
+      </pre>
+    </div>
+  </div>
+</div>
+<div class="pure-g-r">
+  <div class="pure-u-1-2">
+    <div class="first-col">
+      <h3>Constructor optimization</h3>
+      <p>The next 2 examples show how you can make the constructor more compact.</p>
+      <p>If you use @myProperty as a constructor argument, the class property will be set automatically by the constructor (check the second example).</p>
+      <p>In the third example, we use an "option" object to pass parameters to the constructor, instead of passing parameters one by one.
+<br>
+Then we use a feature called "Destructuring assignment" (the name is scary, right ?).
+Look at this:
+<br>
+<code>{@name, @number} = options</code></p>
+      <p>It looks like creating an object with 2 properties, except that the object in on the right of the assignment operator<code>=</code>.
+This code simply means:<br>
+<code>@name = options.name</code><br>
+<code>@number = options.number</code></p>
+    </div>
+  </div>
+  <div class="pure-u-1-2">
+    <div class="second-col">
+      <pre>
+        <code class="lang-coffeescript">#Constructor / Example 2
+class Player
+  constructor: (@name, @number) ->
+
+#Constructor / Example 3
+class Player
+  constructor: (options) ->
+    {@name, @number} = options
+
+#Example of use
+larry = new Player
+  name: 'Larry'
+  number: 33</code>
+      </pre>
+    </div>
+  </div>
+</div>
+<div class="pure-g-r">
+  <div class="pure-u-1-2">
+    <div class="first-col">
+      <h3>The "this" issue</h3>
+      <p>When creating a method, you can use the fat a.pure-g-r <code>=></code> instead of the normal a.pure-g-r <code>-></code> if you want that "this" keyword always means the same thing (the current object).
+<br/>
+It is really useful when inside a class, you have to bind a DOM element with an event for example.</p>
+    </div>
+  </div>
+</div>
+<div class="pure-g-r">
+  <div class="pure-u-1-2">
+    <div class="first-col">
+      <h3>Inheritance</h3>
+      <p>You can create a "child" class that inherits from its parent class by using the <code>extends</code> keyword.</p>
+      <p>In a child class method or constructor, <code>super()</code> is used to call the same method from the parent class.</p>
+    </div>
+  </div>
+  <div class="pure-u-1-2">
+    <div class="second-col">
+      <pre>
+        <code class="lang-coffeescript">#Inheritance
+class Player
+  constructor: (@name) ->
+    @points = 0
+
+  addPoints: (pts) ->
+    @points = @points + pts
+
+class AllStar extends Player
+  addPoints: (points) ->
+    super points
+    console.log 'special behaviour for an All-Star player...'</code>
+      </pre>
+    </div>
+  </div>
+</div>
+<h2>Handling arrays: forEach loops, find, map and max functions</h2>
+<div class="pure-g-r">
+  <div class="pure-u-1-2">
+    <div class="first-col">
+      <p>CoffeeScript provides smart ways to handle array.
+You don't have to include any external library (like jQuery or underscorejs) if you need a map or find function.</p>
+      <p>More details about CoffeeScript idioms <a href="http://arcturo.github.io/library/coffeescript/04_idioms.html">here</a>.</p>
+      <h3>Loops</h3>
+      <p>The basic structure to loop through an array is <code class="lang-coffeescript">for element in array</code></p>
+      <p>If you need to access the index of the element: <code>for element, index in array</code></p>
+      <p>The cool thing is that a method can be called on each element of an array in one line of code.
+<code>doSomething element for element in array</code></p>
+      <p><code>when</code> keyword can be added at the end of the loop to filter the array.
+It can be useful to find an element from a given key.</p>
+      <p>To loop through an array indexed by key (or to loop through object properties, it is the same thing), use <code>of</code> keyword like this: <code>for key, value of object</code></p>
+      <h3>Splats and max() function</h3>
+      <p>CoffeeScript has a feature called "splat" that is used to convert a variable number of arguments into an array and vice-versa.</p>
+      <p>By adding 3 points <code>...</code> after the argument of a function, CoffeeScript converts the array passed into several arguments.</p>
+      <p>Let's say we want a function that returns the greatest number of an array of numbers.</p>
+      <p>Math.max() method (from Javascript Math native object) can accept any number of arguments but not an array.</p>
+      <p>By using a splat, we can call Math.max with an array: <code>Math.max myArray...</code></p>
+      <p class="small">Note: the previous CoffeeScript compiles into the following Javascript code: <code>Math.max.apply(Math, myArray)</code></p>
+    </div>
+  </div>
+  <div class="pure-u-1-2">
+    <div class="second-col">
+      <pre>
+        <code class="lang-coffeescript">players = [
+  number: 23
+  firstname: 'Michael'
+,
+  number: 33
+  firstname: 'Larry'
+,
+  number: 50
+  firstname: 'David'
+]
+
+#map() function equivalent. Returns an array: [23, 33, 50]
+#Do not forget the parenthesis around the expression,
+#otherwise ONLY the last element will be returned.
+numbers = (player.number for player in players)
+
+#Get the greatest element of the array, using splat "..."
+max = Math.max numbers...
+
+
+#Filter the array, finding the player whose number is 33
+#Returns an array with one element: [ { number: 33, firstname: 'Larry' } ]
+filteredArray = (player for player in players when player.number is 33)
+
+#Without parenthesis, the element found is returned: { number: 33, firstname: 'Larry' }
+myPlayer = player for player in players when player.number is 33
+
+#Looping trough object properties
+for key, value of myPlayer
+  console.log(key,'=',value)
+
+</code>
+      </pre>
+    </div>
+  </div>
+</div>
+<h2>How to set up your CoffeeScript environment with Grunt</h2>
+<div class="pure-g-r">
+  <div class="pure-u-1-2">
+    <div class="first-col">
+      <p><a href="http://gruntjs.com/">Grunt</a> is a task runner command line tool built on top of nodejs. It can be used to concatenate or minify assets (CSS, JS) for example
+<br>
+We are going to use Grunt to compile our CoffeeScript files into one single JavaScript files, every time they are updated.
+<br>
+The file system of our application is very basic.
+Inside the root folder (called "myapp"), there are 2 sub-folders:</p>
+      <ul>
+        <li>src contains the .coffee files</li>
+        <li>out contains the compiled JavaScript files, generated by Grunt (you can call it "dist", too)</li>
+      </ul>
+      <p>Let's see how to install and configure Grunt.</p>
+    </div>
+  </div>
+  <div class="pure-u-1-2">
+    <div class="second-col">
+      <p>The project folder should look like this:</p>
+      <span class="octicon octicon-file-directory"></span>
+      <span>myapp</span>
+      <ul class="filesystem">
+        <li>
+          <span class="octicon octicon-file-directory"></span>
+          <span>src</span>
+          <ul class="filesystem">
+            <li>
+              <span class="octicon octicon-file-text"></span>
+              <span>mycontroller1.coffee</span>
+            </li>
+            <li>
+              <span class="octicon octicon-file-text"></span>
+              <span>app1.coffee</span>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <span class="octicon octicon-file-directory"></span>
+          <span>out</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="pure-g-r">
+  <div class="pure-u-1-2">
+    <div class="first-col">
+      <h3>1. Install Grunt CLI</h3>
+      <p>Requirements: nodejs and npm must have been installed on your computer.</p>
+      <p>Install Grunt CLI (Command Line Interface) globally by running this command, from any folder:</p>
+      <pre>
+        <code class="lang-ini">npm install -g grunt-cli</code>
+      </pre>
+    </div>
+  </div>
+</div>
+<h3>2. Install the Grunt CoffeeScript plugin</h3>
+<div class="pure-g-r">
+  <div class="pure-u-1-2">
+    <div class="first-col">
+      <p>The CoffeeScript plugins must be installed locally (in your project folder: "myapp" in our example).
+Go to your project folder and run the following command:</p>
+      <pre>
+        <code class="lang-ini">npm install grunt-contrib-coffee</code>
+      </pre>
+      <p>If you don't have any package.json file in your project folder, npm will return an error and only Grunt will be installed locally, not the coffeescript plugin.
+But if you run the same command a second time, it will work!</p>
+      <p>An alternative is to create a package.json file in your folder by running the following command.
+The command line will ask you some questions in order to create the file.
+Do not enter any space in the project name. You can skip the questions by pushing enter.
+</p>
+      <pre>
+        <code class="lang-ini">npm init</code>
+      </pre>
+      <p>Before going to next step, check your file system: a node_modules folder must have been created by npm, with 2 sub-modules (grunt and grunt-contrib-coffee).</p>
+      <ul>
+        <li>grunt: about 500 files - 5.5MB</li>
+        <li>grunt-contrib-coffee: about 70 files - 690 KB</li>
+      </ul>
+    </div>
+  </div>
+  <div class="pure-u-1-2">
+    <div class="second-col">
+      <span class="octicon octicon-file-directory"></span>
+      <span>myapp</span>
+      <ul class="filesystem">
+        <li>
+          <span class="octicon octicon-file-directory"></span>
+          <span>src</span>
+          <ul class="filesystem">
+            <li>
+              <span class="octicon octicon-file-text"></span>
+              <span>mycontroller1.coffee</span>
+            </li>
+            <li>
+              <span class="octicon octicon-file-text"></span>
+              <span>app1.coffee</span>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <span class="octicon octicon-file-directory"></span>
+          <span>out</span>
+        </li>
+        <li>
+          <span class="octicon octicon-file-directory"></span>
+          <span>node_modules</span>
+          <ul class="filesystem">
+            <li>
+              <span class="octicon octicon-file-directory"></span>
+              <span>grunt</span>
+            </li>
+            <li>
+              <span class="octicon octicon-file-directory"></span>
+              <span>grunt-contrib-coffee</span>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<h4>More about package.json file</h4>
+<div class="pure-g-r">
+  <div class="pure-u-1-2">
+    <div class="first-col">
+      <p>if you add <code>--save-dev</code> at the end of the plugin install command line, the Grunt CoffeeScript plugin will be saved as a "dev dependency" in the package.json file,
+that is to say a component used during the development workflow to build the project.</p>
+      <pre>
+        <code class="lang-ini">npm install grunt-contrib-coffee --save-dev</code>
+      </pre>
+      <p>What is the advantage of registering dependencies inside the package.json file ?</p>
+      <p>Just by running <code>npm install</code> inside your project folder,
+npm will automatically download all components that are part of the application, including the dev dependencies.</p>
+    </div>
+  </div>
+  <div class="pure-u-1-2">
+    <div class="second-col">
+      <p>Example of package.json file with "devDependencies"</p>
+      <pre>
+        <code class="lang-javascript">{
+  "name": "myapp",
+  "version": "0.0.0",
+  "description": "Demo for my blog entry",
+  "author": "Michael",
+  "devDependencies": {
+    "grunt-contrib-coffee": "~0.7.0"
+  }
+}</code>
+      </pre>
+    </div>
+  </div>
+</div>
+<h3>3. Configuration</h3>
+<div class="pure-g-r">
+  <div class="pure-u-1-2">
+    <div class="first-col">
+      <p>Create a file called <b>gruntfile.coffee</b> in your project folder and copy-paste the following content.</p>
+      <pre>
+        <code class="lang-coffeescript">module.exports = (grunt) ->
+  grunt.initConfig
+    coffee:
+      files:
+        'out/app.js': ['src/*.coffee']
+
+  grunt.loadNpmTasks 'grunt-contrib-coffee'</code>
+      </pre>
+      <p>This file is used to define the "tasks" that we will be able to launch in the next step.</p>
+      <p>"coffee" is the name of the task, registered in grint-contrib-plugin that will compile our .coffee file
+<br/></p>
+    </div>
+  </div>
+  <div class="pure-u-1-2">
+    <div class="second-col">
+      <span class="octicon octicon-file-directory"></span>
+      <span>myapp</span>
+      <ul class="filesystem">
+        <li class="new">
+          <span class="octicon octicon-file-text"></span>
+          <span class="filename">gruntfile.coffee</span>
+        </li>
+        <li>
+          <span class="octicon octicon-file-directory"></span>
+          <span>src</span>
+          <ul class="filesystem">
+            <li>
+              <span class="octicon octicon-file-text"></span>
+              <span>mycontroller1.coffee</span>
+            </li>
+            <li>
+              <span class="octicon octicon-file-text"></span>
+              <span>app1.coffee</span>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <span class="octicon octicon-file-directory"></span>
+          <span>out</span>
+        </li>
+        <li>
+          <span class="octicon octicon-file-directory"></span>
+          <span>node_modules</span>
+          <ul class="filesystem">
+            <li>
+              <span class="octicon octicon-file-directory"></span>
+              <span>grunt</span>
+            </li>
+            <li>
+              <span class="octicon octicon-file-directory"></span>
+              <span>grunt-contrib-coffee</span>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<h3>4. Compile the files manually</h3>
+<div class="pure-g-r">
+  <div class="pure-u-1-2">
+    <div class="first-col">
+      <p>From the command line, launch the "coffee" task.</p>
+      <pre>
+        <code class="lang-ini">grunt coffee</code>
+      </pre>
+      <p>Check if the JavaScript file was generated as expected in the out folder.</p>
+    </div>
+  </div>
+  <div class="pure-u-1-2">
+    <div class="second-col">
+      <span class="octicon octicon-file-directory"></span>
+      <span>myapp</span>
+      <ul class="filesystem">
+        <li class="">
+          <span class="octicon octicon-file-text"></span>
+          <span class="filename">gruntfile.coffee</span>
+        </li>
+        <li>
+          <span class="octicon octicon-file-directory"></span>
+          <span>src</span>
+          <ul class="filesystem">
+            <li>
+              <span class="octicon octicon-file-text"></span>
+              <span>mycontroller1.coffee</span>
+            </li>
+            <li>
+              <span class="octicon octicon-file-text"></span>
+              <span>app1.coffee</span>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <span class="octicon octicon-file-directory"></span>
+          <span>out</span>
+          <ul class="filesystem">
+            <li>
+              <span class="octicon octicon-file-text"></span>
+              <span>app.js</span>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <span class="octicon octicon-file-directory"></span>
+          <span>node_modules</span>
+          <ul class="filesystem">
+            <li>
+              <span class="octicon octicon-file-directory"></span>
+              <span>grunt</span>
+            </li>
+            <li>
+              <span class="octicon octicon-file-directory"></span>
+              <span>grunt-contrib-coffee</span>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<h3>5. Compile automatically the files when they are updated</h3>
+<div class="pure-g-r">
+  <div class="pure-u-1-2">
+    <div class="first-col">
+      <p>In order to detect any change made your source file, you need to install and configure the grunt-contrib-watch plugin</p>
+      <p>Run the following command in the console:</p>
+      <pre>
+        <code class="lang-ini">npm install grunt-contrib-watch</code>
+      </pre>
+      <p>The node_modules folder will look like this:</p>
+      <ul>
+        <li>grunt: about 500 files - 5.5MB</li>
+        <li>grunt-contrib-coffee: about 70 files - 690 KB</li>
+        <li>grunt-contrib-watch: about 330 files - 2.5 MB</li>
+      </ul>
+      <p>Then we have to set up the "watch" in order to launch the "coffee" task every time a .coffee file is created or updated.</p>
+      <p>Update grunt.coffee file as follow:</p>
+      <pre>
+        <code class="lang-coffeescript">module.exports = (grunt) ->
+  grunt.initConfig
+    coffee:
+      files:
+        'out/app.js': ['src/*.coffee']
+    watch:
+      files: ['src/*.coffee']
+      tasks: 'coffee'
+
+  grunt.loadNpmTasks 'grunt-contrib-coffee'
+  grunt.loadNpmTasks 'grunt-contrib-watch'</code>
+      </pre>
+    </div>
+  </div>
+  <div class="pure-u-1-2">
+    <div class="second-col">
+      <span class="octicon octicon-file-directory"></span>
+      <span>myapp</span>
+      <ul class="filesystem">
+        <li class="">
+          <span class="octicon octicon-file-text"></span>
+          <span class="filename">gruntfile.coffee</span>
+        </li>
+        <li>
+          <span class="octicon octicon-file-directory"></span>
+          <span>src</span>
+          <ul class="filesystem">
+            <li>
+              <span class="octicon octicon-file-text"></span>
+              <span>mycontroller1.coffee</span>
+            </li>
+            <li>
+              <span class="octicon octicon-file-text"></span>
+              <span>app1.coffee</span>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <span class="octicon octicon-file-directory"></span>
+          <span>out</span>
+          <ul class="filesystem">
+            <li>
+              <span class="octicon octicon-file-text"></span>
+              <span>app.js</span>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <span class="octicon octicon-file-directory"></span>
+          <span>node_modules</span>
+          <ul class="filesystem">
+            <li>
+              <span class="octicon octicon-file-directory"></span>
+              <span>grunt</span>
+            </li>
+            <li>
+              <span class="octicon octicon-file-directory"></span>
+              <span>grunt-contrib-coffee</span>
+            </li>
+            <li>
+              <span class="octicon octicon-file-directory"></span>
+              <span>grunt-contrib-watch</span>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<h3>Default private scope</h3>
+<div class="pure-g-r">
+  <div class="pure-u-1-2">
+    <div class="first-col">
+      <p>By default, the JavaScript code generated by the compiler is wrapped inside an anonymous function that calls itself <code>(function(){ ... })();</code></p>
+      <p>The purpose of this "safety wrapper" is to avoid polluting the global namespace.</p>
+      <p>It means that classes and functions are private: they cannot be called from an other file.</p>
+      <h4>Solution 1: the bare option</h4>
+      <p>You can turn off the safety wrapper by setting a configuration option called <code>bare</code> in gruntfile.coffee file.</p>
+      <pre>
+        <code class="lang-coffeescript">module.exports = (grunt) ->
+  grunt.initConfig
+    coffee:
+      options:
+        bare: true
+      files:
+        'out/app.js': ['src/*.coffee']</code>
+      </pre>
+      <h4>Solution 2: using namespaces</h4>
+      <p>A smarter solution would be to create a public namespace, by adding the following HTML code at the top of the page.</p>
+      <pre>
+        <code class="lang-xml"><script>App = {}</script></code>
+      </pre>
+      <p>Then, in the CoffeeScript code, when you define your class, you can use the App namespace to make the class public.</p>
+      <p>The App namespace has to be used when you create instances of the class, too.</p>
+      <pre>
+        <code class="lang-coffeescript">class App.Player
+  constructor: () ->
+
+#The following code can be run from any file, if the App namespace is public.
+myPlayer = new App.Player</code>
+      </pre>
+    </div>
+  </div>
+</div>
+<h2>To go further with CoffeeScript</h2>
+<h3>The debugging issue</h3>
+<p>The main argument against CoffeeScript is that it makes debugging harder because JavaScript code that runs in the client is not the code you wrote.</p>
+<p>Source maps are usually used to enable debugging of JavaScript minified files.</p>
+<p>The following article explains how to generate "source maps" for your CoffeeScript, to make debugging possible in Chrome console.
+It means that you can set breakpoints in your CoffeeScript code!</p>
+<a href="http://ryanflorence.com/2012/coffeescript-source-maps/">http://ryanflorence.com/2012/coffeescript-source-maps/</a>
+<h3>Advanced features</h3>
+<p>The following article, from the same blog, describes some advanced features of the language.
+A short video demonstrates how some advanced JavaScript code can be made more compact with CoffeeScript</p>
+<a href="http://ryanflorence.com/2012/javascript-coffeescript-rewrite/">http://ryanflorence.com/2012/javascript-coffeescript-rewrite/</a>
+    </div>
+  </div>
+  <div class="hidden-print">
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'michaelrambeau'; // required: replace example with your forum shortname
+
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </div>
+</div>
+<footer class="hidden-print">
+  <div class="container">
+    <p>http://michaelrambeau.com</p>
+    <p>Last update: Sun May 07 2017</p>
+  </div>
+</footer>
+    <script>
+function loadCSS(e,t,n){"use strict";var i=window.document.createElement("link");var o=t||window.document.getElementsByTagName("script")[0];i.rel="stylesheet";i.href=e;i.media="only x";o.parentNode.insertBefore(i,o);setTimeout(function(){i.media=n||"all"})}
+
+loadCSS('http://fonts.googleapis.com/css?family=Lato');
+loadCSS('https://cdnjs.cloudflare.com/ajax/libs/octicons/3.1.0/octicons.min.css');
+    </script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-44563970-1', 'michaelrambeau.com');
+  ga('send', 'pageview');
+
+</script>  </body>
+</html>

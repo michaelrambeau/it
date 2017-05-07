@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Michael Rambeau &middot; Introducing bestof.js.org</title>
+    <meta name="description" content="Why and how I built bestof.js.org, a place to find the best components to build amazing web applications." />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="author" href="https://plus.google.com/u/1/115589168984238296965" />
+    <!--[if lt IE 9]>
+      <script src="../../vendor/html5shiv.js"></script>
+      <script src="../../vendor/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="../../css/style-concat.min.css?2016-04-02" />
+    <link rel="stylesheet" href="../../css/highlight.css" />
+  </head>
+  <body>
+<header class="hidden-print">
+  <div class="container">
+    <div class="pure-menu pure-menu-open pure-menu-horizontal navigation">
+      <ul class="social pure-hidden-phone">
+        <li>
+          <a target="_blank" href="https://github.com/michaelrambeau" title="View Michael Rambeau's profile on GitHub">
+<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M8 0C3.58 0 0 3.582 0 8c0 3.535 2.292 6.533 5.47 7.59.4.075.547-.172.547-.385 0-.19-.007-.693-.01-1.36-2.226.483-2.695-1.073-2.695-1.073-.364-.924-.89-1.17-.89-1.17-.725-.496.056-.486.056-.486.803.056 1.225.824 1.225.824.714 1.223 1.873.87 2.33.665.072-.517.278-.87.507-1.07-1.777-.2-3.644-.888-3.644-3.953 0-.873.31-1.587.823-2.147-.083-.202-.358-1.015.077-2.117 0 0 .672-.215 2.2.82.638-.178 1.323-.266 2.003-.27.68.004 1.364.092 2.003.27 1.527-1.035 2.198-.82 2.198-.82.437 1.102.163 1.915.08 2.117.513.56.823 1.274.823 2.147 0 3.073-1.87 3.75-3.653 3.947.287.246.543.735.543 1.48 0 1.07-.01 1.933-.01 2.195 0 .215.144.463.55.385C13.71 14.53 16 11.534 16 8c0-4.418-3.582-8-8-8"></path></svg>
+          </a>
+        </li>
+        <li>
+          <a target="_blank" href="https://www.facebook.com/michael.rambeau.7" title="View Michael Rambeau's profile on Facebook">
+<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M15.117 0H.883C.395 0 0 .395 0 .883v14.234c0 .488.395.883.883.883h7.663V9.804H6.46V7.39h2.086V5.607c0-2.066 1.262-3.19 3.106-3.19.883 0 1.642.064 1.863.094v2.16h-1.28c-1 0-1.195.476-1.195 1.176v1.54h2.39l-.31 2.416h-2.08V16h4.077c.488 0 .883-.395.883-.883V.883C16 .395 15.605 0 15.117 0" fill-rule="nonzero"></path></svg>
+          </a>
+        </li>
+        <li>
+          <a target="_blank" href="https://plus.google.com/115589168984238296965" rel="publisher" title="View Michael Rambeau's profile on Google+">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><g><path d="M5.09 7.273v1.745H7.98c-.116.75-.873 2.197-2.887 2.197-1.737 0-3.155-1.44-3.155-3.215S3.353 4.785 5.09 4.785c.99 0 1.652.422 2.03.786l1.382-1.33c-.887-.83-2.037-1.33-3.41-1.33C2.275 2.91 0 5.184 0 8s2.276 5.09 5.09 5.09c2.94 0 4.888-2.065 4.888-4.974 0-.334-.036-.59-.08-.843H5.09zM16 7.273h-1.455V5.818H13.09v1.455h-1.454v1.454h1.455v1.455h1.455V8.727H16"/></g></svg>
+          </a>
+        </li>
+        <li>
+          <a target="_blank" href="https://www.linkedin.com/in/michaelrambeau" title="View Michael Rambeau's profile on Linkedin">
+<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M13.632 13.635h-2.37V9.922c0-.886-.018-2.025-1.234-2.025-1.235 0-1.424.964-1.424 1.96v3.778h-2.37V6H8.51V7.04h.03c.318-.6 1.092-1.233 2.247-1.233 2.4 0 2.845 1.58 2.845 3.637v4.188zM3.558 4.955c-.762 0-1.376-.617-1.376-1.377 0-.758.614-1.375 1.376-1.375.76 0 1.376.617 1.376 1.375 0 .76-.617 1.377-1.376 1.377zm1.188 8.68H2.37V6h2.376v7.635zM14.816 0H1.18C.528 0 0 .516 0 1.153v13.694C0 15.484.528 16 1.18 16h13.635c.652 0 1.185-.516 1.185-1.153V1.153C16 .516 15.467 0 14.815 0z" fill-rule="nonzero"></path></svg>
+          </a>
+        </li>
+      </ul>
+      <ul>
+        <li class="">
+          <a href="../../">
+            <i class="octicon octicon-home pure-hidden-desktop"></i>
+            <span class="pure-hidden-phone"> Home</span>
+          </a>
+        </li>
+        <li class="">
+          <a href="../../projects/">
+            Projects
+          </a>
+        </li>
+        <li class="">
+          <a href="../../resume/">
+            Resume
+          </a>
+        </li>
+        <li class="pure-menu-selected">
+          <a href="../../posts/">
+            Posts
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</header>
+<div class="container main">
+  <div class="white-block">
+    <div class="title">
+      <div class="post-date hidden-print">OCTOBER 2015</div>
+      <h1 class="post-title">Introducing bestof.js.org</h1>
+      <div class="pure-g-r">
+        <div class="pure-u-3-5">
+<p>I am happy to introduce the new application I built: <a href="http://bestof.js.org/">bestof.js.org</a>.</p>
+<p>bestof.js.org is a place where front-end engineers and node.js developers can find the <strong>best</strong> components to build amazing web applications.</p>
+<h2 id="a-bit-of-history">A bit of history</h2>
+<p>1995 - 2015... JavaScript is 20 years old!</p>
+<p>In the beginning, JavaScript was just a way to add some dynamic features to static pages generated by a web server. It was often considered as a &quot;toy language&quot;.</p>
+<p>Now browsers are no longer just document &quot;renderers&quot;. Developers create single page applications that deliver rich user experience.</p>
+<p>Browsers can do things like:</p>
+<ul>
+<li>communicate in real-time (<a href="https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API">WebSockets</a>)</li>
+<li>play audio and video (without any plugin),</li>
+<li>render 3D (<a href="https://developer.mozilla.org/en-US/docs/WebGL">WebGL</a>)</li>
+<li>run tasks in the background (<a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers">Web workers</a>)</li>
+<li>...and so many other advance things!</li>
+</ul>
+<p>But JavaScript is not only the browser language, JavaScript is the cornerstone of what is called the <strong>web platform</strong>.</p>
+<p>JavaScript can be found everywhere:</p>
+<ul>
+<li>on the <strong>server-side</strong> with the rise of node.js</li>
+<li>on <strong>mobile</strong> applications with hybrid frameworks and solutions like React Native</li>
+<li>on devices of the Internet of Things (<strong>IoT</strong>)</li>
+</ul>
+<p>The future is bright with ES6, the JavaScript next version, already available with tools such as <a href="http://babeljs.io/">Babel</a>.</p>
+<p>The open source community is very active, new interesting projects are released almost everyday on Github.</p>
+<p>Recently, major companies have opened up their projects: <a href="https://code.facebook.com/web/">Facebook</a> with React for example, but also <a href="http://twitter.github.io/">Twitter</a>, <a href="https://github.com/google">Google</a>, <a href="http://linkedin.github.io/">LinkedIn</a>, <a href="http://netflix.github.io/">Netflix</a>...</p>
+<h2 id="why-bestof-js-org">Why bestof.js.org</h2>
+<p>There are so many open-source projects to follow that it is difficult to stay up-to-date about the latest tendencies.</p>
+<p>I used to take notes about the interesting projects I found but I was tired of searching through my notes and my bookmarks.</p>
+<p>I thought that a tool was needed to help us follow what is happening in this everyday changing world.</p>
+<p>This is why <a href="http://bestof.js.org/">bestof.js.org</a> was born!</p>
+<h2 id="concept">Concept</h2>
+<p>Checking the number of stars on Github is a good way to check project popularity but it does not tell you when the stars have been added.</p>
+<p>bestof.js.org takes &quot;snapshot&quot; of Github stars every day, for more than 300 projects, to detect the trends over the last weeks.</p>
+<p>A project can have been popular a while ago, collecting a big number of stars... but a new contender may have made it obsolete since that time.</p>
+<p>Now with bestof.js.org you can see which projects are <strong>hot</strong> in more than 50 categories (including MV* frameworks, React components, node.js CMS, CSS tools...).</p>
+<h2 id="features">Features</h2>
+<p>The application <a href="http://bestof.js.org/">homepage</a> displays 2 types of ranking:</p>
+<ul>
+<li>The top 20 most popular projects (by total number of stars on Github)</li>
+<li>The top 20 hottest projects (by number of stars added yesterday)</li>
+</ul>
+<p>The project focuses on <strong>speed</strong> providing 2 search features:</p>
+<ul>
+<li>Filter projects by &quot;tag&quot; (Check the &quot;<a href="http://bestof.js.org/#/tags/framework">Framework</a>&quot; tag for example)</li>
+<li>Search by entering keywords in the search box</li>
+</ul>
+<p>In both cases, results are displayed <strong>instantly</strong>.</p>
+<h2 id="technical-overview">Technical overview</h2>
+<p>I tried to create a decoupled architecture, as flexible as possible, taking advantages of micro-services concept and some free cloud services.</p>
+<p>As a result, there are 5 repositories on Github:</p>
+<ul>
+<li><a href="https://github.com/michaelrambeau/bestofjs-webui">bestofjs-webui</a>: the front end web application, a single-page application built with React components</li>
+<li><a href="https://github.com/michaelrambeau/bestofjs-keystonejs">bestofjs-keystonejs</a>: the web application used by admin users to manage data. Built with <a href="http://keystonejs.com/">KeystoneJS</a>, a node.js CMS.</li>
+<li><a href="https://github.com/michaelrambeau/bestofjs-batches">bestofjs-batches</a>: Scheduled tasks that generate every day data used by the web application.</li>
+<li><a href="https://github.com/michaelrambeau/microservices">bestofjs-microservices</a>: microservice used to retrieve project information from Github, when a project is opened in the webui application</li>
+<li><a href="https://github.com/michaelrambeau/bestofjs">bestofjs</a>: repository used to deploy content to Github pages, linked to js.org domain. Generated from bestofjs-webui repository.</li>
+</ul>
+<p>Cloud services I use:</p>
+<ul>
+<li><a href="https://mlab.com/">mlab</a>: mongodb database cloud service</li>
+<li><a href="https://semaphoreci.com/">SemaphoreCI</a>: Continuous Integration service with an amazing &quot;Build scheduler&quot; feature</li>
+<li><a href="https://divshot.com/">divshot</a>: Static web hosting, used to deploy static JSON data consumed by the web application</li>
+<li><a href="https://webtask.io/">webtask.io</a>: node.js microservice</li>
+</ul>
+<h2 id="what-i-learned">What I learned</h2>
+<p>It is not easy to find the right architecture since the start.</p>
+<p>First I thought about a more classic architecture, with a back-end listening for user requests and serving data. So the first version was a Single-Page-Application connected to a web application running on Heroku.</p>
+<p>Later I realized that data displayed by the web application is almost &quot;static&quot;, it only changes every morning when I take snapshots from Github. So all I needed was to build application data every morning using a Continuous Integration server.</p>
+<p>The last piece of the puzzle was to build a &quot;micro-service&quot; that retrieves readme data from Github, when a user opens a project in the application. It has been done using <a href="https://webtask.io/">webtask.io</a>.</p>
+<p>It takes time to build an application on one&#39;s spare time but it is a great experience to release an open-source project!</p>
+<h2 id="show-your-support-">Show your support!</h2>
+<p>If you like the application, please star the <a href="https://github.com/michaelrambeau/bestofjs-webui">project on Github</a>.</p>
+<blockquote>
+<p>We are all made of stars <img src="http://bestof.js.org/images/star.png" width="16" height="16" alt="star"> !</p>
+</blockquote>
+<p>Thank you for your support!</p>
+        </div>
+        <div class="pure-u-2-5">
+          <div class="second-col">
+            <img class="img-responsive" src="../../img/blog/2015-10-bestofjs.jpg" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="hidden-print">
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'michaelrambeau'; // required: replace example with your forum shortname
+
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </div>
+</div>
+<footer class="hidden-print">
+  <div class="container">
+    <p>http://michaelrambeau.com</p>
+    <p>Last update: Sun May 07 2017</p>
+  </div>
+</footer>
+    <script>
+function loadCSS(e,t,n){"use strict";var i=window.document.createElement("link");var o=t||window.document.getElementsByTagName("script")[0];i.rel="stylesheet";i.href=e;i.media="only x";o.parentNode.insertBefore(i,o);setTimeout(function(){i.media=n||"all"})}
+
+loadCSS('http://fonts.googleapis.com/css?family=Lato');
+loadCSS('https://cdnjs.cloudflare.com/ajax/libs/octicons/3.1.0/octicons.min.css');
+    </script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-44563970-1', 'michaelrambeau.com');
+  ga('send', 'pageview');
+
+</script>  </body>
+</html>

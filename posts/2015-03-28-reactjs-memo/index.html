@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Michael Rambeau &middot; ReactJS memo</title>
+    <meta name="description" content="ReactJS Cheatsheet. JSX Tips and tricks" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="author" href="https://plus.google.com/u/1/115589168984238296965" />
+    <!--[if lt IE 9]>
+      <script src="../../vendor/html5shiv.js"></script>
+      <script src="../../vendor/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="../../css/style-concat.min.css?2016-04-02" />
+    <link rel="stylesheet" href="../../css/highlight.css" />
+  </head>
+  <body>
+<header class="hidden-print">
+  <div class="container">
+    <div class="pure-menu pure-menu-open pure-menu-horizontal navigation">
+      <ul class="social pure-hidden-phone">
+        <li>
+          <a target="_blank" href="https://github.com/michaelrambeau" title="View Michael Rambeau's profile on GitHub">
+<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M8 0C3.58 0 0 3.582 0 8c0 3.535 2.292 6.533 5.47 7.59.4.075.547-.172.547-.385 0-.19-.007-.693-.01-1.36-2.226.483-2.695-1.073-2.695-1.073-.364-.924-.89-1.17-.89-1.17-.725-.496.056-.486.056-.486.803.056 1.225.824 1.225.824.714 1.223 1.873.87 2.33.665.072-.517.278-.87.507-1.07-1.777-.2-3.644-.888-3.644-3.953 0-.873.31-1.587.823-2.147-.083-.202-.358-1.015.077-2.117 0 0 .672-.215 2.2.82.638-.178 1.323-.266 2.003-.27.68.004 1.364.092 2.003.27 1.527-1.035 2.198-.82 2.198-.82.437 1.102.163 1.915.08 2.117.513.56.823 1.274.823 2.147 0 3.073-1.87 3.75-3.653 3.947.287.246.543.735.543 1.48 0 1.07-.01 1.933-.01 2.195 0 .215.144.463.55.385C13.71 14.53 16 11.534 16 8c0-4.418-3.582-8-8-8"></path></svg>
+          </a>
+        </li>
+        <li>
+          <a target="_blank" href="https://www.facebook.com/michael.rambeau.7" title="View Michael Rambeau's profile on Facebook">
+<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M15.117 0H.883C.395 0 0 .395 0 .883v14.234c0 .488.395.883.883.883h7.663V9.804H6.46V7.39h2.086V5.607c0-2.066 1.262-3.19 3.106-3.19.883 0 1.642.064 1.863.094v2.16h-1.28c-1 0-1.195.476-1.195 1.176v1.54h2.39l-.31 2.416h-2.08V16h4.077c.488 0 .883-.395.883-.883V.883C16 .395 15.605 0 15.117 0" fill-rule="nonzero"></path></svg>
+          </a>
+        </li>
+        <li>
+          <a target="_blank" href="https://plus.google.com/115589168984238296965" rel="publisher" title="View Michael Rambeau's profile on Google+">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><g><path d="M5.09 7.273v1.745H7.98c-.116.75-.873 2.197-2.887 2.197-1.737 0-3.155-1.44-3.155-3.215S3.353 4.785 5.09 4.785c.99 0 1.652.422 2.03.786l1.382-1.33c-.887-.83-2.037-1.33-3.41-1.33C2.275 2.91 0 5.184 0 8s2.276 5.09 5.09 5.09c2.94 0 4.888-2.065 4.888-4.974 0-.334-.036-.59-.08-.843H5.09zM16 7.273h-1.455V5.818H13.09v1.455h-1.454v1.454h1.455v1.455h1.455V8.727H16"/></g></svg>
+          </a>
+        </li>
+        <li>
+          <a target="_blank" href="https://www.linkedin.com/in/michaelrambeau" title="View Michael Rambeau's profile on Linkedin">
+<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M13.632 13.635h-2.37V9.922c0-.886-.018-2.025-1.234-2.025-1.235 0-1.424.964-1.424 1.96v3.778h-2.37V6H8.51V7.04h.03c.318-.6 1.092-1.233 2.247-1.233 2.4 0 2.845 1.58 2.845 3.637v4.188zM3.558 4.955c-.762 0-1.376-.617-1.376-1.377 0-.758.614-1.375 1.376-1.375.76 0 1.376.617 1.376 1.375 0 .76-.617 1.377-1.376 1.377zm1.188 8.68H2.37V6h2.376v7.635zM14.816 0H1.18C.528 0 0 .516 0 1.153v13.694C0 15.484.528 16 1.18 16h13.635c.652 0 1.185-.516 1.185-1.153V1.153C16 .516 15.467 0 14.815 0z" fill-rule="nonzero"></path></svg>
+          </a>
+        </li>
+      </ul>
+      <ul>
+        <li class="">
+          <a href="../../">
+            <i class="octicon octicon-home pure-hidden-desktop"></i>
+            <span class="pure-hidden-phone"> Home</span>
+          </a>
+        </li>
+        <li class="">
+          <a href="../../projects/">
+            Projects
+          </a>
+        </li>
+        <li class="">
+          <a href="../../resume/">
+            Resume
+          </a>
+        </li>
+        <li class="">
+          <a href="../../posts/">
+            Posts
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</header>
+<div class="container main">
+  <div class="white-block">
+    <div class="title">
+      <div class="post-date hidden-print">MARCH 2015</div>
+      <h1 class="post-title">ReactJS memo</h1>
+<p><a href="http://facebook.github.io/react/">React</a> is a JavaScript library designed to create dynamic UI components.<br>It has become very popular recently, a real eco-system, built around React is growing very fast.<br>Here are some tips and tricks to remember when working with React.</p>
+<h2 id="concepts">Concepts</h2>
+<h3 id="state-vs-props">state VS. props</h3>
+<ul>
+<li>State and Props are component data.</li>
+<li>A component can only change its own <strong>state</strong>, using <code>this.setState()</code> method, not its props.</li>
+<li>If the state changes, the component and all children are automatically updated by React that runs the render() function.</li>
+</ul>
+<h3 id="component-example">Component example</h3>
+<p>A simple component with one property (title) and one state (counter). The button updates the counter state using <code>setState</code> method.</p>
+<pre><code>var MyComponent = React.createClass({
+
+  getDefaultProps: function() {
+    return {
+      title: &#39;My defaut title&#39;
+    };
+  },
+
+  getInitialState: function() {
+    return {
+      counter: 0
+    };
+  },
+
+  onClick: function () {
+    this.setState({
+      counter: this.state.counter + 1
+    });
+  },
+
+  render: function() {
+    return (
+      &lt;div&gt;
+        { this.props.title }
+        { this.state.counter }
+        &lt;button onClick={ this.onClick }&gt;INCREMENT&lt;/button&gt;
+      &lt;/div&gt;
+    );
+  }
+
+});
+</code></pre><h3 id="add-a-component-to-the-html-page">Add a component to the HTML page</h3>
+<p>The following JavaScript code includes a component inside a DOM element, passing initial properties using the options variable.</p>
+<pre><code>var options = {
+  title: &#39;My component&#39;
+};
+React.render(
+  React.createElement(MyComponent, options),
+  document.getElementById(&#39;app&#39;)
+);
+</code></pre><h3 id="nested-components">Nested components</h3>
+<p>Inside a component, sub-components can be used.
+Any type of data can be passed to a component: arrays, objects, functions... don&#39;t forget the curly brackets <code>{ }</code> to pass data.</p>
+<pre><code>&lt;MySubComponent items={ [&#39;A&#39;, &#39;B&#39;] } onSave={ saveFunction } /&gt;
+</code></pre><h2 id="jsx-tips-and-tricks">JSX: tips and tricks</h2>
+<p>JSX syntax is a mix of JavaScript and HTML. The <a href="https://facebook.github.io/react/jsx-compiler.html">JSX online compiler</a> can be used to find compilation issues.</p>
+<h3 id="attributes">Attributes</h3>
+<p>HTML attributes use JS syntax (camelCase).
+For example: use <strong>className</strong>=... instead of class=...</p>
+<pre><code>&lt;button className=&quot;btn btn-default&quot;&gt;
+</code></pre><h3 id="if">IF</h3>
+<pre><code>{ term == &#39;yearly&#39; &amp;&amp; (
+  &lt;p&gt;10%値引き&lt;p&gt;
+) }
+</code></pre><h3 id="if-else">IF ELSE</h3>
+<pre><code>{ term == &#39;monthly&#39; ? (
+  &lt;span&gt;1ヶ月&lt;/span&gt;
+) : (
+  &lt;span&gt;12ヶ月&lt;/span&gt;
+)}
+</code></pre><p>Compact version</p>
+<pre><code>&lt;span&gt;{ term == &#39;monthly&#39; ? &#39;1ヶ月&#39; : &#39;12ヶ月&#39; }&lt;/span&gt;
+</code></pre><h3 id="loops">Loops</h3>
+<p>Loop through items of an array using the Array.map() function and a callback function</p>
+<pre><code>render: function() {
+  var menuItem = function(i) {
+    return(
+      &lt;li&gt;
+        &lt;span&gt;{&#39;STEP&#39; + i }&lt;/span&gt;
+      &lt;/li&gt;
+    );
+  };
+
+  return(
+　  &lt;ul&gt;
+  　  { [1, 2, 3].map(menuItem) }
+　  &lt;/ul&gt;
+  );
+}
+</code></pre><h3 id="inline-style">Inline style</h3>
+<p>Style property uses JSON syntax.</p>
+<pre><code>style={{ float: &#39;right&#39;, padding: 10 }}
+</code></pre><h3 id="working-with-jquery-plugins-">Working with jQuery plugins.</h3>
+<p>Use the componentDidMount event to initialise jQuery plugins.</p>
+<pre><code>componentDidMount: function () {
+  var el = this.getDOMNode();
+  var $el = $(el);
+  var $form = $el.find(&#39;form&#39;);
+  $form.mySuperPlugin();
+}
+</code></pre><h3 id="white-spaces">White spaces</h3>
+<p>White spaces are stripped. Use <code>{&#39; &#39;}</code>to restore white spaces between tags like (between 2 buttons for example).</p>
+<pre><code>&lt;button&gt;Cancel&lt;/button&gt;
+{&#39; &#39;}
+&lt;button&gt;OK&lt;/button&gt;
+</code></pre><h3 id="tag-syntax-jsx-errors">Tag syntax /JSX errors</h3>
+<pre><code>&lt;body&gt;
+  &lt;br&gt;
+  &lt;MyApp&gt;
+&lt;/body&gt;
+
+=&gt; Error &quot;Expected corresponding XJS closing tag for MyApp&quot;
+</code></pre><p>Don&#39;t forget to close all tags! (components and html tags, xhtml syntax)</p>
+<pre><code>&lt;body&gt;
+  &lt;br /&gt;
+  &lt;MyApp /&gt;
+&lt;/body&gt;
+
+=&gt; OK!
+</code></pre><h3 id="event-handlers">Event handlers</h3>
+<h4 id="1-normal-pattern">1. Normal pattern</h4>
+<pre><code>  onDeleteAll: function (event) {
+
+  },
+  render: function() {
+    return (
+     &lt;button onClick={ this.onDeleteAll }&gt;Delete All&lt;/button&gt;
+    );
+  }
+</code></pre><h4 id="2-how-to-pass-extra-data">2. How to pass extra data</h4>
+<p>In event handlers (onClick=...),  use .bind(null, myData) to pass data to the event handler.</p>
+<pre><code>  onEmailAction: function (email, actionCode, event) {
+
+  },
+  render: function() {
+    return (
+      &lt;button
+        onClick={ this.onEmailAction.bind(null, email, &#39;MARK_AS_READ&#39;) }&gt;
+        Mark as read
+      &lt;/button&gt;
+    );
+  }
+</code></pre><h3 id="-mixins-http-facebook-github-io-react-docs-reusable-components-html-mixins-"><a href="http://facebook.github.io/react/docs/reusable-components.html#mixins">Mixins</a></h3>
+<p>Code can be shared between components using mixins.</p>
+<pre><code>var EmailFilterList = React.createClass({
+  mixins: [FilterListEventMixin],
+  render: function() {
+  ...
+</code></pre><p>Note about: in the JavsScript compiled file, mixins have to be loaded <strong>before</strong> the components that use the mixins.</p>
+<h3 id="-namespaced-components-http-facebook-github-io-react-docs-jsx-in-depth-html-namespaced-components-"><a href="http://facebook.github.io/react/docs/jsx-in-depth.html#namespaced-components">Namespaced components</a></h3>
+<p>Sub-components can be attributes of a main component.
+For example, a section used to create an accordion has 2 sub-components: title and body:</p>
+<pre><code>var MySection = React.createClass({...});
+MySection.Title = React.createClass({...});
+MySection.Body = React.createClass({...});
+</code></pre><pre><code>&lt;MySection&gt;
+  &lt;MySection.Title&gt;My title&lt;/MySection.Title&gt;
+  &lt;MySection.Body&gt;
+    ...
+  &lt;/MySection.Body&gt;
+&lt;/MySection&gt;
+</code></pre><h3 id="-property-validation-http-facebook-github-io-react-docs-reusable-components-html-prop-validation-"><a href="http://facebook.github.io/react/docs/reusable-components.html#prop-validation">Property validation</a></h3>
+<p>Use <code>propTypes</code> to specify property types: array, function, string...</p>
+<pre><code>React.createClass({
+  propTypes: {
+    myOptionalArray: React.PropTypes.array
+  }
+  ...
+</code></pre><p>Add <code>.isRequired</code> to make the property required.</p>
+<pre><code>  myRequiredArray: React.PropTypes.array.isRequired
+</code></pre><p>Available types:</p>
+<ul>
+<li>React.PropTypes.array</li>
+<li>React.PropTypes.bool</li>
+<li>React.PropTypes.func</li>
+<li>React.PropTypes.object</li>
+<li>React.PropTypes.number,</li>
+<li>React.PropTypes.string</li>
+<li>React.PropTypes.element (React component)</li>
+<li>React.PropTypes.instanceOf(MyClass) (an instance of a class)</li>
+<li>...</li>
+</ul>
+<h2 id="tools">Tools</h2>
+<p>###Chrome React Extension</p>
+<p>The React Extension for Chrome browser enables to see all React componens in a web page.</p>
+<p>You can check the state and the props, edit them live and see how the components &quot;react&quot; to the changes. That is really convenient for debugging !</p>
+<h3 id="atom-jsx-package">Atom JSX package</h3>
+<p>The <a href="https://github.com/orktes/atom-react">Atom JSX Package</a> for Atom IDE offers nice features:</p>
+<ul>
+<li>JSX linter</li>
+<li>shortcuts</li>
+<li>HTML to JSX converter</li>
+</ul>
+<h2 id="best-practices">Best practices</h2>
+<ul>
+<li>Use state only in the top level and pass data to from parent to children using props.</li>
+<li>Keep business logic outside the component, using &quot;model&quot; (see <a href="https://github.com/tastejs/todomvc/tree/gh-pages/examples/react">TodoMCV example on Github</a>)</li>
+<li>Document component properties using propTypes.</li>
+</ul>
+    </div>
+  </div>
+  <div class="hidden-print">
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'michaelrambeau'; // required: replace example with your forum shortname
+
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </div>
+</div>
+<footer class="hidden-print">
+  <div class="container">
+    <p>http://michaelrambeau.com</p>
+    <p>Last update: Sun May 07 2017</p>
+  </div>
+</footer>
+    <script>
+function loadCSS(e,t,n){"use strict";var i=window.document.createElement("link");var o=t||window.document.getElementsByTagName("script")[0];i.rel="stylesheet";i.href=e;i.media="only x";o.parentNode.insertBefore(i,o);setTimeout(function(){i.media=n||"all"})}
+
+loadCSS('http://fonts.googleapis.com/css?family=Lato');
+loadCSS('https://cdnjs.cloudflare.com/ajax/libs/octicons/3.1.0/octicons.min.css');
+    </script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-44563970-1', 'michaelrambeau.com');
+  ga('send', 'pageview');
+
+</script>  </body>
+</html>

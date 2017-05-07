@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Michael Rambeau &middot; Deploy a node.js application: which host to use ?</title>
+    <meta name="description" content="With node.js, it is easy to create one's own web server that runs locally. But when you want to deploy your application, which host to choose ?" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="author" href="https://plus.google.com/u/1/115589168984238296965" />
+    <!--[if lt IE 9]>
+      <script src="../../vendor/html5shiv.js"></script>
+      <script src="../../vendor/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="../../css/style-concat.min.css?2016-04-02" />
+    <link rel="stylesheet" href="../../css/highlight.css" />
+  </head>
+  <body>
+<header class="hidden-print">
+  <div class="container">
+    <div class="pure-menu pure-menu-open pure-menu-horizontal navigation">
+      <ul class="social pure-hidden-phone">
+        <li>
+          <a target="_blank" href="https://github.com/michaelrambeau" title="View Michael Rambeau's profile on GitHub">
+<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M8 0C3.58 0 0 3.582 0 8c0 3.535 2.292 6.533 5.47 7.59.4.075.547-.172.547-.385 0-.19-.007-.693-.01-1.36-2.226.483-2.695-1.073-2.695-1.073-.364-.924-.89-1.17-.89-1.17-.725-.496.056-.486.056-.486.803.056 1.225.824 1.225.824.714 1.223 1.873.87 2.33.665.072-.517.278-.87.507-1.07-1.777-.2-3.644-.888-3.644-3.953 0-.873.31-1.587.823-2.147-.083-.202-.358-1.015.077-2.117 0 0 .672-.215 2.2.82.638-.178 1.323-.266 2.003-.27.68.004 1.364.092 2.003.27 1.527-1.035 2.198-.82 2.198-.82.437 1.102.163 1.915.08 2.117.513.56.823 1.274.823 2.147 0 3.073-1.87 3.75-3.653 3.947.287.246.543.735.543 1.48 0 1.07-.01 1.933-.01 2.195 0 .215.144.463.55.385C13.71 14.53 16 11.534 16 8c0-4.418-3.582-8-8-8"></path></svg>
+          </a>
+        </li>
+        <li>
+          <a target="_blank" href="https://www.facebook.com/michael.rambeau.7" title="View Michael Rambeau's profile on Facebook">
+<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M15.117 0H.883C.395 0 0 .395 0 .883v14.234c0 .488.395.883.883.883h7.663V9.804H6.46V7.39h2.086V5.607c0-2.066 1.262-3.19 3.106-3.19.883 0 1.642.064 1.863.094v2.16h-1.28c-1 0-1.195.476-1.195 1.176v1.54h2.39l-.31 2.416h-2.08V16h4.077c.488 0 .883-.395.883-.883V.883C16 .395 15.605 0 15.117 0" fill-rule="nonzero"></path></svg>
+          </a>
+        </li>
+        <li>
+          <a target="_blank" href="https://plus.google.com/115589168984238296965" rel="publisher" title="View Michael Rambeau's profile on Google+">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><g><path d="M5.09 7.273v1.745H7.98c-.116.75-.873 2.197-2.887 2.197-1.737 0-3.155-1.44-3.155-3.215S3.353 4.785 5.09 4.785c.99 0 1.652.422 2.03.786l1.382-1.33c-.887-.83-2.037-1.33-3.41-1.33C2.275 2.91 0 5.184 0 8s2.276 5.09 5.09 5.09c2.94 0 4.888-2.065 4.888-4.974 0-.334-.036-.59-.08-.843H5.09zM16 7.273h-1.455V5.818H13.09v1.455h-1.454v1.454h1.455v1.455h1.455V8.727H16"/></g></svg>
+          </a>
+        </li>
+        <li>
+          <a target="_blank" href="https://www.linkedin.com/in/michaelrambeau" title="View Michael Rambeau's profile on Linkedin">
+<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M13.632 13.635h-2.37V9.922c0-.886-.018-2.025-1.234-2.025-1.235 0-1.424.964-1.424 1.96v3.778h-2.37V6H8.51V7.04h.03c.318-.6 1.092-1.233 2.247-1.233 2.4 0 2.845 1.58 2.845 3.637v4.188zM3.558 4.955c-.762 0-1.376-.617-1.376-1.377 0-.758.614-1.375 1.376-1.375.76 0 1.376.617 1.376 1.375 0 .76-.617 1.377-1.376 1.377zm1.188 8.68H2.37V6h2.376v7.635zM14.816 0H1.18C.528 0 0 .516 0 1.153v13.694C0 15.484.528 16 1.18 16h13.635c.652 0 1.185-.516 1.185-1.153V1.153C16 .516 15.467 0 14.815 0z" fill-rule="nonzero"></path></svg>
+          </a>
+        </li>
+      </ul>
+      <ul>
+        <li class="">
+          <a href="../../">
+            <i class="octicon octicon-home pure-hidden-desktop"></i>
+            <span class="pure-hidden-phone"> Home</span>
+          </a>
+        </li>
+        <li class="">
+          <a href="../../projects/">
+            Projects
+          </a>
+        </li>
+        <li class="">
+          <a href="../../resume/">
+            Resume
+          </a>
+        </li>
+        <li class="pure-menu-selected">
+          <a href="../../posts/">
+            Posts
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</header>
+<div class="container main">
+  <div class="review-header">
+    <div class="post-date hidden-print">AUGUST 2014</div>
+    <h1 class="post-title">Deploy a node.js application: which host to use ?</h1>
+  </div>
+</div>
+<div class="container main review">
+<div class="intro">
+  <div class="pure-g-r">
+    <div class="pure-u-3-5">
+      <p>With node.js, it is really easy to run one's web server locally.</p>
+      <p>But if you want to make your node.js application available for all web users, which solution to choose ?</p>
+      <p>Here are my requirements. It has to be:</p>
+      <ul>
+        <li>Fast</li>
+        <li>Easy to use (especially the deploy process)</li>
+        <li>Free (no credit card required!)</li>
+      </ul>
+      <p>I have checked 3 solutions for you: 2 host companies (Heroku and Modulus) and one IDE in the cloud.</p>
+    </div>
+    <div class="pure-u-2-5">
+      <img class="img-responsive" src="http://res.cloudinary.com/michaelrambeau/image/upload/v1408057146/2014-08-nodejs-wallpaper.jpg" />
+    </div>
+  </div>
+</div>
+<div class="review-block">
+  <div class="pure-g-r">
+    <div class="pure-u-1-3">
+      <img class="img-responsive" src="http://res.cloudinary.com/michaelrambeau/image/upload/v1408057146/2014-08-heroku-dashboard.jpg" alt="Heroku" />
+    </div>
+    <div class="pure-u-2-3">
+      <div class="second-col">
+        <a class="heading" href="https://www.heroku.com/">
+          <h2>Heroku</h2>
+        </a>
+        <h3>Setup overview </h3>
+        <p>First, you have to download and install "Heroku Toolbelt" program on your computer, to be able to call heroku commands from the command prompt window.</p>
+        <p>Then login using <code>heroku login</code> command, a SSH key file will be created on your computer.</p>
+        <p>Create a file named <code>.profile</code> at the root of your application, to specify which file has to be runned by node.js to launch the application.</p>
+        <p>Last step: run a process on the server to launch the application: <code>heroku ps:scale web=1</code></p>
+        <p>More details <a href="https://devcenter.heroku.com/articles/getting-started-with-nodejs">here</a> (official website)</p>
+        <h3>Deploy process</h3>
+        <p>Concept: you deploy to Heroku by pushing your code files to a special Git repository. From Git, you will have to create a "remote" repository, usually called "heroku": <code>git remote add heroku your_git_URL.git</code> .</p>
+        <p>To deploy, all you have to do is push the files to the remote repository you have just created: <code>git push heroku master</code></p>
+        <p class="small">I tried to create an account using an email address that was different than the one that is associated with my GitHub account and I had trouble     related to "SSH keys" installed on my computer, I could not "push" my files.
+Heroku repository is different from GitHub repository so it should work with any account.
+I could not solve the problem so I tried to create an other account, using my GitHub account email and it worked.</p>
+        <h3>Pros and cons</h3>
+        <div class="pros-cons">
+          <div class="table-layout pros">
+            <div class="icon">
+              <i class="mega-octicon octicon-plus"></i>
+            </div>
+            <div>
+              <ul>
+                <li>Single-command deploy process (git push heroku master)</li>
+                <li>Nice URLs http://yourapp.herokuapp.com</li>
+                <li>Environment variables (used to store data you don't want store in Git, like database passwords...) are easy to set up from the dashboard.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="table-layout cons">
+            <div class="icon">
+              <i class="mega-octicon octicon-dash"></i>
+            </div>
+            <div>
+              <ul>
+                <li>The server fall asleep after one hour of inactivity, it takes about 5 seconds to awake it.</li>
+                <li>You may encounter some issues if you try to use an email address that is different from your GitHub account one.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="review-block">
+  <div class="pure-g-r">
+    <div class="pure-u-1-3">
+      <img class="img-responsive" src="http://res.cloudinary.com/michaelrambeau/image/upload/v1408057146/2014-08-modulus-dashboard.jpg" alt="Modulus" />
+    </div>
+    <div class="pure-u-2-3">
+      <div class="second-col">
+        <a class="heading" href="http://modulus.io/">
+          <h2>Modulus</h2>
+        </a>
+        <h3>Setup overview </h3>
+        <p>Step 1: install "modulus" globally from npm <code>npm install -g modulus</code></p>
+        <p>Step 2: login to GitHub <code>modulus login --github</code></p>
+        <p>More details <a href="https://modulus.io/codex/getting_started">here</a> (official website)</p>
+        <h3>Deploy process</h3>
+        <p>To push the your code to Modulus, you just have to run the "deploy" command: <code>modulus deploy</code>. The "deploy" command pushes your code, updates the project dependencies (running a npm "install" command) and automatically restarts the application.</p>
+        <h3>Pros and cons</h3>
+        <div class="pros-cons">
+          <div class="table-layout pros">
+            <div class="icon">
+              <i class="mega-octicon octicon-plus"></i>
+            </div>
+            <div>
+              <ul>
+                <li>Very simple "install" process using only npm, nothing to download and install manually.</li>
+                <li>Super fast response time. The server is responsing faster than my local server!</li>
+              </ul>
+            </div>
+          </div>
+          <div class="table-layout cons">
+            <div class="icon">
+              <i class="mega-octicon octicon-dash"></i>
+            </div>
+            <div>
+              <ul>
+                <li>Only the first month is free of charge ?</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="review-block">
+  <div class="pure-g-r">
+    <div class="pure-u-1-3">
+      <img class="img-responsive" src="http://res.cloudinary.com/michaelrambeau/image/upload/v1408059839/2014-08-c9.jpg" alt="Cloud9" />
+    </div>
+    <div class="pure-u-2-3">
+      <div class="second-col">
+        <a class="heading" href="http://c9.io">
+          <h2>Cloud9</h2>
+        </a>
+        <p>Cloud9 is a very powerful online IDE (it runs in the browser) that lets you develop your application from anywhere. You can also use it to "share" your application since anyone can access the application URL.</p>
+        <h3>Deploy process</h3>
+        <p>With cloud9, you take control of the server from your browser. For example, you can run by yourself npm commands. Since Git is installed on the server, to deploy your application, you just have to pull the content from GitHub.</p>
+        <h3>Pros and cons</h3>
+        <div class="pros-cons">
+          <div class="table-layout pros">
+            <div class="icon">
+              <i class="mega-octicon octicon-plus"></i>
+            </div>
+            <div>
+              <ul>
+                <li>Nothing to install on your computer, everything is in the cloud</li>
+                <li>Very flexible, you can set up several "running configurations" to simulate different enviroments.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="table-layout cons">
+            <div class="icon">
+              <i class="mega-octicon octicon-dash"></i>
+            </div>
+            <div>
+              <ul>
+                <li>Can be used only for tests, the server "hibernates" after some days of inactivity.</li>
+                <li>Slower than the previous hosts.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<footer class="hidden-print">
+  <div class="container">
+    <p>http://michaelrambeau.com</p>
+    <p>Last update: Sun May 07 2017</p>
+  </div>
+</footer>
+    <script>
+function loadCSS(e,t,n){"use strict";var i=window.document.createElement("link");var o=t||window.document.getElementsByTagName("script")[0];i.rel="stylesheet";i.href=e;i.media="only x";o.parentNode.insertBefore(i,o);setTimeout(function(){i.media=n||"all"})}
+
+loadCSS('http://fonts.googleapis.com/css?family=Lato');
+loadCSS('https://cdnjs.cloudflare.com/ajax/libs/octicons/3.1.0/octicons.min.css');
+    </script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-44563970-1', 'michaelrambeau.com');
+  ga('send', 'pageview');
+
+</script>  </body>
+</html>

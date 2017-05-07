@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Michael Rambeau &middot; The tools I use for web development</title>
+    <meta name="description" content="Some feedback about 4 tools I discovered recently: Bootstrap, Docpad, Angular and LESS" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="author" href="https://plus.google.com/u/1/115589168984238296965" />
+    <!--[if lt IE 9]>
+      <script src="../../vendor/html5shiv.js"></script>
+      <script src="../../vendor/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="../../css/style-concat.min.css?2016-04-02" />
+  </head>
+  <body>
+<header class="hidden-print">
+  <div class="container">
+    <div class="pure-menu pure-menu-open pure-menu-horizontal navigation">
+      <ul class="social pure-hidden-phone">
+        <li>
+          <a target="_blank" href="https://github.com/michaelrambeau" title="View Michael Rambeau's profile on GitHub">
+<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M8 0C3.58 0 0 3.582 0 8c0 3.535 2.292 6.533 5.47 7.59.4.075.547-.172.547-.385 0-.19-.007-.693-.01-1.36-2.226.483-2.695-1.073-2.695-1.073-.364-.924-.89-1.17-.89-1.17-.725-.496.056-.486.056-.486.803.056 1.225.824 1.225.824.714 1.223 1.873.87 2.33.665.072-.517.278-.87.507-1.07-1.777-.2-3.644-.888-3.644-3.953 0-.873.31-1.587.823-2.147-.083-.202-.358-1.015.077-2.117 0 0 .672-.215 2.2.82.638-.178 1.323-.266 2.003-.27.68.004 1.364.092 2.003.27 1.527-1.035 2.198-.82 2.198-.82.437 1.102.163 1.915.08 2.117.513.56.823 1.274.823 2.147 0 3.073-1.87 3.75-3.653 3.947.287.246.543.735.543 1.48 0 1.07-.01 1.933-.01 2.195 0 .215.144.463.55.385C13.71 14.53 16 11.534 16 8c0-4.418-3.582-8-8-8"></path></svg>
+          </a>
+        </li>
+        <li>
+          <a target="_blank" href="https://www.facebook.com/michael.rambeau.7" title="View Michael Rambeau's profile on Facebook">
+<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M15.117 0H.883C.395 0 0 .395 0 .883v14.234c0 .488.395.883.883.883h7.663V9.804H6.46V7.39h2.086V5.607c0-2.066 1.262-3.19 3.106-3.19.883 0 1.642.064 1.863.094v2.16h-1.28c-1 0-1.195.476-1.195 1.176v1.54h2.39l-.31 2.416h-2.08V16h4.077c.488 0 .883-.395.883-.883V.883C16 .395 15.605 0 15.117 0" fill-rule="nonzero"></path></svg>
+          </a>
+        </li>
+        <li>
+          <a target="_blank" href="https://plus.google.com/115589168984238296965" rel="publisher" title="View Michael Rambeau's profile on Google+">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><g><path d="M5.09 7.273v1.745H7.98c-.116.75-.873 2.197-2.887 2.197-1.737 0-3.155-1.44-3.155-3.215S3.353 4.785 5.09 4.785c.99 0 1.652.422 2.03.786l1.382-1.33c-.887-.83-2.037-1.33-3.41-1.33C2.275 2.91 0 5.184 0 8s2.276 5.09 5.09 5.09c2.94 0 4.888-2.065 4.888-4.974 0-.334-.036-.59-.08-.843H5.09zM16 7.273h-1.455V5.818H13.09v1.455h-1.454v1.454h1.455v1.455h1.455V8.727H16"/></g></svg>
+          </a>
+        </li>
+        <li>
+          <a target="_blank" href="https://www.linkedin.com/in/michaelrambeau" title="View Michael Rambeau's profile on Linkedin">
+<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M13.632 13.635h-2.37V9.922c0-.886-.018-2.025-1.234-2.025-1.235 0-1.424.964-1.424 1.96v3.778h-2.37V6H8.51V7.04h.03c.318-.6 1.092-1.233 2.247-1.233 2.4 0 2.845 1.58 2.845 3.637v4.188zM3.558 4.955c-.762 0-1.376-.617-1.376-1.377 0-.758.614-1.375 1.376-1.375.76 0 1.376.617 1.376 1.375 0 .76-.617 1.377-1.376 1.377zm1.188 8.68H2.37V6h2.376v7.635zM14.816 0H1.18C.528 0 0 .516 0 1.153v13.694C0 15.484.528 16 1.18 16h13.635c.652 0 1.185-.516 1.185-1.153V1.153C16 .516 15.467 0 14.815 0z" fill-rule="nonzero"></path></svg>
+          </a>
+        </li>
+      </ul>
+      <ul>
+        <li class="">
+          <a href="../../">
+            <i class="octicon octicon-home pure-hidden-desktop"></i>
+            <span class="pure-hidden-phone"> Home</span>
+          </a>
+        </li>
+        <li class="">
+          <a href="../../projects/">
+            Projects
+          </a>
+        </li>
+        <li class="">
+          <a href="../../resume/">
+            Resume
+          </a>
+        </li>
+        <li class="pure-menu-selected">
+          <a href="../../posts/">
+            Posts
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</header>
+<div class="container main">
+  <div class="review-header">
+    <div class="post-date hidden-print">AUGUST 2013</div>
+    <h1 class="post-title">The tools I use for web development</h1>
+  </div>
+</div>
+<div class="container main review">
+<div class="intro">
+  <div class="pure-g-r">
+    <div class="pure-u-2-3">
+      <div class="first-col">
+        <p>
+          Of course front-end development can be done the same way as in the early 2000s:
+HTML, Javascript and CSS, the 3 basic ingredients, were already available.
+<br/>
+It is especially true if you have to deal with old browsers that do not know HTML5.
+<br/>
+But I found recently some tools that really help me doing better work.
+        </p>
+        <blockquote>
+          <p>Development is a craftsmanship. Good craftsmen need good tools.</p>
+          <small>A quote found somewhere in the web but I can't remember where</small>
+        </blockquote>
+      </div>
+    </div>
+    <div class="pure-u-1-3">
+      <div class="second-col">
+        <img src="../../img/blog/lego-minifig-400px.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+<div class="review-block">
+  <div class="pure-g-r">
+    <div class="pure-u-1-3">
+      <div class="first-col">
+        <a href="http://www.getbootstrap.com">
+          <img class="img-responsive img-thumbnail" src="../../img/blog/tools/bootstrap.jpg" alt="Bootstrap" />
+        </a>
+      </div>
+    </div>
+    <div class="pure-u-2-3">
+      <div class="second-col">
+        <a class="heading" href="http://www.getbootstrap.com">
+          <h2>Bootstrap</h2>
+        </a>
+        <strong>A set of UI components to create responsive web site (html5, css and js)</strong>
+        <p><p>In July 2013, I was looking for components to build a mobile-friendly web site.
+By any chance, I checked the &quot;Bootstrap&quot; template that was included in my code editor (Netbeans).
+How happy I was when I found that it was exactly what I needed:</p>
+<ul>
+<li>A web page with a layout that changes dynamically depending on the screen size.</li>
+<li>A navigation menu that becomes a small menu button button with 3 bars, like in facebook, gmail mobile sites</li>
+</ul>
+<p>Bootstrap is simple to use and very complete in the sametime.
+Some details are amazing. Just an example: 
+The 3-bar menu button (used for the main navigation, for mobile screens) is made with HTML/CSS, without any icon.
+The same thing for the small triangle used in drop-down menus!
+This &quot;UI framework&quot; does not require any picture file.</p>
+<p>In addition, the documentation is good and show all possibilities.
+The 2 project authors, from Twitter dev team, did a great job... but what was their motivation ?</p>
+</p>
+        <p>What I like:</p>
+        <ul class="custom">
+          <li>Everything I need to create a "responsive" web site is in the box!</li>
+          <li>Javascript conponents such as drop-down menu are very easy to use: just copy the HTML mark-up in the page and it works, no need to bind any DOM element with a Javascript call.</li>
+          <li>The flat design (no gradient, no shadow) is nice and simple</li>
+          <li>CSS built with LESS, easy to customize</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="review-block">
+  <div class="pure-g-r">
+    <div class="pure-u-1-3">
+      <div class="first-col">
+        <a href="http://www.docpad.org">
+          <img class="img-responsive img-thumbnail" src="../../img/blog/tools/docpad.jpg" alt="Docpad" />
+        </a>
+      </div>
+    </div>
+    <div class="pure-u-2-3">
+      <div class="second-col">
+        <a class="heading" href="http://www.docpad.org">
+          <h2>Docpad</h2>
+        </a>
+        <strong>A tool to create easily a full web site, based on node.js</strong>
+        <p><p>Web CMS such as Wordpress are great to create a web site.
+But you need a web server with PHP and a database, that you have to configure.
+Deployments from local environment to production can be painful.
+So if you need a simple web site to be runned quickly, it is not the best solution maybe.</p>
+<p>In the other hand, you can create static HTML pages but you will have to copy-paste common parts such as headers, menus and so on.</p>
+<p>Since I do not really need &quot;dynamic&quot; pages, a good compromise could be a site generator:  a tool that creates static html pages each time the content is updated.
+First I heard about <a href="http://jekyllrb.com/">Jekyll</a>, used by Bootstrap team for their documentation and for their blog.
+It looks really nice but it is powered by Ruby on rails.
+Then I found docpad, based on node.js, that was already on my computer.</p>
+<p>docpad can generate HTML pages from data saved as simple text files, no database is needed.</p>
+<p>Docpad is a very flexible system: you create content using html, markdown, coffeescript or any other language and docpage generates the HTML pages.</p>
+</p>
+        <p>What I like:</p>
+        <ul class="custom">
+          <li>Very light, perfect to have one's web project on an USB key for example</li>
+          <li>Works with several languages, you just need to install the right plugin</li>
+          <li>Made me discover Coffeekup (a templating language built on top of CoffeeScript)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="review-block">
+  <div class="pure-g-r">
+    <div class="pure-u-1-3">
+      <div class="first-col">
+        <a href="http://angularjs.org/">
+          <img class="img-responsive img-thumbnail" src="../../img/blog/tools/angular.jpg" alt="Angular" />
+        </a>
+      </div>
+    </div>
+    <div class="pure-u-2-3">
+      <div class="second-col">
+        <a class="heading" href="http://angularjs.org/">
+          <h2>Angular</h2>
+        </a>
+        <strong>A javascript framework to build easily dynamic applications</strong>
+        <p><h3 id="why-use-a-javascript-framework-">Why use a Javascript framework ?</h3>
+<p>jQuery is a great library that makes DOM manipulation so easy.
+For many of us, we cannot imagine coding Javscript without jQuery.</p>
+<p>But when you need to build a complex application (following the MVC pattern), you might need a more strctured approach.</p>
+<blockquote>
+<p>When working on a web application that involves a lot of JavaScript, one of the first things you learn is to stop tying your data to the DOM. It&#39;s all too easy to create JavaScript applications that end up as tangled piles of jQuery selectors and callbacks, all trying frantically to keep data in sync between the HTML UI, your JavaScript logic, and the database on your server. For rich client-side applications, a more structured approach is often helpful.
+<small>From <a href="http://backbonejs.org/">backbonejs.org</a> introduction</small></p>
+</blockquote>
+<h3 id="why-angular-">Why Angular ?</h3>
+<p>Several Javascript frameworks, such as Backbone and Angular, became popular recently.
+Check this web site to see the main &quot;contenders&quot; in action: <a href="http://www.todomvc.com/">www.todomvc.com</a></p>
+<p>All these frameworks have the hability to connect dynamically the page DOM elements with data.</p>
+<p>Angular is different because it relies on a <strong>specific HTML markup</strong>.</p>
+<p>By using Angular specific attributes (such as &quot;ng-model&quot;, &quot;ng-controller, &quot;ng-repeat&quot;) the HTML page becomes dynamic.
+You can also bind events directly adding &quot;ng-click&quot; to a button or &quot;ng-change&quot; to a combox.
+It can look like &quot;old-fashioned&quot; but it is very different from inline code such as onclick=&quot;myFunction()&quot; because a &quot;scope&quot; has been provided.</p>
+<p>With Angular, you don&#39;t need to include any templating system (like <a href="http://handlebarsjs.com/">Handlebars</a>), the templating system is already &quot;in the box&quot;.</p>
+<p>As a result, using Angular is for me the fastest way to create a &quot;dynamic&quot; page: a page that reacts (showing/hiding blocks, updating styles...) with user&#39;s interaction.
+Of course, there is a learning curve if you want to create more sophisticad applications, you have to enter a &quot;new world&quot; and forget old practices.
+But it is worth the try!</p>
+</p>
+        <p>What I like:</p>
+        <ul class="custom">
+          <li>Works with an expressive HTML markup, no templating system required</li>
+          <li>Perfect for a one-page application driven by ajax</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="review-block">
+  <div class="pure-g-r">
+    <div class="pure-u-1-3">
+      <div class="first-col">
+        <a href="http://www.lesscss.org">
+          <img class="img-responsive img-thumbnail" src="../../img/blog/tools/less.jpg" alt="LESS" />
+        </a>
+      </div>
+    </div>
+    <div class="pure-u-2-3">
+      <div class="second-col">
+        <a class="heading" href="http://www.lesscss.org">
+          <h2>LESS</h2>
+        </a>
+        <strong>A language to write CSS code in a clean and eficient way.</strong>
+        <p>
+          <p>The main problem of CSS is that there is a lot of repetitions: when you create a web site, you usually start with a simple CSS file, and then you keep adding lines, repeating selector, overwriting things, sometimes by accident, sometimes on purpose...</p>
+          <p>LESS provides several solutions to keep your code clean and tidy: variabes, mixins, nested elements...</p>
+          <p>It looks like a smart evolution of CSS rather than a new language, since you can include basic CSS in your LESS code.</p>
+          <p>In my development process, I use a <a href="http://gruntjs.com/">Grunt</a> task to create a single CSS file from my LESS files.</p>
+          <p><a href="http://learnboost.github.io/stylus/">Stylus</a> can be a better alternative because of its compact syntax: no more curly bracket, indentation is used to create nested elements.
+However, I chose LESS because Bootstrap components are built with LESS.</p>
+        </p>
+        <p>What I like:</p>
+        <ul class="custom">
+          <li>No more duplication of selectors... it makes the stylesheet easier to read and to write</li>
+          <li>Media-queries (used to define style dependng on the screen device, for example) can be nested inside elements, which means it is easy to define how a given element behaves depending on the context (mobile, desktop, print...)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+  <div class="hidden-print">
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'michaelrambeau'; // required: replace example with your forum shortname
+
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </div>
+</div>
+<footer class="hidden-print">
+  <div class="container">
+    <p>http://michaelrambeau.com</p>
+    <p>Last update: Sun May 07 2017</p>
+  </div>
+</footer>
+    <script>
+function loadCSS(e,t,n){"use strict";var i=window.document.createElement("link");var o=t||window.document.getElementsByTagName("script")[0];i.rel="stylesheet";i.href=e;i.media="only x";o.parentNode.insertBefore(i,o);setTimeout(function(){i.media=n||"all"})}
+
+loadCSS('http://fonts.googleapis.com/css?family=Lato');
+loadCSS('https://cdnjs.cloudflare.com/ajax/libs/octicons/3.1.0/octicons.min.css');
+    </script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-44563970-1', 'michaelrambeau.com');
+  ga('send', 'pageview');
+
+</script>  </body>
+</html>

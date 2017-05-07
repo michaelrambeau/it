@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Michael Rambeau &middot; AngularJS memo</title>
+    <meta name="description" content="A set of common AngularJS recipes. Services, directives, strategies to filter array of data, routing and more." />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="author" href="https://plus.google.com/u/1/115589168984238296965" />
+    <!--[if lt IE 9]>
+      <script src="../../vendor/html5shiv.js"></script>
+      <script src="../../vendor/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="../../css/style-concat.min.css?2016-04-02" />
+    <link rel="stylesheet" href="../../css/highlight.css" />
+  </head>
+  <body>
+<header class="hidden-print">
+  <div class="container">
+    <div class="pure-menu pure-menu-open pure-menu-horizontal navigation">
+      <ul class="social pure-hidden-phone">
+        <li>
+          <a target="_blank" href="https://github.com/michaelrambeau" title="View Michael Rambeau's profile on GitHub">
+<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M8 0C3.58 0 0 3.582 0 8c0 3.535 2.292 6.533 5.47 7.59.4.075.547-.172.547-.385 0-.19-.007-.693-.01-1.36-2.226.483-2.695-1.073-2.695-1.073-.364-.924-.89-1.17-.89-1.17-.725-.496.056-.486.056-.486.803.056 1.225.824 1.225.824.714 1.223 1.873.87 2.33.665.072-.517.278-.87.507-1.07-1.777-.2-3.644-.888-3.644-3.953 0-.873.31-1.587.823-2.147-.083-.202-.358-1.015.077-2.117 0 0 .672-.215 2.2.82.638-.178 1.323-.266 2.003-.27.68.004 1.364.092 2.003.27 1.527-1.035 2.198-.82 2.198-.82.437 1.102.163 1.915.08 2.117.513.56.823 1.274.823 2.147 0 3.073-1.87 3.75-3.653 3.947.287.246.543.735.543 1.48 0 1.07-.01 1.933-.01 2.195 0 .215.144.463.55.385C13.71 14.53 16 11.534 16 8c0-4.418-3.582-8-8-8"></path></svg>
+          </a>
+        </li>
+        <li>
+          <a target="_blank" href="https://www.facebook.com/michael.rambeau.7" title="View Michael Rambeau's profile on Facebook">
+<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M15.117 0H.883C.395 0 0 .395 0 .883v14.234c0 .488.395.883.883.883h7.663V9.804H6.46V7.39h2.086V5.607c0-2.066 1.262-3.19 3.106-3.19.883 0 1.642.064 1.863.094v2.16h-1.28c-1 0-1.195.476-1.195 1.176v1.54h2.39l-.31 2.416h-2.08V16h4.077c.488 0 .883-.395.883-.883V.883C16 .395 15.605 0 15.117 0" fill-rule="nonzero"></path></svg>
+          </a>
+        </li>
+        <li>
+          <a target="_blank" href="https://plus.google.com/115589168984238296965" rel="publisher" title="View Michael Rambeau's profile on Google+">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><g><path d="M5.09 7.273v1.745H7.98c-.116.75-.873 2.197-2.887 2.197-1.737 0-3.155-1.44-3.155-3.215S3.353 4.785 5.09 4.785c.99 0 1.652.422 2.03.786l1.382-1.33c-.887-.83-2.037-1.33-3.41-1.33C2.275 2.91 0 5.184 0 8s2.276 5.09 5.09 5.09c2.94 0 4.888-2.065 4.888-4.974 0-.334-.036-.59-.08-.843H5.09zM16 7.273h-1.455V5.818H13.09v1.455h-1.454v1.454h1.455v1.455h1.455V8.727H16"/></g></svg>
+          </a>
+        </li>
+        <li>
+          <a target="_blank" href="https://www.linkedin.com/in/michaelrambeau" title="View Michael Rambeau's profile on Linkedin">
+<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M13.632 13.635h-2.37V9.922c0-.886-.018-2.025-1.234-2.025-1.235 0-1.424.964-1.424 1.96v3.778h-2.37V6H8.51V7.04h.03c.318-.6 1.092-1.233 2.247-1.233 2.4 0 2.845 1.58 2.845 3.637v4.188zM3.558 4.955c-.762 0-1.376-.617-1.376-1.377 0-.758.614-1.375 1.376-1.375.76 0 1.376.617 1.376 1.375 0 .76-.617 1.377-1.376 1.377zm1.188 8.68H2.37V6h2.376v7.635zM14.816 0H1.18C.528 0 0 .516 0 1.153v13.694C0 15.484.528 16 1.18 16h13.635c.652 0 1.185-.516 1.185-1.153V1.153C16 .516 15.467 0 14.815 0z" fill-rule="nonzero"></path></svg>
+          </a>
+        </li>
+      </ul>
+      <ul>
+        <li class="">
+          <a href="../../">
+            <i class="octicon octicon-home pure-hidden-desktop"></i>
+            <span class="pure-hidden-phone"> Home</span>
+          </a>
+        </li>
+        <li class="">
+          <a href="../../projects/">
+            Projects
+          </a>
+        </li>
+        <li class="">
+          <a href="../../resume/">
+            Resume
+          </a>
+        </li>
+        <li class="pure-menu-selected">
+          <a href="../../posts/">
+            Posts
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</header>
+<div class="container main">
+  <div class="white-block">
+    <div class="title">
+      <div class="post-date hidden-print">NOVEMBER 2014</div>
+      <h1 class="post-title">AngularJS memo</h1>
+<p class="intro">I have been using AngularJS since 2013 and I really loves how this framework makes the creation of dynamic applications easy.
+<br />
+Here are some "recipes" that I gathered to help me (and other developers, who knows ?) remember how things work in the Angular world.</p>
+<h2>Basics</h2>
+<p>Let's create the application module and one controller.</p>
+<pre>
+  <code>var app = angular.module('myapp', []);
+app.controller('MainController', function($scope) {
+  $scope.myPlayer = {
+    name: 'Larry Bird'
+  };
+});</code>
+</pre>
+<p class="small">Note: <code>angular.module('myapp', [])</code> is a setter, it creates a module called <code>myapp</code> that has no dependencies (the empty array), while <code>angular.module('myapp')</code> is a getter that can be used instead of the global variable called <code>app</code>.</p>
+<pre>
+  <code class="lang-html"><html ng-app="myapp" ng-controller="MainController"></code>
+</pre>
+<p>About 2 way-binding and scope, it is important to read <a href="https://github.com/angular/angular.js/wiki/Understanding-Scopes">this article from the Github wiki</a>, to avoid some issues when binding JavaScript primitives.</p>
+<h3>Using a controller alias</h3>
+<p>Instead of binding the template to the controller's scope, the template can be bound to the controller instance.</p>
+<pre>
+  <code class="lang-html"><div ng-controller="PlayerController as player">
+{{player.name}}</code>
+</pre>
+<p>In this case instead of doing <code>$scope.data = {...}</code> in the controller, we do <code>this.data = {...}</code></p>
+<pre>
+  <code>app.controller('PlayerController', function($scope) {
+  this.name = 'Larry Bird'
+});</code>
+</pre>
+<h3>Common AngularJS directives</h3>
+<p>ng-repeat</p>
+<pre>
+  <code class="lang-html"><div ng-repeat="element in array | orderBy:'lastUpdateTime' | limitTo:10">
+<div ng-repeat="(key, value) in map"></code>
+</pre>
+<p>ng-class</p>
+<pre>
+  <code class="lang-html"><div ng-class="{'selected': item.isSelected}"></code>
+</pre>
+<p>ng-switch</p>
+<pre>
+  <code class="lang-html"><div ng-switch="expression">
+  <div ng-switch-when="matchValue1">...</div>
+  <div ng-switch-when="matchValue2">...</div>
+  <div ng-switch-default>...</div>
+</div></code>
+</pre>
+<p>ng-options</p>
+<pre>
+  <code class="lang-html"><select
+  ng-model="team"
+  ng-options="team.code as team.name for team in teams">
+  <option value="">Select a team</option>
+</select></code>
+</pre>
+<h3>Render html in a template</h3>
+<p>html content is escaped by default. Use $sce service and ng-bind to display html in your templates.</p>
+<pre>
+  <code class="lang-html"><div ng-bind="html">{{body}}</div></code>
+</pre>
+<pre>
+  <code class="lang-javascript">$scope.body = $sce.trustAsHtml(body)</code>
+</pre>
+<h2>Filters</h2>
+<p>In Angular, the term 'filter' has different meanings depending on the context.<br/>
+A filter can be used to format a string in a template,
+but it can also applied on arrays in order to return a subset of the array.<br/>
+Let's clarify with some examples...</p>
+<h3>A. Format string with built-in filters</h3>
+<p>Here are examples of built-in filters used to convert string expressions:</p>
+<ul>
+  <li>date</li>
+  <li>lowercase</li>
+  <li>uppercase</li>
+</ul>
+<p>In templates, a filter can be applied to any expression followed by a pipe character</p>
+<pre>
+  <code>{{ myDate}} | date : 'dd/MM/yyyy' }}</code>
+</pre>
+<h3>B. Filtering array of items</h3>
+<p>We are going to check 3 ways to filter an array of items displayed using ng-repeat.
+Check the code in the following "codepen" for more details about the implementation.</p>
+<div class="codepen"><p data-height="300" data-theme-id="0" data-slug-hash="GgpKwp" data-default-tab="result" data-user="mikeair" class='codepen'>See the Pen <a href='http://codepen.io/mikeair/pen/GgpKwp/'>AngularJS Array filters demo</a> by Michael Rambeau (<a href='http://codepen.io/mikeair'>@mikeair</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script></div>
+<h4>1. Basic filter</h4>
+<p>Without implementing any function, it is possible to filter a list of results depending on values entered in a form.</p>
+<p>First, we create a search form that contains 2 fields: a text field to search players by their name, and a combo-box to search by team.
+We use a JSON object "search" to store search criteria.
+That object has the same attributes "name" and "team" as the items we want to filter.</p>
+<pre>
+  <code class="lang-html"><input ng-model="search.name" placeholder="Enter name to search">
+<select ng-model="search.team">
+  <option value="">All teams</option>
+  <option ng-repeat="team in teams" value="{{team.code}}">{{team.name}}</option>
+</select></code>
+</pre>
+<p>Then we filter the array of results using the variable called "search".
+AngularJS will automatically filter the items, matching "name" and "team" properties of every item, against the "search" variable.</p>
+<pre>
+  <code><ul>
+  <li ng-repeat="player in players | filter:search">{{player.name}}</li>
+</ul></code>
+</pre>
+<h4>2. Filter function defined in the controller</h4>
+<p>Instead of the search variable, let's use a function defined in the controller. The function will we be runned against each element to filter, returning true if the element has to be included.</p>
+<pre>
+  <code>$scope.filterStartWith = function(player) {
+  var re = new RegExp('^' + $scope.search.name, "i");
+  return player.name.match(re);
+};</code>
+</pre>
+<pre>
+  <code class="lang-html"><ul>
+  <li ng-repeat="player in players | filter:filterStartWith">{{player.name}}</li>
+</ul></code>
+</pre>
+<h4>3. Create an Angular custom filter</h4>
+<p>The 2 previous solutions were attached to a given controller.
+The 3rd solution is to create an Angular filter that we can call from any template.
+<br />
+A filter function takes an array of items as the first parameter and returns the array of filtered items.</p>
+<pre>
+  <code>app.filter('teamFilter', function() {
+  return function(items, team) {
+    if (team == '') return items;
+    return items.filter(function (player) {
+      return player.team == team;
+    });
+  };
+});</code>
+</pre>
+<p>We can pass as many parameters as needed from the template,
+following the syntax <code >| myCustomFilter | param1 | param2</code>'</p>
+<pre>
+  <code class="lang-html"><ul>
+  <li ng-repeat="player in players | teamFilter:search.team">{{player.name}}</li>
+</ul></code>
+</pre>
+<p>Filters are really powerful when used in templates but they can also be called by JavaScript, using $filter dependency.</p>
+<pre>
+  <code>var filteredPlayers = $filter('teamFilter')($scope.players, $scope.search.team);</code>
+</pre>
+<h2>Custom directives</h2>
+<p>By default, scope directice inherit from the parent scope.</p>
+<h3>Creating an isolated scope</h3>
+<pre>
+  <code class="lang-javascript">app.directive("myDirective", function() {
+  return {
+    restrict: "AE",
+    templateUrl: "my-template.html",
+    scope: {
+      title: '@',
+      player: '='
+    },
+    require: '^parentDirective',
+    controller: function($scope) {
+    },
+    controllerAs: "ctrl",
+    link: function (scope, element, attrs, parentCtrl) {
+      //Here we can call a function defined in the parent directive controller
+    }
+  };
+});</code>
+</pre>
+<p>Note: directive tag names are in lower case in the html <code>my-directive</code> but in camelcase in the JavaScript code <code>myDirective</code>.</p>
+<p>3 options are available when binding data to an isolate scope:</p>
+<ul>
+  <li><b>@</b> passes data in a string (useful for static properties)</li>
+  <li><b>=</b> passes data in an object (2-way data binding)</li>
+  <li><b>&</b> passes data value in a function (useful to launch a callback from the parent)</li>
+</ul>
+<h3>Scope that inherit from the parent</h3>
+<p>By using <code>scope: true</code>, the directive scope can access values from the parent scope.
+But private variables, limited to the directive scope, can be created.</p>
+<pre>
+  <code>scope: true</code>
+</pre>
+<h3>Wrapping jQuery plugins in directives</h3>
+<p>How to wrap Bootstrap popover plugin in a directive that can be used by adding a 'popover' attribute to any html element.</p>
+<pre>
+  <code>.directive('popover', function($timeout) {
+  return function(scope, element, attributes) {
+    $timeout(function() {
+      element.popover({ trigger: 'hover', content: attributes.popover });
+    });
+    scope.$on('$destroy', function() {
+       element.popover('destroy');
+    });
+  };</code>
+</pre>
+<h2>Service recipes</h2>
+<p>Services are used to connect data and share it accross the application<br/>
+There are 5 recipes to create a service:</p>
+<ul>
+  <li>value</li>
+  <li>factory => share function and objects accross the app</li>
+  <li>service => share instances of methods and objects</li>
+  <li>provider => allow configuration</li>
+  <li>constant</li>
+</ul>
+<h3>Service VS Factory</h3>
+<pre>
+  <code>app.service('myService', function() {
+  this.sayHello = function(name) {
+     return "Hi " + name + "!";
+  };
+});</code>
+</pre>
+<pre>
+  <code>app.factory('myFactory', function() {
+  //some code can be run here (private)
+  return {
+    sayHello : function(name) {
+      return "Hi " + name + "!";
+    }
+  }
+});</code>
+</pre>
+<h3>Example of provider</h3>
+<p>Let's create a factory used to check the validity of a tweet by calling an external API.<br/>
+We want this factory to allow configuration (the maximum length of the tweet), so we are going to create a provider.<br/>
+All providers have a $get function.<br/>
+Wrap the existing function returned by the factory function in a call to the $get() function.</p>
+<pre>
+  <code>app.provider('Tweetable', [function TweetableProvider() {
+  var characterLength = 144;
+
+  this.setLength = function(l) {
+    characterLength = l;
+  };
+
+  this.$get = function($http) {
+   return function(potentialTweet) {
+    return $http({
+      method: 'POST',
+      url: 'http://my-api/tweet',
+      data: {
+        description: potentialTweet,
+        maxLength: characterLength
+      }
+    });
+  };
+  };
+
+}]);</code>
+</pre>
+<p>Configure the service, calling the setLength method</p>
+<pre>
+  <code>.config(['TweetableProvider', function(TweetableProvider) {
+  TweetableProvider.setLength(40);
+}])</code>
+</pre>
+<h2>Working with ngResource module and $resource service</h2>
+<p>ngResource module is a nice way to make the application communicate with a REST API.</p>
+<p>Create a factory, injecting $resource service, that defines the REST URL end-point and a custom method.</p>
+<pre>
+  <code>.factory('Note',['$resource', function NoteFactory($resource) {
+  return $resource('/notes', {}, {
+    tweetIt: {
+      method: 'PUT'
+    }
+  });
+}]);</code>
+</pre>
+<p>In the controller, call get(), query(), save() and delete() methods</p>
+<pre>
+  <code>//Get a single resource
+$scope.note = Note.get({id: $routeParams.id})
+//Get all resources
+$scope.notes = Note.query()
+//Save a new resource
+Note.$save(note)
+//Delete
+Note.$delete(note)</code>
+</pre>
+<h2>Form validation</h2>
+<pre>
+  <code><form name="myForm" ng-submit="myForm.$valid && mySubmitHandler()">
+  <input ng-model="player.name" ng-required="true">
+</form></code>
+</pre>
+<h2>Basic routing with ngRouter module</h2>
+<h3>Define the routes</h3>
+<pre>
+  <code>angular.module('NoteApp', ['ngRoute'])
+.config(['$routeProvider', function($routeProvider) {
+  $routeProvider
+    .when('/', {
+      redirectTo: '/notes'
+    })
+    .when('/notes', {
+      templateUrl: 'templates/pages/notes/index.html',
+      controller: function($http) {
+        var controller = this;
+        $http.get('/notes').success(function(data) {
+          controller.notes = data;
+        });
+      },
+      controllerAs: 'notesCtrl'
+    })
+    .when('/users', {
+      templateUrl: 'templates/pages/users/index.html'
+    })
+    .otherwise({
+      redirectTo: '/notes'
+    });
+}]);</code>
+</pre>
+<h3>Markup</h3>
+<p>Use ng-view as a place holder in the view</p>
+<pre>
+  <code class="lang-html"><div ng-view></div></code>
+</pre>
+<p>Example of link</p>
+<pre>
+  <code class="lang-html"><a ng-repeat="note in notes" ng-href="#/notes/{{note.id}}"></code>
+</pre>
+<p>Read URL parameters in the controller</p>
+<pre>
+  <code>angular.module('NoteWrangler')
+.controller('NotesShowController', ['$routeParams', '$http', function($routeParams, $http) {
+  var id = $routeParams.id;
+  var ctrl = this;
+  $http({method: 'GET', url: '/notes/' + id}).success(function(data) {
+    ctrl.note = data;
+  });
+}]);</code>
+</pre>
+    </div>
+  </div>
+</div>
+<footer class="hidden-print">
+  <div class="container">
+    <p>http://michaelrambeau.com</p>
+    <p>Last update: Sun May 07 2017</p>
+  </div>
+</footer>
+    <script>
+function loadCSS(e,t,n){"use strict";var i=window.document.createElement("link");var o=t||window.document.getElementsByTagName("script")[0];i.rel="stylesheet";i.href=e;i.media="only x";o.parentNode.insertBefore(i,o);setTimeout(function(){i.media=n||"all"})}
+
+loadCSS('http://fonts.googleapis.com/css?family=Lato');
+loadCSS('https://cdnjs.cloudflare.com/ajax/libs/octicons/3.1.0/octicons.min.css');
+    </script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-44563970-1', 'michaelrambeau.com');
+  ga('send', 'pageview');
+
+</script>  </body>
+</html>
