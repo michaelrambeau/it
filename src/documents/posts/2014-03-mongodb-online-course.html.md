@@ -13,7 +13,7 @@ isPost: true
 ---
 [MongoDB](http://www.mongoDB.org) is an open source document-oriented database.
 
-During 7 weeks, I did an online course provided by [MongoDB university](https://university.mongodb.com) called 
+During 7 weeks, I did an online course provided by [MongoDB university](https://university.mongodb.com) called
 "M101JS: MongoDB for Node.js Developers".
 
 Here is the course summary, week by week:
@@ -69,8 +69,4 @@ The final message I got after having completing the course was cool ! (it looks 
 
 About MongoDB, the way of querying the database and to deal with JSON documents is very smart compared to a tradionnal database.
 
-Now I really feel like using MongoDB in my next project, running my own server or using cloud services like [MongoLab](https://mongolab.com).
-
-
-
-
+Now I really feel like using MongoDB in my next project, running my own server or using cloud services like [mLab](https://mlab.com).

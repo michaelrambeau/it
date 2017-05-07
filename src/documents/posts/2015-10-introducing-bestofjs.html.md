@@ -35,9 +35,9 @@ Browsers can do things like:
 
 But JavaScript is not only the browser language, JavaScript is the cornerstone of what is called the **web platform**.
 
-JavaScript can be found everywhere: 
+JavaScript can be found everywhere:
 
-* on the **server-side** with the rise of node.js 
+* on the **server-side** with the rise of node.js
 * on **mobile** applications with hybrid frameworks and solutions like React Native
 * on devices of the Internet of Things (**IoT**)
 
@@ -56,7 +56,7 @@ I used to take notes about the interesting projects I found but I was tired of s
 I thought that a tool was needed to help us follow what is happening in this everyday changing world.
 
 This is why [bestof.js.org](http://bestof.js.org/) was born!
-  
+
 ## Concept
 
 Checking the number of stars on Github is a good way to check project popularity but it does not tell you when the stars have been added.
@@ -74,7 +74,7 @@ The application [homepage](http://bestof.js.org/) displays 2 types of ranking:
 * The top 20 most popular projects (by total number of stars on Github)
 * The top 20 hottest projects (by number of stars added yesterday)
 
-The project focuses on **speed** providing 2 search features: 
+The project focuses on **speed** providing 2 search features:
 
 * Filter projects by "tag" (Check the "[Framework](http://bestof.js.org/#/tags/framework)" tag for example)
 * Search by entering keywords in the search box
@@ -95,7 +95,7 @@ As a result, there are 5 repositories on Github:
 
 Cloud services I use:
 
-* [Mongolab](https://mongolab.com/): mongodb database that stores project data
+* [mlab](https://mlab.com/): mongodb database cloud service
 * [SemaphoreCI](https://semaphoreci.com/): Continuous Integration service with an amazing "Build scheduler" feature
 * [divshot](https://divshot.com/): Static web hosting, used to deploy static JSON data consumed by the web application
 * [webtask.io](https://webtask.io/): node.js microservice
@@ -120,4 +120,3 @@ If you like the application, please star the [project on Github](https://github.
 > We are all made of stars <img src="http://bestof.js.org/images/star.png" width="16" height="16" alt="star"> !
 
 Thank you for your support!
-
